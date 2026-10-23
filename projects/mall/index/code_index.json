@@ -1,0 +1,1573 @@
+{
+ "builtAt": "2026-10-23T15:55:33.506Z",
+ "modules": [
+  {
+   "id": "1",
+   "name": "商品管理",
+   "path": "pms",
+   "aliases": [
+    "pms",
+    "商品中心",
+    "商品模块",
+    "货品",
+    "spu",
+    "单品",
+    "商品域"
+   ],
+   "menus": [
+    {
+     "id": "101",
+     "name": "商品列表",
+     "module": "商品管理",
+     "modulePath": "pms",
+     "parentMenu": null,
+     "path": "product",
+     "component": "pms/product/index",
+     "perms": "/product/**",
+     "permPrefix": "pms:product",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/pms/product/index.vue",
+      "dir": "repos/mall-admin-web/src/views/pms/product",
+      "api": [
+       "repos/mall-admin-web/src/apis/product.ts",
+       "repos/mall-admin-web/src/apis/skuStock.ts",
+       "repos/mall-admin-web/src/apis/brand.ts",
+       "repos/mall-admin-web/src/apis/productCate.ts",
+       "repos/mall-admin-web/src/apis/productAttr.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/PmsProductController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/PmsProductService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dao/PmsProductDao.java",
+      "repos/mall/mall-admin/src/main/resources/dao/PmsProductDao.xml",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/PmsProduct.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/PmsProductMapper.java"
+     ],
+     "seeds": {
+      "slug": "product",
+      "cn": "商品列表",
+      "controllers": [
+       "PmsProductController"
+      ]
+     },
+     "aliases": [
+      "商品列表",
+      "商品管理",
+      "商品",
+      "货品列表",
+      "spu",
+      "单品",
+      "商品上下架",
+      "商品分页查询",
+      "商品删除"
+     ]
+    },
+    {
+     "id": "102",
+     "name": "添加/修改商品",
+     "module": "商品管理",
+     "modulePath": "pms",
+     "parentMenu": null,
+     "path": "addProduct",
+     "component": "pms/product/add",
+     "perms": "/product/**",
+     "permPrefix": "pms:product",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/pms/product/add.vue",
+      "dir": "repos/mall-admin-web/src/views/pms/product",
+      "api": [
+       "repos/mall-admin-web/src/apis/product.ts",
+       "repos/mall-admin-web/src/apis/productCate.ts",
+       "repos/mall-admin-web/src/apis/brand.ts",
+       "repos/mall-admin-web/src/apis/productAttrCate.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/PmsProductController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/PmsProductService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/PmsProductParam.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/PmsProductResult.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dao/PmsProductLadderDao.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dao/PmsProductFullReductionDao.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dao/PmsMemberPriceDao.java"
+     ],
+     "seeds": {
+      "slug": "addProduct",
+      "cn": "添加/修改商品",
+      "controllers": [
+       "PmsProductController"
+      ]
+     },
+     "aliases": [
+      "添加商品",
+      "新建商品",
+      "修改商品",
+      "编辑商品",
+      "商品录入",
+      "商品发布",
+      "新增货品",
+      "商品资料维护",
+      "商品保存",
+      "updateProduct"
+     ]
+    },
+    {
+     "id": "103",
+     "name": "商品分类",
+     "module": "商品管理",
+     "modulePath": "pms",
+     "parentMenu": null,
+     "path": "productCate",
+     "component": "pms/productCate/index",
+     "perms": "/productCategory/**",
+     "permPrefix": "pms:productCategory",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/pms/productCate/index.vue",
+      "dir": "repos/mall-admin-web/src/views/pms/productCate",
+      "api": [
+       "repos/mall-admin-web/src/apis/productCate.ts",
+       "repos/mall-admin-web/src/apis/productAttrCate.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/PmsProductCategoryController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/PmsProductCategoryService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductCategoryServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dao/PmsProductCategoryDao.java",
+      "repos/mall/mall-admin/src/main/resources/dao/PmsProductCategoryDao.xml",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/PmsProductCategoryParam.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/PmsProductCategoryWithChildrenItem.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/PmsProductCategory.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/PmsProductCategoryMapper.java"
+     ],
+     "seeds": {
+      "slug": "productCate",
+      "cn": "商品分类",
+      "controllers": [
+       "PmsProductCategoryController"
+      ]
+     },
+     "aliases": [
+      "商品分类",
+      "类目",
+      "品类",
+      "商品类目",
+      "分类管理",
+      "分类树",
+      "子分类",
+      "级联分类",
+      "分类层级"
+     ]
+    },
+    {
+     "id": "104",
+     "name": "商品类型",
+     "module": "商品管理",
+     "modulePath": "pms",
+     "parentMenu": null,
+     "path": "productAttr",
+     "component": "pms/productAttr/index",
+     "perms": "/productAttribute/**",
+     "permPrefix": "pms:productAttribute",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/pms/productAttr/index.vue",
+      "dir": "repos/mall-admin-web/src/views/pms/productAttr",
+      "api": [
+       "repos/mall-admin-web/src/apis/productAttrCate.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/PmsProductAttributeCategoryController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/PmsProductAttributeCategoryService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductAttributeCategoryServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dao/PmsProductAttributeCategoryDao.java",
+      "repos/mall/mall-admin/src/main/resources/dao/PmsProductAttributeCategoryDao.xml",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/PmsProductAttributeCategoryItem.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/PmsProductAttributeCategory.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/PmsProductAttributeCategoryMapper.java"
+     ],
+     "seeds": {
+      "slug": "productAttr",
+      "cn": "商品类型",
+      "controllers": [
+       "PmsProductAttributeCategoryController"
+      ]
+     },
+     "aliases": [
+      "商品类型",
+      "属性分组",
+      "规格分组",
+      "类型管理",
+      "参数分组",
+      "商品类型列表",
+      "attributeCategory",
+      "商品模型"
+     ]
+    },
+    {
+     "id": "105",
+     "name": "商品属性列表",
+     "module": "商品管理",
+     "modulePath": "pms",
+     "parentMenu": null,
+     "path": "productAttrList",
+     "component": "pms/productAttr/productAttrList",
+     "perms": "/productAttribute/**",
+     "permPrefix": "pms:productAttribute",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/pms/productAttr/productAttrList.vue",
+      "dir": "repos/mall-admin-web/src/views/pms/productAttr",
+      "api": [
+       "repos/mall-admin-web/src/apis/productAttr.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/PmsProductAttributeController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/PmsProductAttributeService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsProductAttributeServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dao/PmsProductAttributeDao.java",
+      "repos/mall/mall-admin/src/main/resources/dao/PmsProductAttributeDao.xml",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/PmsProductAttributeParam.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/PmsProductAttribute.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/PmsProductAttributeMapper.java"
+     ],
+     "seeds": {
+      "slug": "productAttrList",
+      "cn": "商品属性列表",
+      "controllers": [
+       "PmsProductAttributeController"
+      ]
+     },
+     "aliases": [
+      "商品属性",
+      "规格",
+      "参数",
+      "属性列表",
+      "销售属性",
+      "规格参数",
+      "属性筛选",
+      "规格值",
+      "属性值"
+     ]
+    },
+    {
+     "id": "106",
+     "name": "品牌管理",
+     "module": "商品管理",
+     "modulePath": "pms",
+     "parentMenu": null,
+     "path": "brand",
+     "component": "pms/brand/index",
+     "perms": "/brand/**",
+     "permPrefix": "pms:brand",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/pms/brand/index.vue",
+      "dir": "repos/mall-admin-web/src/views/pms/brand",
+      "api": [
+       "repos/mall-admin-web/src/apis/brand.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/PmsBrandController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/PmsBrandService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/PmsBrandServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/PmsBrandParam.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/PmsBrand.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/PmsBrandMapper.java"
+     ],
+     "seeds": {
+      "slug": "brand",
+      "cn": "品牌管理",
+      "controllers": [
+       "PmsBrandController"
+      ]
+     },
+     "aliases": [
+      "品牌",
+      "品牌管理",
+      "厂商",
+      "牌子",
+      "品牌列表",
+      "品牌维护",
+      "品牌资料",
+      "manufacturer"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2",
+   "name": "订单管理",
+   "path": "oms",
+   "aliases": [
+    "oms",
+    "订单中心",
+    "交易",
+    "订单模块",
+    "交易订单"
+   ],
+   "menus": [
+    {
+     "id": "201",
+     "name": "订单列表",
+     "module": "订单管理",
+     "modulePath": "oms",
+     "parentMenu": null,
+     "path": "order",
+     "component": "oms/order/index",
+     "perms": "/order/**",
+     "permPrefix": "oms:order",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/oms/order/index.vue",
+      "dir": "repos/mall-admin-web/src/views/oms/order",
+      "api": [
+       "repos/mall-admin-web/src/apis/order.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/OmsOrderService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dao/OmsOrderDao.java",
+      "repos/mall/mall-admin/src/main/resources/dao/OmsOrderDao.xml",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/OmsOrderQueryParam.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/OmsOrderDetail.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/OmsOrder.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/OmsOrderMapper.java"
+     ],
+     "seeds": {
+      "slug": "order",
+      "cn": "订单列表",
+      "controllers": [
+       "OmsOrderController"
+      ]
+     },
+     "aliases": [
+      "订单列表",
+      "订单管理",
+      "订单查询",
+      "订单",
+      "订单分页",
+      "取消订单",
+      "订单备注",
+      "关闭订单",
+      "订单跟踪"
+     ]
+    },
+    {
+     "id": "202",
+     "name": "订单详情",
+     "module": "订单管理",
+     "modulePath": "oms",
+     "parentMenu": null,
+     "path": "orderDetail",
+     "component": "oms/order/orderDetail",
+     "perms": "/order/**",
+     "permPrefix": "oms:order",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/oms/order/orderDetail.vue",
+      "dir": "repos/mall-admin-web/src/views/oms/order",
+      "api": [
+       "repos/mall-admin-web/src/apis/order.ts",
+       "repos/mall-admin-web/src/apis/companyAddress.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/OmsOrderDetail.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/OmsReceiverInfoParam.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/OmsMoneyInfoParam.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/OmsOrderOperateHistory.java"
+     ],
+     "seeds": {
+      "slug": "orderDetail",
+      "cn": "订单详情",
+      "controllers": [
+       "OmsOrderController"
+      ]
+     },
+     "aliases": [
+      "订单详情",
+      "查看订单",
+      "订单追踪",
+      "修改收货人",
+      "修改费用",
+      "物流详情",
+      "订单操作记录",
+      "收货信息"
+     ]
+    },
+    {
+     "id": "203",
+     "name": "订单发货",
+     "module": "订单管理",
+     "modulePath": "oms",
+     "parentMenu": null,
+     "path": "deliverOrderList",
+     "component": "oms/order/deliverOrderList",
+     "perms": "/order/**",
+     "permPrefix": "oms:order",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/oms/order/deliverOrderList.vue",
+      "dir": "repos/mall-admin-web/src/views/oms/order",
+      "api": [
+       "repos/mall-admin-web/src/apis/order.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/OmsOrderDeliveryParam.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dao/OmsOrderDao.java",
+      "repos/mall/mall-admin/src/main/resources/dao/OmsOrderDao.xml"
+     ],
+     "seeds": {
+      "slug": "deliverOrderList",
+      "cn": "订单发货",
+      "controllers": [
+       "OmsOrderController"
+      ]
+     },
+     "aliases": [
+      "订单发货",
+      "发货",
+      "批量发货",
+      "发货列表",
+      "物流单号",
+      "快递单号",
+      "配送",
+      "发货操作"
+     ]
+    },
+    {
+     "id": "204",
+     "name": "订单设置",
+     "module": "订单管理",
+     "modulePath": "oms",
+     "parentMenu": null,
+     "path": "orderSetting",
+     "component": "oms/order/setting",
+     "perms": "/orderSetting/**",
+     "permPrefix": "oms:orderSetting",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/oms/order/setting.vue",
+      "dir": "repos/mall-admin-web/src/views/oms/order",
+      "api": [
+       "repos/mall-admin-web/src/apis/orderSetting.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderSettingController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/OmsOrderSettingService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderSettingServiceImpl.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/OmsOrderSetting.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/OmsOrderSettingMapper.java"
+     ],
+     "seeds": {
+      "slug": "orderSetting",
+      "cn": "订单设置",
+      "controllers": [
+       "OmsOrderSettingController"
+      ]
+     },
+     "aliases": [
+      "订单设置",
+      "自动确认收货",
+      "超时时间",
+      "自动收货",
+      "收货超时",
+      "订单确认时间",
+      "售后时限"
+     ]
+    },
+    {
+     "id": "205",
+     "name": "退货申请处理",
+     "module": "订单管理",
+     "modulePath": "oms",
+     "parentMenu": null,
+     "path": "returnApply",
+     "component": "oms/apply/index",
+     "perms": "/returnApply/**",
+     "permPrefix": "oms:returnApply",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/oms/apply/index.vue",
+      "dir": "repos/mall-admin-web/src/views/oms/apply",
+      "api": [
+       "repos/mall-admin-web/src/apis/returnApply.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderReturnApplyController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/OmsOrderReturnApplyService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnApplyServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dao/OmsOrderReturnApplyDao.java",
+      "repos/mall/mall-admin/src/main/resources/dao/OmsOrderReturnApplyDao.xml",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/OmsReturnApplyQueryParam.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/OmsOrderReturnApplyResult.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/OmsOrderReturnApply.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/OmsOrderReturnApplyMapper.java"
+     ],
+     "seeds": {
+      "slug": "returnApply",
+      "cn": "退货申请处理",
+      "controllers": [
+       "OmsOrderReturnApplyController"
+      ]
+     },
+     "aliases": [
+      "退货申请",
+      "退款申请",
+      "售后处理",
+      "退货审核",
+      "退单",
+      "退货管理",
+      "售后审核",
+      "退款处理",
+      "退货单"
+     ]
+    },
+    {
+     "id": "206",
+     "name": "退货申请详情",
+     "module": "订单管理",
+     "modulePath": "oms",
+     "parentMenu": null,
+     "path": "returnApplyDetail",
+     "component": "oms/apply/applyDetail",
+     "perms": "/returnApply/**",
+     "permPrefix": "oms:returnApply",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/oms/apply/applyDetail.vue",
+      "dir": "repos/mall-admin-web/src/views/oms/apply",
+      "api": [
+       "repos/mall-admin-web/src/apis/returnApply.ts",
+       "repos/mall-admin-web/src/apis/companyAddress.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderReturnApplyController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnApplyServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/OmsOrderReturnApplyResult.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/OmsOrderReturnApply.java"
+     ],
+     "seeds": {
+      "slug": "returnApplyDetail",
+      "cn": "退货申请详情",
+      "controllers": [
+       "OmsOrderReturnApplyController"
+      ]
+     },
+     "aliases": [
+      "退货详情",
+      "退款详情",
+      "售后详情",
+      "退货单详情",
+      "申请单详情",
+      "退货进度"
+     ]
+    },
+    {
+     "id": "207",
+     "name": "退货原因设置",
+     "module": "订单管理",
+     "modulePath": "oms",
+     "parentMenu": null,
+     "path": "returnReason",
+     "component": "oms/apply/reason",
+     "perms": "/returnReason/**",
+     "permPrefix": "oms:returnReason",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/oms/apply/reason.vue",
+      "dir": "repos/mall-admin-web/src/views/oms/apply",
+      "api": [
+       "repos/mall-admin-web/src/apis/returnReason.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/OmsOrderReturnReasonController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/OmsOrderReturnReasonService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OmsOrderReturnReasonServiceImpl.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/OmsOrderReturnReason.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/OmsOrderReturnReasonMapper.java"
+     ],
+     "seeds": {
+      "slug": "returnReason",
+      "cn": "退货原因设置",
+      "controllers": [
+       "OmsOrderReturnReasonController"
+      ]
+     },
+     "aliases": [
+      "退货原因",
+      "退款原因",
+      "售后原因",
+      "原因设置",
+      "退货理由",
+      "原因字典"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3",
+   "name": "营销管理",
+   "path": "sms",
+   "aliases": [
+    "sms",
+    "营销中心",
+    "促销",
+    "活动管理",
+    "推广",
+    "营销域"
+   ],
+   "menus": [
+    {
+     "id": "301",
+     "name": "秒杀活动列表",
+     "module": "营销管理",
+     "modulePath": "sms",
+     "parentMenu": null,
+     "path": "flash",
+     "component": "sms/flash/index",
+     "perms": "/flash/**",
+     "permPrefix": "sms:flash",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/sms/flash/index.vue",
+      "dir": "repos/mall-admin-web/src/views/sms/flash",
+      "api": [
+       "repos/mall-admin-web/src/apis/flash.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/SmsFlashPromotionController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/SmsFlashPromotionService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/SmsFlashPromotionServiceImpl.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/SmsFlashPromotion.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/SmsFlashPromotionMapper.java"
+     ],
+     "seeds": {
+      "slug": "flash",
+      "cn": "秒杀活动列表",
+      "controllers": [
+       "SmsFlashPromotionController"
+      ]
+     },
+     "aliases": [
+      "秒杀",
+      "秒杀活动",
+      "限时抢购",
+      "闪购",
+      "限时购",
+      "促销活动",
+      "seckill",
+      "秒杀管理"
+     ]
+    },
+    {
+     "id": "302",
+     "name": "秒杀时间段管理",
+     "module": "营销管理",
+     "modulePath": "sms",
+     "parentMenu": null,
+     "path": "flashSession",
+     "component": "sms/flash/sessionList",
+     "perms": "/flashSession/**",
+     "permPrefix": "sms:flashSession",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/sms/flash/sessionList.vue",
+      "dir": "repos/mall-admin-web/src/views/sms/flash",
+      "api": [
+       "repos/mall-admin-web/src/apis/flashSession.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/SmsFlashPromotionSessionController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/SmsFlashPromotionSessionService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/SmsFlashPromotionSessionServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/SmsFlashPromotionSessionDetail.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/SmsFlashPromotionSession.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/SmsFlashPromotionSessionMapper.java"
+     ],
+     "seeds": {
+      "slug": "flashSession",
+      "cn": "秒杀时间段管理",
+      "controllers": [
+       "SmsFlashPromotionSessionController"
+      ]
+     },
+     "aliases": [
+      "秒杀场次",
+      "时间段",
+      "秒杀时段",
+      "场次管理",
+      "限时场次",
+      "秒杀时间",
+      "场次排期"
+     ]
+    },
+    {
+     "id": "303",
+     "name": "秒杀商品管理",
+     "module": "营销管理",
+     "modulePath": "sms",
+     "parentMenu": null,
+     "path": "flashProductRelation",
+     "component": "sms/flash/productRelationList",
+     "perms": "/flashProductRelation/**",
+     "permPrefix": "sms:flashProductRelation",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/sms/flash/productRelationList.vue",
+      "dir": "repos/mall-admin-web/src/views/sms/flash",
+      "api": [
+       "repos/mall-admin-web/src/apis/flashProductRelation.ts",
+       "repos/mall-admin-web/src/apis/product.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/SmsFlashPromotionProductRelationController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/SmsFlashPromotionProductRelationService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/SmsFlashPromotionProductRelationServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dao/SmsFlashPromotionProductRelationDao.java",
+      "repos/mall/mall-admin/src/main/resources/dao/SmsFlashPromotionProductRelationDao.xml",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/SmsFlashPromotionProduct.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/SmsFlashPromotionProductRelation.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/SmsFlashPromotionProductRelationMapper.java"
+     ],
+     "seeds": {
+      "slug": "flashProductRelation",
+      "cn": "秒杀商品管理",
+      "controllers": [
+       "SmsFlashPromotionProductRelationController"
+      ]
+     },
+     "aliases": [
+      "秒杀商品",
+      "限时购商品",
+      "秒杀选品",
+      "活动商品",
+      "抢购商品",
+      "秒杀库存",
+      "商品排期",
+      "秒杀价格"
+     ]
+    },
+    {
+     "id": "304",
+     "name": "优惠券列表",
+     "module": "营销管理",
+     "modulePath": "sms",
+     "parentMenu": null,
+     "path": "coupon",
+     "component": "sms/coupon/index",
+     "perms": "/coupon/**",
+     "permPrefix": "sms:coupon",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/sms/coupon/index.vue",
+      "dir": "repos/mall-admin-web/src/views/sms/coupon",
+      "api": [
+       "repos/mall-admin-web/src/apis/coupon.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/SmsCouponController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/SmsCouponService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/SmsCouponServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dao/SmsCouponDao.java",
+      "repos/mall/mall-admin/src/main/resources/dao/SmsCouponDao.xml",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/SmsCouponParam.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/SmsCoupon.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/SmsCouponMapper.java"
+     ],
+     "seeds": {
+      "slug": "coupon",
+      "cn": "优惠券列表",
+      "controllers": [
+       "SmsCouponController"
+      ]
+     },
+     "aliases": [
+      "优惠券",
+      "优惠券管理",
+      "满减券",
+      "折扣券",
+      "代金券",
+      "发券",
+      "coupon",
+      "券活动",
+      "优惠活动"
+     ]
+    },
+    {
+     "id": "305",
+     "name": "优惠券领取详情",
+     "module": "营销管理",
+     "modulePath": "sms",
+     "parentMenu": null,
+     "path": "couponHistory",
+     "component": "sms/coupon/history",
+     "perms": "/couponHistory/**",
+     "permPrefix": "sms:couponHistory",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/sms/coupon/history.vue",
+      "dir": "repos/mall-admin-web/src/views/sms/coupon",
+      "api": [
+       "repos/mall-admin-web/src/apis/coupon.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/SmsCouponHistoryController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/SmsCouponHistoryService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/SmsCouponHistoryServiceImpl.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/SmsCouponHistory.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/SmsCouponHistoryMapper.java"
+     ],
+     "seeds": {
+      "slug": "couponHistory",
+      "cn": "优惠券领取详情",
+      "controllers": [
+       "SmsCouponHistoryController"
+      ]
+     },
+     "aliases": [
+      "领券记录",
+      "优惠券使用记录",
+      "用券记录",
+      "券历史",
+      "领取记录",
+      "核销记录",
+      "couponHistory"
+     ]
+    },
+    {
+     "id": "306",
+     "name": "品牌推荐",
+     "module": "营销管理",
+     "modulePath": "sms",
+     "parentMenu": null,
+     "path": "brand",
+     "component": "sms/brand/index",
+     "perms": "/home/brand/**",
+     "permPrefix": "sms:homeBrand",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/sms/brand/index.vue",
+      "dir": "repos/mall-admin-web/src/views/sms/brand",
+      "api": [
+       "repos/mall-admin-web/src/apis/homeBrand.ts",
+       "repos/mall-admin-web/src/apis/brand.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/SmsHomeBrandController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/SmsHomeBrandService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/SmsHomeBrandServiceImpl.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/SmsHomeBrand.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/SmsHomeBrandMapper.java"
+     ],
+     "seeds": {
+      "slug": "homeBrand",
+      "cn": "品牌推荐",
+      "controllers": [
+       "SmsHomeBrandController"
+      ]
+     },
+     "aliases": [
+      "品牌推荐",
+      "首页品牌",
+      "推荐品牌",
+      "品牌墙",
+      "首页楼层",
+      "homeBrand",
+      "品牌推荐位"
+     ]
+    },
+    {
+     "id": "307",
+     "name": "新品推荐",
+     "module": "营销管理",
+     "modulePath": "sms",
+     "parentMenu": null,
+     "path": "new",
+     "component": "sms/new/index",
+     "perms": "/home/newProduct/**",
+     "permPrefix": "sms:homeNew",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/sms/new/index.vue",
+      "dir": "repos/mall-admin-web/src/views/sms/new",
+      "api": [
+       "repos/mall-admin-web/src/apis/newProduct.ts",
+       "repos/mall-admin-web/src/apis/product.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/SmsHomeNewProductController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/SmsHomeNewProductService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/SmsHomeNewProductServiceImpl.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/SmsHomeNewProduct.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/SmsHomeNewProductMapper.java"
+     ],
+     "seeds": {
+      "slug": "homeNew",
+      "cn": "新品推荐",
+      "controllers": [
+       "SmsHomeNewProductController"
+      ]
+     },
+     "aliases": [
+      "新品推荐",
+      "新品",
+      "首页新品",
+      "新品上架",
+      "推荐新品",
+      "新品楼层",
+      "homeNew"
+     ]
+    },
+    {
+     "id": "308",
+     "name": "人气推荐",
+     "module": "营销管理",
+     "modulePath": "sms",
+     "parentMenu": null,
+     "path": "hot",
+     "component": "sms/hot/index",
+     "perms": "/home/recommendProduct/**",
+     "permPrefix": "sms:homeHot",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/sms/hot/index.vue",
+      "dir": "repos/mall-admin-web/src/views/sms/hot",
+      "api": [
+       "repos/mall-admin-web/src/apis/recommendProduct.ts",
+       "repos/mall-admin-web/src/apis/product.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/SmsHomeRecommendProductController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/SmsHomeRecommendProductService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/SmsHomeRecommendProductServiceImpl.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/SmsHomeRecommendProduct.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/SmsHomeRecommendProductMapper.java"
+     ],
+     "seeds": {
+      "slug": "homeHot",
+      "cn": "人气推荐",
+      "controllers": [
+       "SmsHomeRecommendProductController"
+      ]
+     },
+     "aliases": [
+      "人气推荐",
+      "人气商品",
+      "热销",
+      "爆款",
+      "热卖",
+      "首页人气",
+      "人气榜单",
+      "recommendProduct"
+     ]
+    },
+    {
+     "id": "309",
+     "name": "专题推荐",
+     "module": "营销管理",
+     "modulePath": "sms",
+     "parentMenu": null,
+     "path": "subject",
+     "component": "sms/subject/index",
+     "perms": "/home/recommendSubject/**",
+     "permPrefix": "sms:homeSubject",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/sms/subject/index.vue",
+      "dir": "repos/mall-admin-web/src/views/sms/subject",
+      "api": [
+       "repos/mall-admin-web/src/apis/homeSubject.ts",
+       "repos/mall-admin-web/src/apis/subject.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/SmsHomeRecommendSubjectController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/SmsHomeRecommendSubjectService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/SmsHomeRecommendSubjectServiceImpl.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/SmsHomeRecommendSubject.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/SmsHomeRecommendSubjectMapper.java"
+     ],
+     "seeds": {
+      "slug": "homeSubject",
+      "cn": "专题推荐",
+      "controllers": [
+       "SmsHomeRecommendSubjectController"
+      ]
+     },
+     "aliases": [
+      "专题推荐",
+      "专题",
+      "首页专题",
+      "专题精选",
+      "好物专题",
+      "专题楼层",
+      "recommendSubject"
+     ]
+    },
+    {
+     "id": "310",
+     "name": "广告列表",
+     "module": "营销管理",
+     "modulePath": "sms",
+     "parentMenu": null,
+     "path": "advertise",
+     "component": "sms/advertise/index",
+     "perms": "/home/advertise/**",
+     "permPrefix": "sms:homeAdvertise",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/sms/advertise/index.vue",
+      "dir": "repos/mall-admin-web/src/views/sms/advertise",
+      "api": [
+       "repos/mall-admin-web/src/apis/homeAdvertise.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/SmsHomeAdvertiseController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/SmsHomeAdvertiseService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/SmsHomeAdvertiseServiceImpl.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/SmsHomeAdvertise.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/SmsHomeAdvertiseMapper.java"
+     ],
+     "seeds": {
+      "slug": "homeAdvertise",
+      "cn": "广告列表",
+      "controllers": [
+       "SmsHomeAdvertiseController"
+      ]
+     },
+     "aliases": [
+      "广告",
+      "广告列表",
+      "首页广告",
+      "轮播图",
+      "banner",
+      "广告位",
+      "推广位",
+      "广告排期"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "4",
+   "name": "权限管理",
+   "path": "ums",
+   "aliases": [
+    "ums",
+    "权限中心",
+    "RBAC",
+    "后台权限",
+    "用户权限",
+    "账号权限"
+   ],
+   "menus": [
+    {
+     "id": "401",
+     "name": "用户列表",
+     "module": "权限管理",
+     "modulePath": "ums",
+     "parentMenu": null,
+     "path": "admin",
+     "component": "ums/admin/index",
+     "perms": "/admin/**",
+     "permPrefix": "ums:admin",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/ums/admin/index.vue",
+      "dir": "repos/mall-admin-web/src/views/ums/admin",
+      "api": [
+       "repos/mall-admin-web/src/apis/admin.ts",
+       "repos/mall-admin-web/src/apis/role.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/UmsAdminController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/UmsAdminService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/UmsAdminServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/UmsAdminCacheServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/UmsAdminParam.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/UpdateAdminPasswordParam.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/UmsAdmin.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/UmsAdminMapper.java"
+     ],
+     "seeds": {
+      "slug": "admin",
+      "cn": "用户列表",
+      "controllers": [
+       "UmsAdminController"
+      ]
+     },
+     "aliases": [
+      "用户列表",
+      "后台用户",
+      "管理员",
+      "账号管理",
+      "后台账号",
+      "员工账号",
+      "运营账号",
+      "后台用户管理"
+     ]
+    },
+    {
+     "id": "402",
+     "name": "角色列表",
+     "module": "权限管理",
+     "modulePath": "ums",
+     "parentMenu": null,
+     "path": "role",
+     "component": "ums/role/index",
+     "perms": "/role/**",
+     "permPrefix": "ums:role",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/ums/role/index.vue",
+      "dir": "repos/mall-admin-web/src/views/ums/role",
+      "api": [
+       "repos/mall-admin-web/src/apis/role.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/UmsRoleController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/UmsRoleService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/UmsRoleServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dao/UmsRoleDao.java",
+      "repos/mall/mall-admin/src/main/resources/dao/UmsRoleDao.xml",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/UmsRole.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/UmsRoleMapper.java"
+     ],
+     "seeds": {
+      "slug": "role",
+      "cn": "角色列表",
+      "controllers": [
+       "UmsRoleController"
+      ]
+     },
+     "aliases": [
+      "角色列表",
+      "角色",
+      "角色管理",
+      "岗位",
+      "权限角色",
+      "后台角色",
+      "role"
+     ]
+    },
+    {
+     "id": "403",
+     "name": "角色权限分配",
+     "module": "权限管理",
+     "modulePath": "ums",
+     "parentMenu": null,
+     "path": "allocResource",
+     "component": "ums/role/allocResource",
+     "perms": "/role/**",
+     "permPrefix": "ums:role",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/ums/role/allocResource.vue",
+      "dir": "repos/mall-admin-web/src/views/ums/role",
+      "api": [
+       "repos/mall-admin-web/src/apis/role.ts",
+       "repos/mall-admin-web/src/apis/resource.ts",
+       "repos/mall-admin-web/src/apis/resourceCategory.ts",
+       "repos/mall-admin-web/src/apis/menu.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/UmsRoleController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/UmsRoleServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dao/UmsRoleDao.java",
+      "repos/mall/mall-admin/src/main/resources/dao/UmsRoleDao.xml",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dao/UmsAdminRoleRelationDao.java",
+      "repos/mall/mall-admin/src/main/resources/dao/UmsAdminRoleRelationDao.xml",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/UmsRoleResourceRelation.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/UmsRoleMenuRelation.java"
+     ],
+     "seeds": {
+      "slug": "allocResource",
+      "cn": "角色权限分配",
+      "controllers": [
+       "UmsRoleController"
+      ]
+     },
+     "aliases": [
+      "分配权限",
+      "角色授权",
+      "分配菜单",
+      "分配资源",
+      "授权",
+      "权限分配",
+      "菜单授权",
+      "资源授权",
+      "权限绑定"
+     ]
+    },
+    {
+     "id": "404",
+     "name": "菜单列表",
+     "module": "权限管理",
+     "modulePath": "ums",
+     "parentMenu": null,
+     "path": "menu",
+     "component": "ums/menu/index",
+     "perms": "/menu/**",
+     "permPrefix": "ums:menu",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/ums/menu/index.vue",
+      "dir": "repos/mall-admin-web/src/views/ums/menu",
+      "api": [
+       "repos/mall-admin-web/src/apis/menu.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/UmsMenuController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/UmsMenuService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/UmsMenuServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/UmsMenuNode.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/UmsMenu.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/UmsMenuMapper.java"
+     ],
+     "seeds": {
+      "slug": "menu",
+      "cn": "菜单列表",
+      "controllers": [
+       "UmsMenuController"
+      ]
+     },
+     "aliases": [
+      "菜单列表",
+      "菜单管理",
+      "菜单",
+      "导航菜单",
+      "后台菜单",
+      "菜单树",
+      "菜单排序",
+      "菜单隐藏"
+     ]
+    },
+    {
+     "id": "405",
+     "name": "资源列表",
+     "module": "权限管理",
+     "modulePath": "ums",
+     "parentMenu": null,
+     "path": "resource",
+     "component": "ums/resource/index",
+     "perms": "/resource/**",
+     "permPrefix": "ums:resource",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/ums/resource/index.vue",
+      "dir": "repos/mall-admin-web/src/views/ums/resource",
+      "api": [
+       "repos/mall-admin-web/src/apis/resource.ts",
+       "repos/mall-admin-web/src/apis/resourceCategory.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/UmsResourceController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/UmsResourceService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/UmsResourceServiceImpl.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/UmsResource.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/UmsResourceMapper.java"
+     ],
+     "seeds": {
+      "slug": "resource",
+      "cn": "资源列表",
+      "controllers": [
+       "UmsResourceController"
+      ]
+     },
+     "aliases": [
+      "资源列表",
+      "资源",
+      "接口资源",
+      "URL权限",
+      "权限资源",
+      "接口权限",
+      "资源管理",
+      "接口清单"
+     ]
+    },
+    {
+     "id": "406",
+     "name": "资源分类",
+     "module": "权限管理",
+     "modulePath": "ums",
+     "parentMenu": null,
+     "path": "resourceCategory",
+     "component": "ums/resource/categoryList",
+     "perms": "/resourceCategory/**",
+     "permPrefix": "ums:resourceCategory",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/ums/resource/categoryList.vue",
+      "dir": "repos/mall-admin-web/src/views/ums/resource",
+      "api": [
+       "repos/mall-admin-web/src/apis/resourceCategory.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/UmsResourceCategoryController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/UmsResourceCategoryService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/UmsResourceCategoryServiceImpl.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/model/UmsResourceCategory.java",
+      "repos/mall/mall-mbg/src/main/java/com/macro/mall/mapper/UmsResourceCategoryMapper.java"
+     ],
+     "seeds": {
+      "slug": "resourceCategory",
+      "cn": "资源分类",
+      "controllers": [
+       "UmsResourceCategoryController"
+      ]
+     },
+     "aliases": [
+      "资源分类",
+      "权限分类",
+      "接口分类",
+      "资源类别",
+      "资源分组",
+      "资源栏目"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5",
+   "name": "首页",
+   "path": "home",
+   "aliases": [
+    "首页",
+    "dashboard",
+    "工作台",
+    "总览",
+    "门户首屏"
+   ],
+   "menus": [
+    {
+     "id": "501",
+     "name": "首页",
+     "module": "首页",
+     "modulePath": "home",
+     "parentMenu": null,
+     "path": "home",
+     "component": "home/index",
+     "perms": "",
+     "permPrefix": "",
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/home/index.vue",
+      "dir": "repos/mall-admin-web/src/views/home",
+      "api": []
+     },
+     "beFiles": [],
+     "seeds": {
+      "slug": "home",
+      "cn": "首页",
+      "controllers": []
+     },
+     "aliases": [
+      "首页",
+      "dashboard",
+      "仪表盘",
+      "工作台",
+      "总览",
+      "后台首页",
+      "运营大盘"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6",
+   "name": "平台机制",
+   "path": "platform",
+   "aliases": [
+    "平台",
+    "框架",
+    "基础设施",
+    "framework",
+    "security",
+    "infra",
+    "公共机制"
+   ],
+   "menus": [
+    {
+     "id": "601",
+     "name": "登录认证",
+     "module": "平台机制",
+     "modulePath": "platform",
+     "parentMenu": null,
+     "path": "login",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "fe": {
+      "view": "repos/mall-admin-web/src/views/normal/login/index.vue",
+      "dir": "repos/mall-admin-web/src/views/normal/login",
+      "api": [
+       "repos/mall-admin-web/src/apis/admin.ts",
+       "repos/mall-admin-web/src/stores/user.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/UmsAdminController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/UmsAdminServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/UmsAdminLoginParam.java",
+      "repos/mall/mall-security/src/main/java/com/macro/mall/security/component/JwtAuthenticationTokenFilter.java",
+      "repos/mall/mall-security/src/main/java/com/macro/mall/security/util/JwtTokenUtil.java",
+      "repos/mall/mall-security/src/main/java/com/macro/mall/security/component/RestfulAccessDeniedHandler.java",
+      "repos/mall/mall-security/src/main/java/com/macro/mall/security/component/RestAuthenticationEntryPoint.java"
+     ],
+     "seeds": {
+      "slug": "login",
+      "cn": "登录认证",
+      "controllers": []
+     },
+     "aliases": [
+      "登录",
+      "登陆",
+      "认证",
+      "鉴权",
+      "token",
+      "JWT",
+      "令牌",
+      "刷新令牌",
+      "refreshToken",
+      "注销",
+      "账号密码登录"
+     ]
+    },
+    {
+     "id": "602",
+     "name": "动态权限校验",
+     "module": "平台机制",
+     "modulePath": "platform",
+     "parentMenu": null,
+     "path": "dynamicSecurity",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/mall/mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityMetadataSource.java",
+      "repos/mall/mall-security/src/main/java/com/macro/mall/security/component/DynamicSecurityService.java",
+      "repos/mall/mall-security/src/main/java/com/macro/mall/security/config/IgnoreUrlsConfig.java",
+      "repos/mall/mall-security/src/main/java/com/macro/mall/security/config/SecurityConfig.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/config/MallSecurityConfig.java",
+      "repos/mall/mall-security/src/main/java/com/macro/mall/security/component/RestfulAccessDeniedHandler.java",
+      "repos/mall/mall-security/src/main/java/com/macro/mall/security/component/RestAuthenticationEntryPoint.java"
+     ],
+     "seeds": {
+      "slug": "dynamicSecurity",
+      "cn": "动态权限校验",
+      "controllers": []
+     },
+     "aliases": [
+      "动态权限",
+      "权限校验",
+      "URL鉴权",
+      "鉴权拦截",
+      "越权",
+      "403",
+      "无权限",
+      "安全配置",
+      "白名单",
+      "鉴权过滤器"
+     ]
+    },
+    {
+     "id": "603",
+     "name": "全局异常与统一返回",
+     "module": "平台机制",
+     "modulePath": "platform",
+     "parentMenu": null,
+     "path": "globalException",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/mall/mall-common/src/main/java/com/macro/mall/common/exception/GlobalExceptionHandler.java",
+      "repos/mall/mall-common/src/main/java/com/macro/mall/common/exception/ApiException.java",
+      "repos/mall/mall-common/src/main/java/com/macro/mall/common/api/CommonResult.java",
+      "repos/mall/mall-common/src/main/java/com/macro/mall/common/api/CommonPage.java",
+      "repos/mall/mall-common/src/main/java/com/macro/mall/common/api/ResultCode.java",
+      "repos/mall/mall-common/src/main/java/com/macro/mall/common/api/IErrorCode.java"
+     ],
+     "seeds": {
+      "slug": "globalException",
+      "cn": "全局异常与统一返回",
+      "controllers": []
+     },
+     "aliases": [
+      "全局异常",
+      "异常处理",
+      "统一返回",
+      "错误码",
+      "CommonResult",
+      "异常兜底",
+      "报错处理",
+      "全局错误"
+     ]
+    },
+    {
+     "id": "604",
+     "name": "文件上传",
+     "module": "平台机制",
+     "modulePath": "platform",
+     "parentMenu": null,
+     "path": "oss",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "fe": {
+      "view": "repos/mall-admin-web/src/components/Upload/singleUpload.vue",
+      "dir": "repos/mall-admin-web/src/components/Upload",
+      "api": [
+       "repos/mall-admin-web/src/apis/oss.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/OssController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/OssService.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/service/impl/OssServiceImpl.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/config/OssConfig.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/controller/MinioController.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/MinioUploadDto.java",
+      "repos/mall/mall-admin/src/main/java/com/macro/mall/dto/OssPolicyResult.java"
+     ],
+     "seeds": {
+      "slug": "oss",
+      "cn": "文件上传",
+      "controllers": []
+     },
+     "aliases": [
+      "文件上传",
+      "图片上传",
+      "对象存储",
+      "OSS",
+      "阿里云OSS",
+      "MinIO",
+      "附件上传",
+      "上传组件"
+     ]
+    }
+   ]
+  }
+ ]
+}

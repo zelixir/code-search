@@ -1,0 +1,1237 @@
+{
+ "builtAt": "2026-10-23T14:30:59.612Z",
+ "modules": [
+  {
+   "id": "1",
+   "name": "系统管理",
+   "path": "system",
+   "menus": [
+    {
+     "id": "100",
+     "name": "用户管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "user",
+     "component": "system/user/index",
+     "perms": "system:user:list",
+     "permPrefix": "system:user",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/system/user/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/system/user",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/system/user.js"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysUser.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserService.java"
+     ],
+     "seeds": {
+      "slug": "user",
+      "cn": "用户管理",
+      "controllers": [
+       "SysUserController"
+      ]
+     },
+     "aliases": [
+      "用户",
+      "账号",
+      "员工",
+      "密码",
+      "重置密码",
+      "导入用户",
+      "用户导入"
+     ]
+    },
+    {
+     "id": "101",
+     "name": "角色管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "role",
+     "component": "system/role/index",
+     "perms": "system:role:list",
+     "permPrefix": "system:role",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/system/role/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/system/role",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/system/role.js"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysRoleController.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysRole.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/domain/SysUserRole.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/service/ISysRoleService.java"
+     ],
+     "seeds": {
+      "slug": "role",
+      "cn": "角色管理",
+      "controllers": [
+       "SysRoleController"
+      ]
+     },
+     "aliases": [
+      "角色",
+      "数据范围",
+      "角色授权"
+     ]
+    },
+    {
+     "id": "102",
+     "name": "菜单管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "menu",
+     "component": "system/menu/index",
+     "perms": "system:menu:list",
+     "permPrefix": "system:menu",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/system/menu/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/system/menu",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/system/menu.js"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysMenuController.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysMenu.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/service/ISysMenuService.java"
+     ],
+     "seeds": {
+      "slug": "menu",
+      "cn": "菜单管理",
+      "controllers": [
+       "SysMenuController"
+      ]
+     },
+     "aliases": [
+      "菜单",
+      "导航",
+      "路由配置"
+     ]
+    },
+    {
+     "id": "103",
+     "name": "部门管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "dept",
+     "component": "system/dept/index",
+     "perms": "system:dept:list",
+     "permPrefix": "system:dept",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/system/dept/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/system/dept",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/system/dept.js"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysDeptController.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDept.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/service/ISysDeptService.java"
+     ],
+     "seeds": {
+      "slug": "dept",
+      "cn": "部门管理",
+      "controllers": [
+       "SysDeptController"
+      ]
+     },
+     "aliases": [
+      "部门",
+      "组织",
+      "机构",
+      "组织架构"
+     ]
+    },
+    {
+     "id": "104",
+     "name": "岗位管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "post",
+     "component": "system/post/index",
+     "perms": "system:post:list",
+     "permPrefix": "system:post",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/system/post/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/system/post",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/system/post.js"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysPostController.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/domain/SysPost.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/service/ISysPostService.java"
+     ],
+     "seeds": {
+      "slug": "post",
+      "cn": "岗位管理",
+      "controllers": [
+       "SysPostController"
+      ]
+     },
+     "aliases": [
+      "岗位",
+      "职位"
+     ]
+    },
+    {
+     "id": "105",
+     "name": "字典管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "dict",
+     "component": "system/dict/index",
+     "perms": "system:dict:list",
+     "permPrefix": "system:dict",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/system/dict/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/system/dict",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/system/dict"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysDictDataController.java",
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysDictTypeController.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDictData.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysDictType.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/service/ISysDictDataService.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/service/ISysDictTypeService.java"
+     ],
+     "seeds": {
+      "slug": "dict",
+      "cn": "字典管理",
+      "controllers": [
+       "SysDictDataController",
+       "SysDictTypeController"
+      ]
+     },
+     "aliases": [
+      "字典",
+      "枚举",
+      "数据字典",
+      "字典项",
+      "下拉选项",
+      "下拉框",
+      "状态文字",
+      "取值"
+     ]
+    },
+    {
+     "id": "106",
+     "name": "参数设置",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "config",
+     "component": "system/config/index",
+     "perms": "system:config:list",
+     "permPrefix": "system:config",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/system/config/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/system/config",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/system/config.js"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysConfigController.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/domain/SysConfig.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/service/ISysConfigService.java"
+     ],
+     "seeds": {
+      "slug": "config",
+      "cn": "参数设置",
+      "controllers": [
+       "SysConfigController"
+      ]
+     },
+     "aliases": [
+      "参数",
+      "配置",
+      "系统参数",
+      "开关"
+     ]
+    },
+    {
+     "id": "107",
+     "name": "通知公告",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "notice",
+     "component": "system/notice/index",
+     "perms": "system:notice:list",
+     "permPrefix": "system:notice",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/system/notice/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/system/notice",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/system/notice.js"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysNoticeController.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/domain/SysNotice.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/service/ISysNoticeReadService.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/service/ISysNoticeService.java"
+     ],
+     "seeds": {
+      "slug": "notice",
+      "cn": "通知公告",
+      "controllers": [
+       "SysNoticeController"
+      ]
+     },
+     "aliases": [
+      "通知",
+      "公告",
+      "消息",
+      "广播"
+     ]
+    },
+    {
+     "id": "500",
+     "name": "操作日志",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": "日志管理",
+     "path": "operlog",
+     "component": "monitor/operlog/index",
+     "perms": "monitor:operlog:list",
+     "permPrefix": "monitor:operlog",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/monitor/operlog/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/monitor/operlog",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/monitor/operlog.js"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/SysOperlogController.java"
+     ],
+     "seeds": {
+      "slug": "operlog",
+      "cn": "操作日志",
+      "controllers": [
+       "SysOperlogController"
+      ]
+     },
+     "aliases": [
+      "操作日志",
+      "审计",
+      "操作记录"
+     ]
+    },
+    {
+     "id": "501",
+     "name": "登录日志",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": "日志管理",
+     "path": "logininfor",
+     "component": "monitor/logininfor/index",
+     "perms": "monitor:logininfor:list",
+     "permPrefix": "monitor:logininfor",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/monitor/logininfor/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/monitor/logininfor",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/monitor/logininfor.js"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/SysLogininforController.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/domain/SysLogininfor.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/service/ISysLogininforService.java"
+     ],
+     "seeds": {
+      "slug": "logininfor",
+      "cn": "登录日志",
+      "controllers": [
+       "SysLogininforController"
+      ]
+     },
+     "aliases": [
+      "登录日志",
+      "登录记录",
+      "登录历史"
+     ]
+    }
+   ],
+   "aliases": [
+    "用户",
+    "角色",
+    "菜单",
+    "部门",
+    "岗位",
+    "字典",
+    "参数",
+    "公告",
+    "日志",
+    "账号"
+   ]
+  },
+  {
+   "id": "2",
+   "name": "系统监控",
+   "path": "monitor",
+   "menus": [
+    {
+     "id": "109",
+     "name": "在线用户",
+     "module": "系统监控",
+     "modulePath": "monitor",
+     "parentMenu": null,
+     "path": "online",
+     "component": "monitor/online/index",
+     "perms": "monitor:online:list",
+     "permPrefix": "monitor:online",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/monitor/online/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/monitor/online",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/monitor/online.js"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/SysUserOnlineController.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/domain/SysUserOnline.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserOnlineService.java"
+     ],
+     "seeds": {
+      "slug": "online",
+      "cn": "在线用户",
+      "controllers": [
+       "SysUserOnlineController"
+      ]
+     },
+     "aliases": [
+      "在线",
+      "会话",
+      "强退",
+      "踢下线",
+      "强制退出"
+     ]
+    },
+    {
+     "id": "110",
+     "name": "定时任务",
+     "module": "系统监控",
+     "modulePath": "monitor",
+     "parentMenu": null,
+     "path": "job",
+     "component": "monitor/job/index",
+     "perms": "monitor:job:list",
+     "permPrefix": "monitor:job",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/monitor/job/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/monitor/job",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/monitor/job.js"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-quartz/src/main/java/com/ruoyi/quartz/controller/SysJobController.java",
+      "repos/RuoYi-Vue/ruoyi-quartz/src/main/java/com/ruoyi/quartz/controller/SysJobLogController.java",
+      "repos/RuoYi-Vue/ruoyi-quartz/src/main/java/com/ruoyi/quartz/domain/SysJob.java",
+      "repos/RuoYi-Vue/ruoyi-quartz/src/main/java/com/ruoyi/quartz/domain/SysJobLog.java",
+      "repos/RuoYi-Vue/ruoyi-quartz/src/main/java/com/ruoyi/quartz/service/ISysJobLogService.java",
+      "repos/RuoYi-Vue/ruoyi-quartz/src/main/java/com/ruoyi/quartz/service/ISysJobService.java"
+     ],
+     "seeds": {
+      "slug": "job",
+      "cn": "定时任务",
+      "controllers": [
+       "SysJobController",
+       "SysJobLogController"
+      ]
+     },
+     "aliases": [
+      "定时",
+      "调度",
+      "quartz",
+      "job",
+      "cron",
+      "计划任务"
+     ]
+    },
+    {
+     "id": "111",
+     "name": "数据监控",
+     "module": "系统监控",
+     "modulePath": "monitor",
+     "parentMenu": null,
+     "path": "druid",
+     "component": "monitor/druid/index",
+     "perms": "monitor:druid:list",
+     "permPrefix": "monitor:druid",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/monitor/druid/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/monitor/druid",
+      "api": []
+     },
+     "beFiles": [],
+     "seeds": {
+      "slug": "druid",
+      "cn": "数据监控",
+      "controllers": []
+     },
+     "aliases": [
+      "druid",
+      "连接池",
+      "数据源监控"
+     ]
+    },
+    {
+     "id": "112",
+     "name": "服务监控",
+     "module": "系统监控",
+     "modulePath": "monitor",
+     "parentMenu": null,
+     "path": "server",
+     "component": "monitor/server/index",
+     "perms": "monitor:server:list",
+     "permPrefix": "monitor:server",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/monitor/server/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/monitor/server",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/monitor/server.js"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/ServerController.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/web/domain/Server.java"
+     ],
+     "seeds": {
+      "slug": "server",
+      "cn": "服务监控",
+      "controllers": [
+       "ServerController"
+      ]
+     },
+     "aliases": [
+      "服务器",
+      "cpu",
+      "内存",
+      "jvm",
+      "磁盘",
+      "系统信息"
+     ]
+    },
+    {
+     "id": "113",
+     "name": "缓存监控",
+     "module": "系统监控",
+     "modulePath": "monitor",
+     "parentMenu": null,
+     "path": "cache",
+     "component": "monitor/cache/index",
+     "perms": "monitor:cache:list",
+     "permPrefix": "monitor:cache",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/monitor/cache/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/monitor/cache",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/monitor/cache.js"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/CacheController.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/constant/CacheConstants.java",
+      "repos/RuoYi-Vue/ruoyi-system/src/main/java/com/ruoyi/system/domain/SysCache.java"
+     ],
+     "seeds": {
+      "slug": "cache",
+      "cn": "缓存监控",
+      "controllers": [
+       "CacheController"
+      ]
+     },
+     "aliases": [
+      "缓存",
+      "redis",
+      "缓存信息"
+     ]
+    },
+    {
+     "id": "114",
+     "name": "缓存列表",
+     "module": "系统监控",
+     "modulePath": "monitor",
+     "parentMenu": null,
+     "path": "cacheList",
+     "component": "monitor/cache/list",
+     "perms": "monitor:cache:list",
+     "permPrefix": "monitor:cache",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/monitor/cache/list.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/monitor/cache",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/monitor/cache.js"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/CacheController.java"
+     ],
+     "seeds": {
+      "slug": "cacheList",
+      "cn": "缓存列表",
+      "controllers": [
+       "CacheController"
+      ]
+     },
+     "aliases": [
+      "缓存键",
+      "键值",
+      "缓存名称"
+     ]
+    }
+   ],
+   "aliases": [
+    "监控",
+    "在线",
+    "定时",
+    "缓存",
+    "服务",
+    "会话",
+    "调度"
+   ]
+  },
+  {
+   "id": "3",
+   "name": "系统工具",
+   "path": "tool",
+   "menus": [
+    {
+     "id": "115",
+     "name": "表单构建",
+     "module": "系统工具",
+     "modulePath": "tool",
+     "parentMenu": null,
+     "path": "build",
+     "component": "tool/build/index",
+     "perms": "tool:build:list",
+     "permPrefix": "tool:build",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/tool/build/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/tool/build",
+      "api": []
+     },
+     "beFiles": [],
+     "seeds": {
+      "slug": "build",
+      "cn": "表单构建",
+      "controllers": []
+     },
+     "aliases": [
+      "表单",
+      "设计器",
+      "拖拽",
+      "form"
+     ]
+    },
+    {
+     "id": "116",
+     "name": "代码生成",
+     "module": "系统工具",
+     "modulePath": "tool",
+     "parentMenu": null,
+     "path": "gen",
+     "component": "tool/gen/index",
+     "perms": "tool:gen:list",
+     "permPrefix": "tool:gen",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/tool/gen/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/tool/gen",
+      "api": [
+       "repos/RuoYi-Vue3/src/api/tool/gen.js"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-generator/src/main/java/com/ruoyi/generator/controller/GenController.java",
+      "repos/RuoYi-Vue/ruoyi-generator/src/main/java/com/ruoyi/generator/config/GenConfig.java",
+      "repos/RuoYi-Vue/ruoyi-generator/src/main/java/com/ruoyi/generator/domain/GenTable.java",
+      "repos/RuoYi-Vue/ruoyi-generator/src/main/java/com/ruoyi/generator/domain/GenTableColumn.java",
+      "repos/RuoYi-Vue/ruoyi-generator/src/main/java/com/ruoyi/generator/service/IGenTableColumnService.java",
+      "repos/RuoYi-Vue/ruoyi-generator/src/main/java/com/ruoyi/generator/service/IGenTableService.java"
+     ],
+     "seeds": {
+      "slug": "gen",
+      "cn": "代码生成",
+      "controllers": [
+       "GenController"
+      ]
+     },
+     "aliases": [
+      "生成",
+      "模板",
+      "脚手架",
+      "crud",
+      "generator"
+     ]
+    },
+    {
+     "id": "117",
+     "name": "系统接口",
+     "module": "系统工具",
+     "modulePath": "tool",
+     "parentMenu": null,
+     "path": "swagger",
+     "component": "tool/swagger/index",
+     "perms": "tool:swagger:list",
+     "permPrefix": "tool:swagger",
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/tool/swagger/index.vue",
+      "dir": "repos/RuoYi-Vue3/src/views/tool/swagger",
+      "api": []
+     },
+     "beFiles": [],
+     "seeds": {
+      "slug": "swagger",
+      "cn": "系统接口",
+      "controllers": []
+     },
+     "aliases": [
+      "swagger",
+      "api文档",
+      "接口文档",
+      "openapi"
+     ]
+    }
+   ],
+   "aliases": [
+    "工具",
+    "生成",
+    "表单",
+    "接口",
+    "api"
+   ]
+  },
+  {
+   "id": "900",
+   "name": "平台机制",
+   "path": "framework",
+   "menus": [
+    {
+     "id": "91",
+     "name": "登录认证",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "登录认证",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "登录",
+      "登陆",
+      "认证",
+      "login",
+      "注册",
+      "验证码",
+      "captcha",
+      "密码错误",
+      "锁定"
+     ],
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/api/login.js",
+      "dir": null,
+      "api": [
+       "repos/RuoYi-Vue3/src/store/modules/user.js",
+       "repos/RuoYi-Vue3/src/views/login.vue",
+       "repos/RuoYi-Vue3/src/views/register.vue"
+      ]
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/common/CaptchaController.java",
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysLoginController.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/config/SecurityConfig.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/SysLoginService.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/SysRegisterService.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "登录认证",
+      "controllers": [
+       "CaptchaController",
+       "SysLoginController"
+      ]
+     }
+    },
+    {
+     "id": "92",
+     "name": "Token机制",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "Token机制",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "token",
+      "jwt",
+      "令牌",
+      "token刷新",
+      "无感刷新",
+      "会话保持"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/core/redis/RedisCache.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/security/filter/JwtAuthenticationTokenFilter.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/TokenService.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "Token机制",
+      "controllers": []
+     }
+    },
+    {
+     "id": "93",
+     "name": "权限校验",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "权限校验",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "权限",
+      "鉴权",
+      "授权",
+      "hasPermi",
+      "permission",
+      "security"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/config/SecurityConfig.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/security/context/PermissionContextHolder.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/PermissionService.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/SysPermissionService.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "权限校验",
+      "controllers": []
+     }
+    },
+    {
+     "id": "94",
+     "name": "数据权限",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "数据权限",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "数据权限",
+      "数据范围",
+      "dataScope",
+      "部门过滤"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/annotation/DataScope.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/aspectj/DataScopeAspect.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "数据权限",
+      "controllers": []
+     }
+    },
+    {
+     "id": "95",
+     "name": "防重复提交",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "防重复提交",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "重复提交",
+      "防重",
+      "幂等",
+      "repeatSubmit"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/annotation/RepeatSubmit.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/interceptor/impl/SameUrlDataInterceptor.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/interceptor/RepeatSubmitInterceptor.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "防重复提交",
+      "controllers": []
+     }
+    },
+    {
+     "id": "96",
+     "name": "操作日志切面",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "操作日志切面",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "操作日志",
+      "日志记录",
+      "注解日志",
+      "@Log"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/annotation/Log.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/utils/LogUtils.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/aspectj/LogAspect.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/manager/AsyncManager.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/manager/factory/AsyncFactory.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "操作日志切面",
+      "controllers": []
+     }
+    },
+    {
+     "id": "97",
+     "name": "Excel导入导出",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "Excel导入导出",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "excel",
+      "导入",
+      "导出",
+      "excelutil",
+      "表格"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/annotation/Excel.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/utils/poi/ExcelUtil.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "Excel导入导出",
+      "controllers": []
+     }
+    },
+    {
+     "id": "98",
+     "name": "限流",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "限流",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "限流",
+      "频率限制",
+      "rateLimiter",
+      "rate"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/annotation/RateLimiter.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/enums/LimitType.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/aspectj/RateLimiterAspect.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "限流",
+      "controllers": []
+     }
+    },
+    {
+     "id": "99",
+     "name": "分页",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "分页",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "分页",
+      "pagehelper",
+      "pageSize",
+      "pageNum",
+      "翻页"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/core/page/PageDomain.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/core/page/TableSupport.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/utils/PageUtils.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "分页",
+      "controllers": []
+     }
+    },
+    {
+     "id": "910",
+     "name": "全局异常处理",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "全局异常处理",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "异常处理",
+      "异常",
+      "错误码",
+      "exception"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/web/exception/GlobalExceptionHandler.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "全局异常处理",
+      "controllers": []
+     }
+    },
+    {
+     "id": "911",
+     "name": "XSS过滤",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "XSS过滤",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "xss",
+      "脚本注入",
+      "转义"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/filter/XssFilter.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/filter/XssHttpServletRequestWrapper.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/utils/html/EscapeUtil.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/xss/Xss.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/xss/XssValidator.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "XSS过滤",
+      "controllers": []
+     }
+    },
+    {
+     "id": "912",
+     "name": "国际化",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "国际化",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "国际化",
+      "i18n",
+      "多语言",
+      "messages"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/utils/MessageUtils.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/config/I18nConfig.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "国际化",
+      "controllers": []
+     }
+    },
+    {
+     "id": "913",
+     "name": "对象存储",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "对象存储",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "文件上传",
+      "上传",
+      "附件",
+      "下载"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/common/CommonController.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/utils/file/FileUploadUtils.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/utils/file/FileUtils.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/utils/file/ImageUtils.java",
+      "repos/RuoYi-Vue/ruoyi-common/src/main/java/com/ruoyi/common/utils/file/MimeTypeUtils.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "对象存储",
+      "controllers": [
+       "CommonController"
+      ]
+     }
+    },
+    {
+     "id": "914",
+     "name": "首页",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "首页",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "首页",
+      "主页",
+      "工作台",
+      "index"
+     ],
+     "fe": {
+      "view": "repos/RuoYi-Vue3/src/views/index.vue",
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysIndexController.java",
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysProfileController.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "首页",
+      "controllers": [
+       "SysIndexController",
+       "SysProfileController"
+      ]
+     }
+    }
+   ],
+   "aliases": [
+    "登录",
+    "token",
+    "权限",
+    "异常",
+    "上传",
+    "导出",
+    "导入",
+    "限流",
+    "分页",
+    "防重复",
+    "xss",
+    "国际化",
+    "机制",
+    "底层",
+    "框架"
+   ]
+  }
+ ]
+}

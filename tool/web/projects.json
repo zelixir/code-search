@@ -1,0 +1,24 @@
+{
+ "projects": {
+  "ruoyi": {
+   "name": "RuoYi-Vue(后台管理框架)",
+   "dir": "../projects/ruoyi"
+  },
+  "mall": {
+   "name": "mall(电商中后台)",
+   "dir": "../projects/mall"
+  },
+  "jeecg": {
+   "name": "JeecgBoot(低代码平台)",
+   "dir": "../projects/jeecg"
+  },
+  "litemall": {
+   "name": "litemall(小商城)",
+   "dir": "../projects/litemall"
+  },
+  "yudao": {
+   "name": "芋道 ruoyi-vue-pro(多业务域)",
+   "dir": "../projects/yudao"
+  }
+ }
+}

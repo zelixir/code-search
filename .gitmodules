@@ -1,0 +1,18 @@
+[submodule "projects/ruoyi/repos/RuoYi-Vue"]
+	path = projects/ruoyi/repos/RuoYi-Vue
+	url = https://gitee.com/y_project/RuoYi-Vue.git
+[submodule "projects/ruoyi/repos/RuoYi-Vue3"]
+	path = projects/ruoyi/repos/RuoYi-Vue3
+	url = https://github.com/yangzongzhuan/RuoYi-Vue3.git
+[submodule "projects/mall/repos/mall"]
+	path = projects/mall/repos/mall
+	url = https://gitee.com/macrozheng/mall.git
+[submodule "projects/mall/repos/mall-admin-web"]
+	path = projects/mall/repos/mall-admin-web
+	url = https://gitee.com/macrozheng/mall-admin-web.git
+[submodule "projects/jeecg/repos/jeecg-boot"]
+	path = projects/jeecg/repos/jeecg-boot
+	url = https://gitee.com/jeecg/jeecg-boot.git
+[submodule "projects/litemall/repos/litemall"]
+	path = projects/litemall/repos/litemall
+	url = https://gitee.com/linlinjava/litemall.git

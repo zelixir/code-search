@@ -1,0 +1,1747 @@
+{
+ "builtAt": "2026-10-23T15:56:52.649Z",
+ "modules": [
+  {
+   "id": "1",
+   "name": "主页",
+   "path": "dashboard",
+   "aliases": [
+    "首页",
+    "门户",
+    "工作台首页",
+    "系统主页",
+    "登录后首页"
+   ],
+   "menus": [
+    {
+     "id": "9502685863ab87f0ad1134142788a385",
+     "name": "首页",
+     "module": "主页",
+     "modulePath": "dashboard",
+     "parentMenu": null,
+     "path": "analysis",
+     "component": "dashboard/Analysis",
+     "perms": null,
+     "permPrefix": "SysLog",
+     "aliases": [
+      "仪表盘",
+      "系统首页",
+      "登录后主页",
+      "首页看板",
+      "门户首页"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/dashboard/Analysis/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/dashboard/Analysis",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/dashboard/Analysis/api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysLogController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysLogServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysLog.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysAnnouncementController.java"
+     ],
+     "seeds": {
+      "slug": "Analysis",
+      "cn": "首页",
+      "controllers": [
+       "SysLogController"
+      ]
+     }
+    },
+    {
+     "id": "1438108176814825473",
+     "name": "工作台",
+     "module": "主页",
+     "modulePath": "dashboard",
+     "parentMenu": null,
+     "path": "workbench",
+     "component": "dashboard/workbench/index",
+     "perms": null,
+     "permPrefix": "SysAnnouncement",
+     "aliases": [
+      "工作面板",
+      "待办事项",
+      "快捷入口",
+      "个人工作区",
+      "工作桌面"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/dashboard/workbench/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/dashboard/workbench",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/api/common/api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysAnnouncementController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysAnnouncementServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysAnnouncement.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "工作台",
+      "controllers": [
+       "SysAnnouncementController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "2",
+   "name": "系统管理",
+   "path": "system",
+   "aliases": [
+    "系统设置",
+    "系统配置",
+    "后台管理",
+    "权限管理"
+   ],
+   "menus": [
+    {
+     "id": "3f915b2769fc80648e92d04e84ca059d",
+     "name": "用户管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "user",
+     "component": "system/user/index",
+     "perms": null,
+     "permPrefix": "SysUser",
+     "aliases": [
+      "账号管理",
+      "员工账号",
+      "新增用户",
+      "重置密码",
+      "用户列表",
+      "开通账号",
+      "停用账号"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/user/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/user",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/user/user.api.ts",
+       "repos/jeecg-boot/jeecgboot-vue3/src/api/sys/user.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysUserController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysUserService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysUserServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysUser.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/mapper/SysUserMapper.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "用户管理",
+      "controllers": [
+       "SysUserController"
+      ]
+     }
+    },
+    {
+     "id": "190c2b43bec6a5f7a4194a85db67d96a",
+     "name": "角色管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "role",
+     "component": "system/role/index",
+     "perms": null,
+     "permPrefix": "SysRole",
+     "aliases": [
+      "角色",
+      "角色授权",
+      "分配角色",
+      "角色列表",
+      "新建角色",
+      "角色权限配置"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/role/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/role",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/role/role.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysRoleController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysRoleService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysRoleServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysRole.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysRolePermissionServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysRolePermission.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "角色管理",
+      "controllers": [
+       "SysRoleController"
+      ]
+     }
+    },
+    {
+     "id": "1170592628746878978",
+     "name": "菜单管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "menu",
+     "component": "system/menu/index",
+     "perms": null,
+     "permPrefix": "SysPermission",
+     "aliases": [
+      "菜单",
+      "导航配置",
+      "菜单配置",
+      "新增菜单",
+      "菜单树",
+      "路由菜单维护"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/menu/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/menu",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/menu/menu.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysPermissionController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysPermissionService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysPermissionServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysPermission.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/mapper/SysPermissionMapper.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "菜单管理",
+      "controllers": [
+       "SysPermissionController"
+      ]
+     }
+    },
+    {
+     "id": "45c966826eeff4c99b8f8ebfe74511fc",
+     "name": "部门管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "depart",
+     "component": "system/depart/index",
+     "perms": null,
+     "permPrefix": "SysDepart",
+     "aliases": [
+      "组织架构",
+      "组织机构",
+      "部门树",
+      "新增部门",
+      "机构管理",
+      "部门维护"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/depart/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/depart",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/depart/depart.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysDepartController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysDepartService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysDepartServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysDepart.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "部门管理",
+      "controllers": [
+       "SysDepartController"
+      ]
+     }
+    },
+    {
+     "id": "1438782641187074050",
+     "name": "数据字典",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "dict",
+     "component": "system/dict/index",
+     "perms": null,
+     "permPrefix": "SysDict",
+     "aliases": [
+      "字典",
+      "字典项维护",
+      "下拉选项维护",
+      "字典编码",
+      "枚举值管理"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/dict/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/dict",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/dict/dict.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysDictController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysDictItemController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysDictService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysDictServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysDict.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysDictItem.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "数据字典",
+      "controllers": [
+       "SysDictController",
+       "SysDictItemController"
+      ]
+     }
+    },
+    {
+     "id": "1438782851980210178",
+     "name": "通知公告",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "notice",
+     "component": "system/notice/index",
+     "perms": null,
+     "permPrefix": "SysAnnouncement",
+     "aliases": [
+      "公告",
+      "发通知",
+      "公告管理",
+      "系统消息发布",
+      "站内公告"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/notice/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/notice",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/notice/notice.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysAnnouncementController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysAnnouncementSendController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysAnnouncementService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysAnnouncementServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysAnnouncement.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "通知公告",
+      "controllers": [
+       "SysAnnouncementController"
+      ]
+     }
+    },
+    {
+     "id": "1280350452934307841",
+     "name": "多租户管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "tenant",
+     "component": "system/tenant/index",
+     "perms": null,
+     "permPrefix": "SysTenant",
+     "aliases": [
+      "租户",
+      "SaaS租户",
+      "租户开通",
+      "租户列表",
+      "租户套餐"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/tenant/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/tenant",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/tenant/tenant.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysTenantController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysTenantService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysTenantServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysTenant.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysTenantPackServiceImpl.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "多租户管理",
+      "controllers": [
+       "SysTenantController"
+      ]
+     }
+    },
+    {
+     "id": "1438782530717495298",
+     "name": "分类字典",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "category",
+     "component": "system/category/index",
+     "perms": null,
+     "permPrefix": "SysCategory",
+     "aliases": [
+      "分类编码",
+      "类目管理",
+      "类别字典",
+      "分类维护",
+      "数据分类"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/category/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/category",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/category/category.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysCategoryController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysCategoryService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysCategoryServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysCategory.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "分类字典",
+      "controllers": [
+       "SysCategoryController"
+      ]
+     }
+    },
+    {
+     "id": "1438469604861403137",
+     "name": "职务级别",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "position",
+     "component": "system/position/index",
+     "perms": null,
+     "permPrefix": "SysPosition",
+     "aliases": [
+      "职务",
+      "职级",
+      "岗位职务",
+      "职位管理",
+      "职务维护"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/position/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/position",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/position/position.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysPositionController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysPositionService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysPositionServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysPosition.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "职务级别",
+      "controllers": [
+       "SysPositionController"
+      ]
+     }
+    },
+    {
+     "id": "177217757493801",
+     "name": "用户组管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "sysUgroupList",
+     "component": "system/ugroup/SysUgroupList",
+     "perms": null,
+     "permPrefix": "SysUgroup",
+     "aliases": [
+      "用户组",
+      "用户分组",
+      "批量分配用户",
+      "组管理"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/ugroup/SysUgroupList.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/ugroup",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/ugroup/ugroup.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysUgroupController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysUgroupUserController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysUgroupService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysUgroupServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysUgroup.java"
+     ],
+     "seeds": {
+      "slug": "SysUgroupList",
+      "cn": "用户组管理",
+      "controllers": [
+       "SysUgroupController"
+      ]
+     }
+    },
+    {
+     "id": "1701575168519839746",
+     "name": "白名单管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "tableWhiteList",
+     "component": "system/tableWhiteList/SysTableWhiteListList",
+     "perms": null,
+     "permPrefix": "SysTableWhiteList",
+     "aliases": [
+      "表白名单",
+      "SQL白名单",
+      "防注入白名单",
+      "字典表白名单"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/tableWhiteList/SysTableWhiteListList.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/tableWhiteList",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/tableWhiteList/SysTableWhiteList.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysTableWhiteListController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysTableWhiteListService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysTableWhiteListServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysTableWhiteList.java"
+     ],
+     "seeds": {
+      "slug": "SysTableWhiteListList",
+      "cn": "白名单管理",
+      "controllers": [
+       "SysTableWhiteListController"
+      ]
+     }
+    },
+    {
+     "id": "1629109281748291586",
+     "name": "第三方配置",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "app",
+     "component": "system/appconfig/ThirdAppConfigList",
+     "perms": null,
+     "permPrefix": "ThirdApp",
+     "aliases": [
+      "第三方接入",
+      "钉钉配置",
+      "企业微信配置",
+      "钉钉同步",
+      "飞书配置",
+      "第三方APP"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/appconfig/ThirdAppConfigList.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/appconfig",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/appconfig/ThirdApp.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/ThirdAppController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysThirdAppConfigService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysThirdAppConfigServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysThirdAppConfig.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/ThirdAppWechatEnterpriseServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/ThirdAppDingtalkServiceImpl.java"
+     ],
+     "seeds": {
+      "slug": "ThirdAppConfigList",
+      "cn": "第三方配置",
+      "controllers": [
+       "ThirdAppController"
+      ]
+     }
+    },
+    {
+     "id": "1455735714507472898",
+     "name": "通讯录",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "address",
+     "component": "system/address/index",
+     "perms": null,
+     "permPrefix": "SysUser",
+     "aliases": [
+      "员工通讯录",
+      "联系人列表",
+      "组织通讯录",
+      "同事查询",
+      "员工联系方式"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/address/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/address",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/address/address.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysUserController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysUserService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysUserServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysDepartController.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "通讯录",
+      "controllers": [
+       "SysUserController"
+      ]
+     }
+    },
+    {
+     "id": "5c2f42277948043026b7a14692456828",
+     "name": "我的部门",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "depart-user",
+     "component": "system/departUser/index",
+     "perms": null,
+     "permPrefix": "SysDepart",
+     "aliases": [
+      "部门人员",
+      "本部门用户",
+      "部门成员",
+      "部门用户管理"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/departUser/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/departUser",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/departUser/depart.user.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysDepartController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysUserController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysUserDepartService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysUserDepartServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysUserDepart.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "我的部门",
+      "controllers": [
+       "SysDepartController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "3",
+   "name": "系统监控",
+   "path": "monitor",
+   "aliases": [
+    "运维监控",
+    "系统监控中心",
+    "运行监控"
+   ],
+   "menus": [
+    {
+     "id": "1439399179791409153",
+     "name": "网关路由",
+     "module": "系统监控",
+     "modulePath": "monitor",
+     "parentMenu": null,
+     "path": "route",
+     "component": "monitor/route/index",
+     "perms": null,
+     "permPrefix": "SysGatewayRoute",
+     "aliases": [
+      "网关",
+      "路由配置",
+      "gateway路由",
+      "动态路由",
+      "路由转发规则"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/route/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/route",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/route/route.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysGatewayRouteController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysGatewayRouteService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysGatewayRouteServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysGatewayRoute.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "网关路由",
+      "controllers": [
+       "SysGatewayRouteController"
+      ]
+     }
+    },
+    {
+     "id": "1439488251473993730",
+     "name": "定时任务",
+     "module": "系统监控",
+     "modulePath": "monitor",
+     "parentMenu": null,
+     "path": "quartz",
+     "component": "monitor/quartz/index",
+     "perms": null,
+     "permPrefix": "QuartzJob",
+     "aliases": [
+      "quartz任务",
+      "计划任务",
+      "cron任务",
+      "任务调度",
+      "周期任务",
+      "job管理"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/quartz/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/quartz",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/quartz/quartz.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/quartz/controller/QuartzJobController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/quartz/service/IQuartzJobService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/quartz/service/impl/QuartzJobServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/quartz/entity/QuartzJob.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "定时任务",
+      "controllers": [
+       "QuartzJobController"
+      ]
+     }
+    },
+    {
+     "id": "1439511654494937090",
+     "name": "数据源管理",
+     "module": "系统监控",
+     "modulePath": "monitor",
+     "parentMenu": null,
+     "path": "datasource",
+     "component": "monitor/datasource/index",
+     "perms": null,
+     "permPrefix": "SysDataSource",
+     "aliases": [
+      "多数据源",
+      "数据库连接配置",
+      "切换数据源",
+      "新增数据源",
+      "数据源配置"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/datasource/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/datasource",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/datasource/datasource.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysDataSourceController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysDataSourceService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysDataSourceServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysDataSource.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/config/mybatis/interceptor/DynamicDatasourceInterceptor.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "数据源管理",
+      "controllers": [
+       "SysDataSourceController"
+      ]
+     }
+    },
+    {
+     "id": "1439533711676973057",
+     "name": "日志管理",
+     "module": "系统监控",
+     "modulePath": "monitor",
+     "parentMenu": null,
+     "path": "log",
+     "component": "monitor/log/index",
+     "perms": null,
+     "permPrefix": "SysLog",
+     "aliases": [
+      "系统日志",
+      "操作日志",
+      "登录日志",
+      "日志查询",
+      "异常日志",
+      "日志审计"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/log/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/log",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/log/log.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysLogController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysLogService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysLogServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysLog.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "日志管理",
+      "controllers": [
+       "SysLogController"
+      ]
+     }
+    },
+    {
+     "id": "1439531077792473089",
+     "name": "数据日志",
+     "module": "系统监控",
+     "modulePath": "monitor",
+     "parentMenu": null,
+     "path": "datalog",
+     "component": "monitor/datalog/index",
+     "perms": null,
+     "permPrefix": "SysDataLog",
+     "aliases": [
+      "数据变更记录",
+      "修改历史",
+      "字段变更日志",
+      "数据留痕",
+      "审计记录"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/datalog/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/datalog",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/datalog/datalog.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysDataLogController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysDataLogService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysDataLogServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysDataLog.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "数据日志",
+      "controllers": [
+       "SysDataLogController"
+      ]
+     }
+    },
+    {
+     "id": "1439797053314342913",
+     "name": "性能监控",
+     "module": "系统监控",
+     "modulePath": "monitor",
+     "parentMenu": null,
+     "path": "server",
+     "component": "monitor/server/index",
+     "perms": null,
+     "permPrefix": "ActuatorMemory",
+     "aliases": [
+      "服务器监控",
+      "内存监控",
+      "健康检查",
+      "actuator监控",
+      "jvm监控"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/server/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/server",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/server/server.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/monitor/controller/ActuatorMemoryController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/monitor/actuator/CustomActuatorConfig.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/monitor/actuator/httptrace/CustomHttpTraceEndpoint.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/monitor/actuator/undertow/CustomUndertowMetricsHandler.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "性能监控",
+      "controllers": [
+       "ActuatorMemoryController"
+      ]
+     }
+    },
+    {
+     "id": "1439839507094740994",
+     "name": "Redis监控",
+     "module": "系统监控",
+     "modulePath": "monitor",
+     "parentMenu": null,
+     "path": "redis",
+     "component": "monitor/redis/index",
+     "perms": null,
+     "permPrefix": "ActuatorRedis",
+     "aliases": [
+      "缓存监控",
+      "redis信息",
+      "缓存服务状态",
+      "redis运行状态"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/redis/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/redis",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/redis/redis.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/monitor/controller/ActuatorRedisController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/monitor/service/impl/RedisServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/monitor/service/RedisService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/monitor/domain/RedisInfo.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "Redis监控",
+      "controllers": [
+       "ActuatorRedisController"
+      ]
+     }
+    },
+    {
+     "id": "1594930803956920321",
+     "name": "在线用户",
+     "module": "系统监控",
+     "modulePath": "monitor",
+     "parentMenu": null,
+     "path": "onlineuser",
+     "component": "system/onlineuser/OnlineUserList",
+     "perms": null,
+     "permPrefix": "SysUserOnline",
+     "aliases": [
+      "在线人员",
+      "在线人数",
+      "强制下线",
+      "踢下线",
+      "当前登录用户",
+      "会话管理"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/onlineuser/OnlineUserList.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/onlineuser",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/onlineuser/OnlineUser.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysUserOnlineController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/system/util/JwtUtil.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/util/oConvertUtils.java"
+     ],
+     "seeds": {
+      "slug": "OnlineUserList",
+      "cn": "在线用户",
+      "controllers": [
+       "SysUserOnlineController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "4",
+   "name": "消息中心",
+   "path": "message",
+   "aliases": [
+    "消息推送",
+    "站内消息中心"
+   ],
+   "menus": [
+    {
+     "id": "1443391584864358402",
+     "name": "消息模板",
+     "module": "消息中心",
+     "modulePath": "message",
+     "parentMenu": null,
+     "path": "template",
+     "component": "system/message/template/index",
+     "perms": null,
+     "permPrefix": "SysMessageTemplate",
+     "aliases": [
+      "短信模板",
+      "邮件模板",
+      "推送模板",
+      "模板配置",
+      "消息模板维护"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/message/template/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/message/template",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/message/template/template.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/message/controller/SysMessageTemplateController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/message/service/ISysMessageTemplateService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/message/service/impl/SysMessageTemplateServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/message/entity/SysMessageTemplate.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "消息模板",
+      "controllers": [
+       "SysMessageTemplateController"
+      ]
+     }
+    },
+    {
+     "id": "1439542701152575489",
+     "name": "我的消息",
+     "module": "消息中心",
+     "modulePath": "message",
+     "parentMenu": null,
+     "path": "mynews",
+     "component": "monitor/mynews/index",
+     "perms": null,
+     "permPrefix": "SysAnnouncementSend",
+     "aliases": [
+      "站内消息",
+      "收到的通知",
+      "未读消息",
+      "我的公告",
+      "消息查看"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/mynews/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/mynews",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/monitor/mynews/mynews.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysAnnouncementSendController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysAnnouncementController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysAnnouncementSend.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysAnnouncementSendServiceImpl.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "我的消息",
+      "controllers": [
+       "SysAnnouncementSendController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "5",
+   "name": "低代码开发",
+   "path": "online",
+   "aliases": [
+    "低代码",
+    "零代码开发",
+    "在线开发"
+   ],
+   "menus": [
+    {
+     "id": "1455101470794850305",
+     "name": "Online表单开发",
+     "module": "低代码开发",
+     "modulePath": "online",
+     "parentMenu": null,
+     "path": "cgform",
+     "component": "super/online/cgform/index",
+     "perms": null,
+     "permPrefix": "OnlCgformDemo",
+     "aliases": [
+      "online表单",
+      "在线表单",
+      "表单设计器",
+      "零代码表单",
+      "自动生成表单页面"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/super/online/cgform/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/super/online/cgform",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/super/online/cgform/cgform.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/constant/enums/CgformEnum.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-module-demo/src/main/java/org/jeecg/modules/demo/online/OnlCgformDemoController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-api/jeecg-system-local-api/src/main/java/org/jeecg/common/online/api/IOnlineBaseExtApi.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-api/jeecg-system-cloud-api/src/main/java/org/jeecg/common/online/api/IOnlineBaseExtApi.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-api/jeecg-system-cloud-api/src/main/java/org/jeecg/common/online/api/fallback/OnlineBaseExtApiFallback.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "Online表单开发",
+      "controllers": [
+       "OnlCgformDemoController"
+      ]
+     }
+    },
+    {
+     "id": "1460888189937176577",
+     "name": "Online报表配置",
+     "module": "低代码开发",
+     "modulePath": "online",
+     "parentMenu": null,
+     "path": "cgreport",
+     "component": "super/online/cgreport/index",
+     "perms": null,
+     "permPrefix": "OnlCgformDemo",
+     "aliases": [
+      "online报表",
+      "在线报表",
+      "报表设计",
+      "低代码报表",
+      "自动报表"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/super/online/cgreport/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/super/online/cgreport",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/super/online/cgreport/cgreport.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-module-demo/src/main/java/org/jeecg/modules/demo/online/OnlCgformDemoController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-api/jeecg-system-local-api/src/main/java/org/jeecg/common/online/api/IOnlineBaseExtApi.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-api/jeecg-system-cloud-api/src/main/java/org/jeecg/common/online/api/IOnlineBaseExtApi.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-api/jeecg-system-cloud-api/src/main/java/org/jeecg/common/online/api/fallback/OnlineBaseExtApiFallback.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-api/jeecg-system-cloud-api/src/main/java/org/jeecg/common/online/api/factory/OnlineBaseExtApiFallbackFactory.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "Online报表配置",
+      "controllers": [
+       "OnlCgformDemoController"
+      ]
+     }
+    },
+    {
+     "id": "1458353686530232321",
+     "name": "系统校验规则",
+     "module": "低代码开发",
+     "modulePath": "online",
+     "parentMenu": null,
+     "path": "checkrule",
+     "component": "system/checkRule/index",
+     "perms": null,
+     "permPrefix": "SysCheckRule",
+     "aliases": [
+      "校验规则",
+      "表单校验",
+      "自定义校验",
+      "正则校验配置"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/checkRule/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/checkRule",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/checkRule/check.rule.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysCheckRuleController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysCheckRuleService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysCheckRuleServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysCheckRule.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "系统校验规则",
+      "controllers": [
+       "SysCheckRuleController"
+      ]
+     }
+    },
+    {
+     "id": "1457678003102879745",
+     "name": "系统编码规则",
+     "module": "低代码开发",
+     "modulePath": "online",
+     "parentMenu": null,
+     "path": "fillrule",
+     "component": "system/fillRule/index",
+     "perms": null,
+     "permPrefix": "SysFillRule",
+     "aliases": [
+      "编码规则",
+      "自动编号",
+      "单号生成",
+      "流水号规则",
+      "序号自动生成"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/fillRule/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/fillRule",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/fillRule/fill.rule.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysFillRuleController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/ISysFillRuleService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysFillRuleServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysFillRule.java"
+     ],
+     "seeds": {
+      "slug": "index",
+      "cn": "系统编码规则",
+      "controllers": [
+       "SysFillRuleController"
+      ]
+     }
+    },
+    {
+     "id": "1930152938891608066",
+     "name": "APP版本管理",
+     "module": "低代码开发",
+     "modulePath": "online",
+     "parentMenu": null,
+     "path": "version",
+     "component": "system/appVersion/SysAppVersion",
+     "perms": null,
+     "permPrefix": "SysAppVersion",
+     "aliases": [
+      "APP版本",
+      "版本管理",
+      "移动端版本",
+      "apk版本更新"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/appVersion/SysAppVersion.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/appVersion",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/appVersion/appVersion.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysAppVersionController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/entity/SysAppVersion.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/util/oConvertUtils.java"
+     ],
+     "seeds": {
+      "slug": "SysAppVersion",
+      "cn": "APP版本管理",
+      "controllers": [
+       "SysAppVersionController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "6",
+   "name": "AI应用平台",
+   "path": "airag",
+   "aliases": [
+    "AI平台",
+    "大模型应用",
+    "AI助手平台"
+   ],
+   "menus": [
+    {
+     "id": "1892557342028226561",
+     "name": "AI知识库",
+     "module": "AI应用平台",
+     "modulePath": "airag",
+     "parentMenu": null,
+     "path": "AiKnowledgeBaseList",
+     "component": "super/airag/aiknowledge/AiKnowledgeBaseList",
+     "perms": null,
+     "permPrefix": "AiragKnowledge",
+     "aliases": [
+      "知识库",
+      "文档知识库",
+      "向量知识库",
+      "RAG知识库",
+      "知识问答库",
+      "上传文档训练"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/super/airag/aiknowledge/AiKnowledgeBaseList.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/super/airag/aiknowledge",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/super/airag/aiknowledge/AiKnowledgeBase.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/llm/controller/AiragKnowledgeController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/llm/service/IAiragKnowledgeService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/llm/service/impl/AiragKnowledgeServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/llm/entity/AiragKnowledge.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/llm/entity/AiragKnowledgeDoc.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/llm/handler/EmbeddingHandler.java"
+     ],
+     "seeds": {
+      "slug": "AiKnowledgeBaseList",
+      "cn": "AI知识库",
+      "controllers": [
+       "AiragKnowledgeController"
+      ]
+     }
+    },
+    {
+     "id": "1892553778493022209",
+     "name": "AI模型配置",
+     "module": "AI应用平台",
+     "modulePath": "airag",
+     "parentMenu": null,
+     "path": "AiModelList",
+     "component": "super/airag/aimodel/AiModelList",
+     "perms": null,
+     "permPrefix": "AiragModel",
+     "aliases": [
+      "大模型配置",
+      "模型管理",
+      "LLM配置",
+      "模型接入",
+      "模型参数配置"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/super/airag/aimodel/AiModelList.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/super/airag/aimodel",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/super/airag/aimodel/model.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/llm/controller/AiragModelController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/llm/service/IAiragModelService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/llm/service/impl/AiragModelServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/llm/entity/AiragModel.java"
+     ],
+     "seeds": {
+      "slug": "AiModelList",
+      "cn": "AI模型配置",
+      "controllers": [
+       "AiragModelController"
+      ]
+     }
+    },
+    {
+     "id": "1895401981290643458",
+     "name": "AI聊天",
+     "module": "AI应用平台",
+     "modulePath": "airag",
+     "parentMenu": null,
+     "path": "AiChat",
+     "component": "super/airag/aiapp/chat/AiChat",
+     "perms": null,
+     "permPrefix": "AiragChat",
+     "aliases": [
+      "AI对话",
+      "智能问答",
+      "对话机器人",
+      "大模型对话",
+      "聊天助手"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/super/airag/aiapp/chat/AiChat.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/super/airag/aiapp/chat",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/super/airag/aiapp/AiApp.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/app/controller/AiragChatController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/app/service/IAiragChatService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/app/service/impl/AiragChatServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/llm/handler/AIChatHandler.java"
+     ],
+     "seeds": {
+      "slug": "AiChat",
+      "cn": "AI聊天",
+      "controllers": [
+       "AiragChatController"
+      ]
+     }
+    },
+    {
+     "id": "1893865471550578689",
+     "name": "AI应用管理",
+     "module": "AI应用平台",
+     "modulePath": "airag",
+     "parentMenu": null,
+     "path": "AiAppList",
+     "component": "super/airag/aiapp/AiAppList",
+     "perms": null,
+     "permPrefix": "AiragApp",
+     "aliases": [
+      "AI应用",
+      "智能体应用",
+      "AI助手配置",
+      "应用编排",
+      "创建AI应用"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/super/airag/aiapp/AiAppList.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/super/airag/aiapp",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/super/airag/aiapp/AiApp.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/app/controller/AiragAppController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/app/service/IAiragAppService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/app/service/impl/AiragAppServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/app/entity/AiragApp.java"
+     ],
+     "seeds": {
+      "slug": "AiAppList",
+      "cn": "AI应用管理",
+      "controllers": [
+       "AiragAppController"
+      ]
+     }
+    },
+    {
+     "id": "1980223355087781889",
+     "name": "MCP配置",
+     "module": "AI应用平台",
+     "modulePath": "airag",
+     "parentMenu": null,
+     "path": "AiragMcpList",
+     "component": "super/airag/aimcp/AiragMcpList",
+     "perms": null,
+     "permPrefix": "AiragMcp",
+     "aliases": [
+      "MCP服务",
+      "工具接入",
+      "外部工具协议",
+      "mcp server配置"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/super/airag/aimcp/AiragMcpList.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/super/airag/aimcp",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/super/airag/aimcp/AiragMcp.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/llm/controller/AiragMcpController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/llm/service/IAiragMcpService.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/llm/service/impl/AiragMcpServiceImpl.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-module/jeecg-boot-module-airag/src/main/java/org/jeecg/modules/airag/llm/entity/AiragMcp.java"
+     ],
+     "seeds": {
+      "slug": "AiragMcpList",
+      "cn": "MCP配置",
+      "controllers": [
+       "AiragMcpController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "7",
+   "name": "平台机制",
+   "path": "core",
+   "aliases": [
+    "框架机制",
+    "平台底层",
+    "基础框架"
+   ],
+   "menus": [
+    {
+     "id": "1001",
+     "name": "登录认证",
+     "module": "平台机制",
+     "modulePath": "core",
+     "parentMenu": null,
+     "path": "login",
+     "component": "sys/login",
+     "permPrefix": "Login",
+     "aliases": [
+      "登录",
+      "账号登录",
+      "验证码校验",
+      "退出登录",
+      "单点登录",
+      "登录流程"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/sys/login/LoginForm.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/sys/login",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/api/sys/user.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/LoginController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/system/util/JwtUtil.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/config/shiro/ShiroConfig.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/config/shiro/filters/JwtFilter.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/SysUserController.java"
+     ],
+     "seeds": {
+      "slug": "login",
+      "cn": "登录认证",
+      "controllers": [
+       "LoginController"
+      ]
+     }
+    },
+    {
+     "id": "1002",
+     "name": "JWT鉴权机制",
+     "module": "平台机制",
+     "modulePath": "core",
+     "parentMenu": null,
+     "path": "auth",
+     "component": "sys/auth",
+     "permPrefix": "JwtFilter",
+     "aliases": [
+      "token",
+      "jwt令牌",
+      "鉴权过滤器",
+      "token刷新",
+      "shiro认证",
+      "令牌校验"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/sys/login/Login.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/sys/login",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/api/sys/user.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/config/shiro/filters/JwtFilter.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/config/shiro/JwtToken.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/config/shiro/ShiroConfig.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/system/util/JwtUtil.java"
+     ],
+     "seeds": {
+      "slug": "auth",
+      "cn": "JWT鉴权机制",
+      "controllers": [
+       "JwtFilter"
+      ]
+     }
+    },
+    {
+     "id": "1003",
+     "name": "多租户数据隔离",
+     "module": "平台机制",
+     "modulePath": "core",
+     "parentMenu": null,
+     "path": "tenant",
+     "component": "core/tenant",
+     "permPrefix": "JeecgTenantParser",
+     "aliases": [
+      "租户隔离",
+      "租户拦截器",
+      "SQL租户拼接",
+      "数据隔离",
+      "TenantContext",
+      "租户id注入"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/tenant/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/tenant",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/tenant/tenant.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/config/mybatis/JeecgTenantParser.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/config/mybatis/TenantContext.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/constant/TenantConstant.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/SysTenantServiceImpl.java"
+     ],
+     "seeds": {
+      "slug": "tenant",
+      "cn": "多租户数据隔离",
+      "controllers": [
+       "JeecgTenantParser"
+      ]
+     }
+    },
+    {
+     "id": "1004",
+     "name": "字典翻译机制",
+     "module": "平台机制",
+     "modulePath": "core",
+     "parentMenu": null,
+     "path": "dict",
+     "component": "core/dict",
+     "permPrefix": "DictAspect",
+     "aliases": [
+      "字典翻译",
+      "Dict注解",
+      "自动翻译",
+      "字典回显",
+      "字典切面",
+      "字典值转文字"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/components/Form/src/jeecg/components/JDictSelectTag.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/components/Form/src/jeecg/components",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/dict/dict.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/aspect/DictAspect.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/aspect/annotation/Dict.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/aspect/annotation/AutoDict.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/config/AutoPoiDictConfig.java"
+     ],
+     "seeds": {
+      "slug": "dict",
+      "cn": "字典翻译机制",
+      "controllers": [
+       "DictAspect"
+      ]
+     }
+    },
+    {
+     "id": "1005",
+     "name": "Excel导入导出",
+     "module": "平台机制",
+     "modulePath": "core",
+     "parentMenu": null,
+     "path": "excel",
+     "component": "core/excel",
+     "permPrefix": "Jeecg",
+     "aliases": [
+      "excel导出",
+      "excel导入",
+      "表格导出",
+      "数据导入",
+      "导入导出实现",
+      "AutoPoi"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/user/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/user",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/user/user.api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/util/ImportExcelUtil.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/system/base/controller/JeecgController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/service/impl/ImportFileServiceImpl.java"
+     ],
+     "seeds": {
+      "slug": "excel",
+      "cn": "Excel导入导出",
+      "controllers": [
+       "JeecgController",
+       "ImportExcelUtil"
+      ]
+     }
+    },
+    {
+     "id": "1006",
+     "name": "全局异常处理",
+     "module": "平台机制",
+     "modulePath": "core",
+     "parentMenu": null,
+     "path": "exception",
+     "component": "core/exception",
+     "permPrefix": "JeecgBootExceptionHandler",
+     "aliases": [
+      "异常处理",
+      "全局异常拦截",
+      "统一错误返回",
+      "异常处理器",
+      "错误提示"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/sys/exception/Exception.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/sys/exception",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/api/common/api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/exception/JeecgBootExceptionHandler.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/api/vo/Result.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/constant/CommonConstant.java"
+     ],
+     "seeds": {
+      "slug": "exception",
+      "cn": "全局异常处理",
+      "controllers": [
+       "JeecgBootExceptionHandler"
+      ]
+     }
+    },
+    {
+     "id": "1007",
+     "name": "文件上传",
+     "module": "平台机制",
+     "modulePath": "core",
+     "parentMenu": null,
+     "path": "upload",
+     "component": "core/upload",
+     "permPrefix": "Common",
+     "aliases": [
+      "上传文件",
+      "附件上传",
+      "图片上传",
+      "OSS上传",
+      "minio上传",
+      "上传接口"
+     ],
+     "fe": {
+      "view": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/ossfile/index.vue",
+      "dir": "repos/jeecg-boot/jeecgboot-vue3/src/views/system/ossfile",
+      "api": [
+       "repos/jeecg-boot/jeecgboot-vue3/src/views/system/ossfile/ossfile.api.ts",
+       "repos/jeecg-boot/jeecgboot-vue3/src/api/sys/upload.ts",
+       "repos/jeecg-boot/jeecgboot-vue3/src/api/common/api.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/system/controller/CommonController.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/common/util/oss/OssBootUtil.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/config/oss/MinioConfig.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-boot-base-core/src/main/java/org/jeecg/config/oss/OssConfiguration.java",
+      "repos/jeecg-boot/jeecg-boot/jeecg-module-system/jeecg-system-biz/src/main/java/org/jeecg/modules/oss/controller/OssFileController.java"
+     ],
+     "seeds": {
+      "slug": "upload",
+      "cn": "文件上传",
+      "controllers": [
+       "CommonController",
+       "OssFileController"
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

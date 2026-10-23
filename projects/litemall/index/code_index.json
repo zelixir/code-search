@@ -1,0 +1,1731 @@
+{
+ "builtAt": "2026-10-23T15:56:37.338Z",
+ "modules": [
+  {
+   "id": "1",
+   "name": "仪表盘",
+   "path": "dashboard",
+   "menus": [
+    {
+     "id": "100",
+     "name": "首页",
+     "module": "仪表盘",
+     "modulePath": "dashboard",
+     "parentMenu": null,
+     "path": "dashboard",
+     "component": "dashboard/index",
+     "perms": null,
+     "permPrefix": "admin/dashboard",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/dashboard/index.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/dashboard",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/dashboard.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminDashbordController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGoodsProductService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGoodsService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallOrderService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallUserService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoodsProduct.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoods.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallOrder.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallUser.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallGoodsProductMapper.xml"
+     ],
+     "seeds": {
+      "slug": "dashboard",
+      "cn": "首页",
+      "controllers": [
+       "AdminDashbordController"
+      ]
+     },
+     "aliases": [
+      "仪表盘",
+      "主页",
+      "工作台",
+      "数据看板",
+      "运营总览"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2",
+   "name": "用户管理",
+   "path": "user",
+   "menus": [
+    {
+     "id": "200",
+     "name": "会员管理",
+     "module": "用户管理",
+     "modulePath": "user",
+     "parentMenu": null,
+     "path": "user",
+     "component": "user/user",
+     "perms": "GET /admin/user/list",
+     "permPrefix": "admin/user",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/user/user.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/user",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/user.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminUserController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallUserService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallUser.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallUserMapper.xml"
+     ],
+     "seeds": {
+      "slug": "user",
+      "cn": "会员管理",
+      "controllers": [
+       "AdminUserController"
+      ]
+     },
+     "aliases": [
+      "会员",
+      "用户列表",
+      "会员列表",
+      "买家",
+      "小程序用户",
+      "客户"
+     ]
+    },
+    {
+     "id": "201",
+     "name": "收货地址",
+     "module": "用户管理",
+     "modulePath": "user",
+     "parentMenu": null,
+     "path": "address",
+     "component": "user/address",
+     "perms": "GET /admin/address/list",
+     "permPrefix": "admin/address",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/user/address.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/user",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/user.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminAddressController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallAddressService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallRegionService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallAddress.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallRegion.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallAddressMapper.xml",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallRegionMapper.xml"
+     ],
+     "seeds": {
+      "slug": "address",
+      "cn": "收货地址",
+      "controllers": [
+       "AdminAddressController"
+      ]
+     },
+     "aliases": [
+      "地址管理",
+      "收货信息",
+      "会员地址",
+      "省市区地址"
+     ]
+    },
+    {
+     "id": "202",
+     "name": "会员收藏",
+     "module": "用户管理",
+     "modulePath": "user",
+     "parentMenu": null,
+     "path": "collect",
+     "component": "user/collect",
+     "perms": "GET /admin/collect/list",
+     "permPrefix": "admin/collect",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/user/collect.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/user",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/user.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminCollectController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallCollectService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallCollect.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallCollectMapper.xml"
+     ],
+     "seeds": {
+      "slug": "collect",
+      "cn": "会员收藏",
+      "controllers": [
+       "AdminCollectController"
+      ]
+     },
+     "aliases": [
+      "收藏",
+      "商品收藏",
+      "用户收藏",
+      "收藏夹"
+     ]
+    },
+    {
+     "id": "203",
+     "name": "会员足迹",
+     "module": "用户管理",
+     "modulePath": "user",
+     "parentMenu": null,
+     "path": "footprint",
+     "component": "user/footprint",
+     "perms": "GET /admin/footprint/list",
+     "permPrefix": "admin/footprint",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/user/footprint.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/user",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/user.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminFootprintController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallFootprintService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallFootprint.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallFootprintMapper.xml"
+     ],
+     "seeds": {
+      "slug": "footprint",
+      "cn": "会员足迹",
+      "controllers": [
+       "AdminFootprintController"
+      ]
+     },
+     "aliases": [
+      "足迹",
+      "浏览历史",
+      "浏览记录",
+      "看过的商品"
+     ]
+    },
+    {
+     "id": "204",
+     "name": "搜索历史",
+     "module": "用户管理",
+     "modulePath": "user",
+     "parentMenu": null,
+     "path": "history",
+     "component": "user/history",
+     "perms": "GET /admin/history/list",
+     "permPrefix": "admin/history",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/user/history.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/user",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/user.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminHistoryController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallSearchHistoryService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallSearchHistory.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallSearchHistoryMapper.xml"
+     ],
+     "seeds": {
+      "slug": "history",
+      "cn": "搜索历史",
+      "controllers": [
+       "AdminHistoryController"
+      ]
+     },
+     "aliases": [
+      "搜索记录",
+      "关键词历史",
+      "用户搜索行为",
+      "历史搜索"
+     ]
+    },
+    {
+     "id": "205",
+     "name": "意见反馈",
+     "module": "用户管理",
+     "modulePath": "user",
+     "parentMenu": null,
+     "path": "feedback",
+     "component": "user/feedback",
+     "perms": "GET /admin/feedback/list",
+     "permPrefix": "admin/feedback",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/user/feedback.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/user",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/user.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminFeedbackController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallFeedbackService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallFeedback.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallFeedbackMapper.xml"
+     ],
+     "seeds": {
+      "slug": "feedback",
+      "cn": "意见反馈",
+      "controllers": [
+       "AdminFeedbackController"
+      ]
+     },
+     "aliases": [
+      "反馈",
+      "用户反馈",
+      "投诉建议",
+      "意见箱"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3",
+   "name": "商场管理",
+   "path": "mall",
+   "menus": [
+    {
+     "id": "300",
+     "name": "行政区域",
+     "module": "商场管理",
+     "modulePath": "mall",
+     "parentMenu": null,
+     "path": "region",
+     "component": "mall/region",
+     "perms": null,
+     "permPrefix": "admin/region",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/mall/region.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/mall",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/region.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminRegionController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallRegionService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallRegion.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallRegionMapper.xml"
+     ],
+     "seeds": {
+      "slug": "region",
+      "cn": "行政区域",
+      "controllers": [
+       "AdminRegionController"
+      ]
+     },
+     "aliases": [
+      "省市区",
+      "行政区划",
+      "地区数据",
+      "区域列表",
+      "地址库"
+     ]
+    },
+    {
+     "id": "301",
+     "name": "品牌制造商",
+     "module": "商场管理",
+     "modulePath": "mall",
+     "parentMenu": null,
+     "path": "brand",
+     "component": "mall/brand",
+     "perms": "GET /admin/brand/list",
+     "permPrefix": "admin/brand",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/mall/brand.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/mall",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/brand.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminBrandController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallBrandService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallBrand.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallBrandMapper.xml"
+     ],
+     "seeds": {
+      "slug": "brand",
+      "cn": "品牌制造商",
+      "controllers": [
+       "AdminBrandController"
+      ]
+     },
+     "aliases": [
+      "品牌",
+      "品牌商",
+      "制造商",
+      "厂商",
+      "品牌维护"
+     ]
+    },
+    {
+     "id": "302",
+     "name": "商品类目",
+     "module": "商场管理",
+     "modulePath": "mall",
+     "parentMenu": null,
+     "path": "category",
+     "component": "mall/category",
+     "perms": "GET /admin/category/list",
+     "permPrefix": "admin/category",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/mall/category.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/mall",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/category.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminCategoryController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallCategoryService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallCategory.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallCategoryMapper.xml"
+     ],
+     "seeds": {
+      "slug": "category",
+      "cn": "商品类目",
+      "controllers": [
+       "AdminCategoryController"
+      ]
+     },
+     "aliases": [
+      "分类",
+      "商品分类",
+      "类目管理",
+      "类别",
+      "目录"
+     ]
+    },
+    {
+     "id": "303",
+     "name": "订单管理",
+     "module": "商场管理",
+     "modulePath": "mall",
+     "parentMenu": null,
+     "path": "order",
+     "component": "mall/order",
+     "perms": "GET /admin/order/list",
+     "permPrefix": "admin/order",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/mall/order.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/mall",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/order.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminOrderController.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/service/AdminOrderService.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/express/ExpressService.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/job/OrderJob.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallOrderGoodsService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallOrderService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallUserService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallCommentService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallCouponUserService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallOrder.java"
+     ],
+     "seeds": {
+      "slug": "order",
+      "cn": "订单管理",
+      "controllers": [
+       "AdminOrderController"
+      ]
+     },
+     "aliases": [
+      "订单",
+      "订单列表",
+      "发货",
+      "退款",
+      "订单详情",
+      "快递单号",
+      "订单查询"
+     ]
+    },
+    {
+     "id": "304",
+     "name": "售后管理",
+     "module": "商场管理",
+     "modulePath": "mall",
+     "parentMenu": null,
+     "path": "aftersale",
+     "component": "mall/aftersale",
+     "perms": "GET /admin/aftersale/list",
+     "permPrefix": "admin/aftersale",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/mall/aftersale.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/mall",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/aftersale.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminAftersaleController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallAftersaleService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallOrderService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallOrderGoodsService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGoodsProductService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallAftersale.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoodsProduct.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallOrder.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallOrderGoods.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallAftersaleMapper.xml"
+     ],
+     "seeds": {
+      "slug": "aftersale",
+      "cn": "售后管理",
+      "controllers": [
+       "AdminAftersaleController"
+      ]
+     },
+     "aliases": [
+      "售后",
+      "退换货",
+      "维权",
+      "退款申请",
+      "售后审核"
+     ]
+    },
+    {
+     "id": "305",
+     "name": "通用问题",
+     "module": "商场管理",
+     "modulePath": "mall",
+     "parentMenu": null,
+     "path": "issue",
+     "component": "mall/issue",
+     "perms": "GET /admin/issue/list",
+     "permPrefix": "admin/issue",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/mall/issue.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/mall",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/issue.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminIssueController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallIssueService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallIssue.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallIssueMapper.xml"
+     ],
+     "seeds": {
+      "slug": "issue",
+      "cn": "通用问题",
+      "controllers": [
+       "AdminIssueController"
+      ]
+     },
+     "aliases": [
+      "常见问题",
+      "FAQ",
+      "帮助中心",
+      "问题解答"
+     ]
+    },
+    {
+     "id": "306",
+     "name": "关键词",
+     "module": "商场管理",
+     "modulePath": "mall",
+     "parentMenu": null,
+     "path": "keyword",
+     "component": "mall/keyword",
+     "perms": "GET /admin/keyword/list",
+     "permPrefix": "admin/keyword",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/mall/keyword.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/mall",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/keyword.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminKeywordController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallKeywordService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallKeyword.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallKeywordMapper.xml"
+     ],
+     "seeds": {
+      "slug": "keyword",
+      "cn": "关键词",
+      "controllers": [
+       "AdminKeywordController"
+      ]
+     },
+     "aliases": [
+      "搜索关键词",
+      "热词",
+      "关键字",
+      "搜索推荐词"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "4",
+   "name": "商品管理",
+   "path": "goods",
+   "menus": [
+    {
+     "id": "400",
+     "name": "商品列表",
+     "module": "商品管理",
+     "modulePath": "goods",
+     "parentMenu": null,
+     "path": "list",
+     "component": "goods/list",
+     "perms": "GET /admin/goods/list",
+     "permPrefix": "admin/goods",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/goods/list.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/goods",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/goods.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminGoodsController.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/service/AdminGoodsService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGoodsService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallCategoryService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallBrandService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallCartService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoods.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoodsAttribute.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoodsSpecification.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoodsProduct.java"
+     ],
+     "seeds": {
+      "slug": "list",
+      "cn": "商品列表",
+      "controllers": [
+       "AdminGoodsController"
+      ]
+     },
+     "aliases": [
+      "商品",
+      "货品",
+      "在售商品",
+      "商品管理",
+      "商品详情"
+     ]
+    },
+    {
+     "id": "401",
+     "name": "商品上架",
+     "module": "商品管理",
+     "modulePath": "goods",
+     "parentMenu": null,
+     "path": "create",
+     "component": "goods/create",
+     "perms": "POST /admin/goods/create",
+     "permPrefix": "admin/goods",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/goods/create.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/goods",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/goods.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminGoodsController.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/service/AdminGoodsService.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/dto/GoodsAllinone.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/qcode/QCodeService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGoodsService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallCategoryService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallBrandService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallCartService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallStorageService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoods.java"
+     ],
+     "seeds": {
+      "slug": "create",
+      "cn": "商品上架",
+      "controllers": [
+       "AdminGoodsController"
+      ]
+     },
+     "aliases": [
+      "新增商品",
+      "发布商品",
+      "录入商品",
+      "上新",
+      "商品录入"
+     ]
+    },
+    {
+     "id": "402",
+     "name": "商品编辑",
+     "module": "商品管理",
+     "modulePath": "goods",
+     "parentMenu": null,
+     "path": "edit",
+     "component": "goods/edit",
+     "perms": "GET /admin/goods/detail",
+     "permPrefix": "admin/goods",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/goods/edit.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/goods",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/goods.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminGoodsController.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/service/AdminGoodsService.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/dto/GoodsAllinone.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGoodsService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallCategoryService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallBrandService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallCartService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoods.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoodsAttribute.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoodsProduct.java"
+     ],
+     "seeds": {
+      "slug": "edit",
+      "cn": "商品编辑",
+      "controllers": [
+       "AdminGoodsController"
+      ]
+     },
+     "aliases": [
+      "修改商品",
+      "编辑货品",
+      "更新商品",
+      "商品信息修改"
+     ]
+    },
+    {
+     "id": "403",
+     "name": "商品评论",
+     "module": "商品管理",
+     "modulePath": "goods",
+     "parentMenu": null,
+     "path": "comment",
+     "component": "goods/comment",
+     "perms": "GET /admin/comment/list",
+     "permPrefix": "admin/comment",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/goods/comment.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/goods",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/comment.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminCommentController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallCommentService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallComment.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallCommentMapper.xml"
+     ],
+     "seeds": {
+      "slug": "comment",
+      "cn": "商品评论",
+      "controllers": [
+       "AdminCommentController"
+      ]
+     },
+     "aliases": [
+      "评论",
+      "评价管理",
+      "商品评价",
+      "用户评价",
+      "差评"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5",
+   "name": "推广管理",
+   "path": "promotion",
+   "menus": [
+    {
+     "id": "500",
+     "name": "广告管理",
+     "module": "推广管理",
+     "modulePath": "promotion",
+     "parentMenu": null,
+     "path": "ad",
+     "component": "promotion/ad",
+     "perms": "GET /admin/ad/list",
+     "permPrefix": "admin/ad",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/promotion/ad.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/promotion",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/ad.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminAdController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallAdService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallAd.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallAdMapper.xml"
+     ],
+     "seeds": {
+      "slug": "ad",
+      "cn": "广告管理",
+      "controllers": [
+       "AdminAdController"
+      ]
+     },
+     "aliases": [
+      "广告",
+      "banner",
+      "轮播图",
+      "广告位",
+      "首页横幅"
+     ]
+    },
+    {
+     "id": "501",
+     "name": "优惠券管理",
+     "module": "推广管理",
+     "modulePath": "promotion",
+     "parentMenu": null,
+     "path": "coupon",
+     "component": "promotion/coupon",
+     "perms": "GET /admin/coupon/list",
+     "permPrefix": "admin/coupon",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/promotion/coupon.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/promotion",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/coupon.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminCouponController.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/job/CouponJob.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/CouponVerifyService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/CouponAssignService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallCouponService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallCouponUserService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallCoupon.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallCouponUser.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallCart.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallCouponMapper.xml"
+     ],
+     "seeds": {
+      "slug": "coupon",
+      "cn": "优惠券管理",
+      "controllers": [
+       "AdminCouponController"
+      ]
+     },
+     "aliases": [
+      "优惠券",
+      "卡券",
+      "满减券",
+      "发券",
+      "优惠活动"
+     ]
+    },
+    {
+     "id": "502",
+     "name": "优惠券详情",
+     "module": "推广管理",
+     "modulePath": "promotion",
+     "parentMenu": null,
+     "path": "couponDetail",
+     "component": "promotion/couponDetail",
+     "perms": "GET /admin/coupon/listuser",
+     "permPrefix": "admin/coupon",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/promotion/couponDetail.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/promotion",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/coupon.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminCouponController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallCouponService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallCouponUserService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallCoupon.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallCouponUser.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallCouponMapper.xml",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallCouponUserMapper.xml"
+     ],
+     "seeds": {
+      "slug": "couponDetail",
+      "cn": "优惠券详情",
+      "controllers": [
+       "AdminCouponController"
+      ]
+     },
+     "aliases": [
+      "领券记录",
+      "券使用情况",
+      "用户领券",
+      "优惠券明细"
+     ]
+    },
+    {
+     "id": "503",
+     "name": "专题管理",
+     "module": "推广管理",
+     "modulePath": "promotion",
+     "parentMenu": null,
+     "path": "topic",
+     "component": "promotion/topic",
+     "perms": "GET /admin/topic/list",
+     "permPrefix": "admin/topic",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/promotion/topic.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/promotion",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/topic.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminTopicController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGoodsService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallTopicService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoods.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallTopic.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallGoodsMapper.xml",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallTopicMapper.xml"
+     ],
+     "seeds": {
+      "slug": "topic",
+      "cn": "专题管理",
+      "controllers": [
+       "AdminTopicController"
+      ]
+     },
+     "aliases": [
+      "专题",
+      "专题栏目",
+      "内容专题",
+      "商品专题"
+     ]
+    },
+    {
+     "id": "504",
+     "name": "专题创建",
+     "module": "推广管理",
+     "modulePath": "promotion",
+     "parentMenu": null,
+     "path": "topic-create",
+     "component": "promotion/topicCreate",
+     "perms": "POST /admin/topic/create",
+     "permPrefix": "admin/topic",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/promotion/topicCreate.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/promotion",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/topic.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminTopicController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGoodsService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallTopicService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoods.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallTopic.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallGoodsMapper.xml",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallTopicMapper.xml"
+     ],
+     "seeds": {
+      "slug": "topic-create",
+      "cn": "专题创建",
+      "controllers": [
+       "AdminTopicController"
+      ]
+     },
+     "aliases": [
+      "新建专题",
+      "添加专题",
+      "创建专题页",
+      "专题新增"
+     ]
+    },
+    {
+     "id": "505",
+     "name": "专题编辑",
+     "module": "推广管理",
+     "modulePath": "promotion",
+     "parentMenu": null,
+     "path": "topic-edit",
+     "component": "promotion/topicEdit",
+     "perms": "GET /admin/topic/read",
+     "permPrefix": "admin/topic",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/promotion/topicEdit.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/promotion",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/topic.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminTopicController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGoodsService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallTopicService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoods.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallTopic.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallGoodsMapper.xml",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallTopicMapper.xml"
+     ],
+     "seeds": {
+      "slug": "topic-edit",
+      "cn": "专题编辑",
+      "controllers": [
+       "AdminTopicController"
+      ]
+     },
+     "aliases": [
+      "修改专题",
+      "编辑专题内容",
+      "专题更新",
+      "专题内容修改"
+     ]
+    },
+    {
+     "id": "506",
+     "name": "团购规则",
+     "module": "推广管理",
+     "modulePath": "promotion",
+     "parentMenu": null,
+     "path": "groupon-rule",
+     "component": "promotion/grouponRule",
+     "perms": "GET /admin/groupon/list",
+     "permPrefix": "admin/groupon",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/promotion/grouponRule.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/promotion",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/groupon.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminGrouponController.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/task/GrouponRuleExpiredTask.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGoodsService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGrouponRulesService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGrouponService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallOrderService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoods.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGroupon.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGrouponRules.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallOrder.java"
+     ],
+     "seeds": {
+      "slug": "groupon-rule",
+      "cn": "团购规则",
+      "controllers": [
+       "AdminGrouponController"
+      ]
+     },
+     "aliases": [
+      "团购",
+      "拼团规则",
+      "团购设置",
+      "成团条件",
+      "拼团配置"
+     ]
+    },
+    {
+     "id": "507",
+     "name": "团购活动",
+     "module": "推广管理",
+     "modulePath": "promotion",
+     "parentMenu": null,
+     "path": "groupon-activity",
+     "component": "promotion/grouponActivity",
+     "perms": "GET /admin/groupon/listRecord",
+     "permPrefix": "admin/groupon",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/promotion/grouponActivity.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/promotion",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/groupon.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminGrouponController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGoodsService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGrouponRulesService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGrouponService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGoods.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGroupon.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGrouponRules.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallGoodsMapper.xml",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallGrouponMapper.xml",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallGrouponRulesMapper.xml"
+     ],
+     "seeds": {
+      "slug": "groupon-activity",
+      "cn": "团购活动",
+      "controllers": [
+       "AdminGrouponController"
+      ]
+     },
+     "aliases": [
+      "拼团",
+      "参团记录",
+      "开团情况",
+      "拼团进度",
+      "团购订单"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6",
+   "name": "系统管理",
+   "path": "sys",
+   "menus": [
+    {
+     "id": "600",
+     "name": "管理员",
+     "module": "系统管理",
+     "modulePath": "sys",
+     "parentMenu": null,
+     "path": "admin",
+     "component": "sys/admin",
+     "perms": "GET /admin/admin/list",
+     "permPrefix": "admin/admin",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/sys/admin.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/sys",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/admin.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminAdminController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallAdminService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallAdmin.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallAdminMapper.xml"
+     ],
+     "seeds": {
+      "slug": "admin",
+      "cn": "管理员",
+      "controllers": [
+       "AdminAdminController"
+      ]
+     },
+     "aliases": [
+      "后台账号",
+      "运营人员",
+      "管理员账号",
+      "后台用户",
+      "账号管理"
+     ]
+    },
+    {
+     "id": "601",
+     "name": "通知管理",
+     "module": "系统管理",
+     "modulePath": "sys",
+     "parentMenu": null,
+     "path": "notice",
+     "component": "sys/notice",
+     "perms": "GET /admin/notice/list",
+     "permPrefix": "admin/notice",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/sys/notice.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/sys",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/notice.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminNoticeController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallAdminService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallNoticeAdminService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallNoticeService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallNotice.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallAdmin.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallNoticeAdmin.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallNoticeMapper.xml",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallAdminMapper.xml",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallNoticeAdminMapper.xml"
+     ],
+     "seeds": {
+      "slug": "notice",
+      "cn": "通知管理",
+      "controllers": [
+       "AdminNoticeController"
+      ]
+     },
+     "aliases": [
+      "通知",
+      "公告",
+      "站内信",
+      "消息通知",
+      "通知公告"
+     ]
+    },
+    {
+     "id": "602",
+     "name": "操作日志",
+     "module": "系统管理",
+     "modulePath": "sys",
+     "parentMenu": null,
+     "path": "log",
+     "component": "sys/log",
+     "perms": "GET /admin/log/list",
+     "permPrefix": "admin/log",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/sys/log.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/sys",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/log.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminLogController.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/service/LogHelper.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallLogService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallLog.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallAdmin.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallLogMapper.xml",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallAdminMapper.xml"
+     ],
+     "seeds": {
+      "slug": "log",
+      "cn": "操作日志",
+      "controllers": [
+       "AdminLogController"
+      ]
+     },
+     "aliases": [
+      "日志",
+      "审计日志",
+      "操作记录",
+      "后台日志"
+     ]
+    },
+    {
+     "id": "603",
+     "name": "角色管理",
+     "module": "系统管理",
+     "modulePath": "sys",
+     "parentMenu": null,
+     "path": "role",
+     "component": "sys/role",
+     "perms": "GET /admin/role/list",
+     "permPrefix": "admin/role",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/sys/role.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/sys",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/role.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminRoleController.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/util/PermissionUtil.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/annotation/RequiresPermissionsDesc.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/shiro/AdminAuthorizingRealm.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallAdminService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallPermissionService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallRoleService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallAdmin.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallPermission.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallRole.java"
+     ],
+     "seeds": {
+      "slug": "role",
+      "cn": "角色管理",
+      "controllers": [
+       "AdminRoleController"
+      ]
+     },
+     "aliases": [
+      "角色",
+      "权限",
+      "权限分配",
+      "角色权限",
+      "授权"
+     ]
+    },
+    {
+     "id": "604",
+     "name": "对象存储",
+     "module": "系统管理",
+     "modulePath": "sys",
+     "parentMenu": null,
+     "path": "os",
+     "component": "sys/os",
+     "perms": "GET /admin/storage/list",
+     "permPrefix": "admin/storage",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/sys/os.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/sys",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/storage.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminStorageController.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/storage/StorageService.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/storage/Storage.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/storage/LocalStorage.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/storage/AliyunStorage.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/storage/TencentStorage.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/storage/QiniuStorage.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallStorageService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallStorage.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallStorageMapper.xml"
+     ],
+     "seeds": {
+      "slug": "os",
+      "cn": "对象存储",
+      "controllers": [
+       "AdminStorageController"
+      ]
+     },
+     "aliases": [
+      "存储",
+      "文件存储",
+      "上传配置",
+      "OSS",
+      "COS",
+      "图片存储"
+     ]
+    },
+    {
+     "id": "605",
+     "name": "登录认证",
+     "module": "系统管理",
+     "modulePath": "sys",
+     "parentMenu": null,
+     "path": "login",
+     "component": "login/index",
+     "perms": null,
+     "permPrefix": "admin/auth",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/login/index.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/login",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/login.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminAuthController.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/config/ShiroConfig.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/shiro/AdminAuthorizingRealm.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/shiro/AdminWebSessionManager.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/config/ShiroExceptionHandler.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/config/KaptchaConfig.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallAdminService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallPermissionService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallRoleService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallAdmin.java"
+     ],
+     "seeds": {
+      "slug": "login",
+      "cn": "登录认证",
+      "controllers": [
+       "AdminAuthController"
+      ]
+     },
+     "aliases": [
+      "登录",
+      "后台登录",
+      "鉴权",
+      "token",
+      "会话",
+      "shiro",
+      "认证",
+      "验证码"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "7",
+   "name": "配置管理",
+   "path": "config",
+   "menus": [
+    {
+     "id": "700",
+     "name": "商场配置",
+     "module": "配置管理",
+     "modulePath": "config",
+     "parentMenu": null,
+     "path": "mall",
+     "component": "config/mall",
+     "perms": "GET /admin/config/mall",
+     "permPrefix": "admin/config",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/config/mall.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/config",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/config.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminConfigController.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/system/SystemConfig.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/notify/NotifyService.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/notify/AliyunSmsSender.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/notify/TencentSmsSender.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallSystemConfigService.java"
+     ],
+     "seeds": {
+      "slug": "mall",
+      "cn": "商场配置",
+      "controllers": [
+       "AdminConfigController"
+      ]
+     },
+     "aliases": [
+      "商城参数",
+      "店铺设置",
+      "商城设置",
+      "短信配置",
+      "客服配置"
+     ]
+    },
+    {
+     "id": "701",
+     "name": "运费配置",
+     "module": "配置管理",
+     "modulePath": "config",
+     "parentMenu": null,
+     "path": "express",
+     "component": "config/express",
+     "perms": "GET /admin/config/express",
+     "permPrefix": "admin/config",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/config/express.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/config",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/config.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminConfigController.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/express/ExpressService.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/express/config/ExpressProperties.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/express/config/ExpressAutoConfiguration.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/express/dao/ExpressInfo.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallSystemConfigService.java"
+     ],
+     "seeds": {
+      "slug": "express",
+      "cn": "运费配置",
+      "controllers": [
+       "AdminConfigController"
+      ]
+     },
+     "aliases": [
+      "运费",
+      "邮费",
+      "物流配置",
+      "运费设置",
+      "满额包邮"
+     ]
+    },
+    {
+     "id": "702",
+     "name": "订单配置",
+     "module": "配置管理",
+     "modulePath": "config",
+     "parentMenu": null,
+     "path": "order",
+     "component": "config/order",
+     "perms": "GET /admin/config/order",
+     "permPrefix": "admin/config",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/config/order.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/config",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/config.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminConfigController.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/job/OrderJob.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallSystemConfigService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallOrderGoodsService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallOrderService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallGrouponService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallOrder.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallOrderGoods.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallGroupon.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallOrderMapper.xml"
+     ],
+     "seeds": {
+      "slug": "order",
+      "cn": "订单配置",
+      "controllers": [
+       "AdminConfigController"
+      ]
+     },
+     "aliases": [
+      "订单参数",
+      "自动确认收货",
+      "超时时间",
+      "订单规则",
+      "未付款超时"
+     ]
+    },
+    {
+     "id": "703",
+     "name": "小程序配置",
+     "module": "配置管理",
+     "modulePath": "config",
+     "parentMenu": null,
+     "path": "wx",
+     "component": "config/wx",
+     "perms": "GET /admin/config/wx",
+     "permPrefix": "admin/config",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/config/wx.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/config",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/config.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminConfigController.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/config/WxProperties.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/config/WxConfig.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallSystemConfigService.java"
+     ],
+     "seeds": {
+      "slug": "wx",
+      "cn": "小程序配置",
+      "controllers": [
+       "AdminConfigController"
+      ]
+     },
+     "aliases": [
+      "微信配置",
+      "appid",
+      "小程序设置",
+      "微信密钥",
+      "appsecret"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "8",
+   "name": "统计报表",
+   "path": "stat",
+   "menus": [
+    {
+     "id": "800",
+     "name": "用户统计",
+     "module": "统计报表",
+     "modulePath": "stat",
+     "parentMenu": null,
+     "path": "user",
+     "component": "stat/user",
+     "perms": "GET /admin/stat/user",
+     "permPrefix": "admin/stat",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/stat/user.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/stat",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/stat.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminStatController.java",
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/vo/StatVo.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/StatService.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/StatMapper.xml"
+     ],
+     "seeds": {
+      "slug": "user",
+      "cn": "用户统计",
+      "controllers": [
+       "AdminStatController"
+      ]
+     },
+     "aliases": [
+      "会员统计",
+      "新增用户",
+      "用户数据统计",
+      "用户增长"
+     ]
+    },
+    {
+     "id": "801",
+     "name": "订单统计",
+     "module": "统计报表",
+     "modulePath": "stat",
+     "parentMenu": null,
+     "path": "order",
+     "component": "stat/order",
+     "perms": "GET /admin/stat/order",
+     "permPrefix": "admin/stat",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/stat/order.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/stat",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/stat.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminStatController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/StatService.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/StatMapper.xml"
+     ],
+     "seeds": {
+      "slug": "order",
+      "cn": "订单统计",
+      "controllers": [
+       "AdminStatController"
+      ]
+     },
+     "aliases": [
+      "销售统计",
+      "下单量",
+      "订单数据统计",
+      "成交统计"
+     ]
+    },
+    {
+     "id": "802",
+     "name": "商品统计",
+     "module": "统计报表",
+     "modulePath": "stat",
+     "parentMenu": null,
+     "path": "goods",
+     "component": "stat/goods",
+     "perms": "GET /admin/stat/goods",
+     "permPrefix": "admin/stat",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/stat/goods.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/stat",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/stat.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminStatController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/StatService.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/StatMapper.xml"
+     ],
+     "seeds": {
+      "slug": "goods",
+      "cn": "商品统计",
+      "controllers": [
+       "AdminStatController"
+      ]
+     },
+     "aliases": [
+      "商品销量",
+      "下单商品统计",
+      "商品销售排行",
+      "销售商品统计"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "9",
+   "name": "个人中心",
+   "path": "profile",
+   "menus": [
+    {
+     "id": "900",
+     "name": "修改密码",
+     "module": "个人中心",
+     "modulePath": "profile",
+     "parentMenu": null,
+     "path": "password",
+     "component": "profile/password",
+     "perms": null,
+     "permPrefix": "admin/profile",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/profile/password.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/profile",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/profile.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminProfileController.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/util/bcrypt/BCrypt.java",
+      "repos/litemall/litemall-core/src/main/java/org/linlinjava/litemall/core/util/bcrypt/BCryptPasswordEncoder.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallAdminService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallNoticeAdminService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallNoticeService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallAdmin.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallIssue.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallNotice.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallNoticeAdmin.java"
+     ],
+     "seeds": {
+      "slug": "password",
+      "cn": "修改密码",
+      "controllers": [
+       "AdminProfileController"
+      ]
+     },
+     "aliases": [
+      "改密码",
+      "重置密码",
+      "账号安全",
+      "密码修改"
+     ]
+    },
+    {
+     "id": "901",
+     "name": "通知中心",
+     "module": "个人中心",
+     "modulePath": "profile",
+     "parentMenu": null,
+     "path": "notice",
+     "component": "profile/notice",
+     "perms": null,
+     "permPrefix": "admin/profile",
+     "fe": {
+      "view": "repos/litemall/litemall-admin/src/views/profile/notice.vue",
+      "dir": "repos/litemall/litemall-admin/src/views/profile",
+      "api": [
+       "repos/litemall/litemall-admin/src/api/profile.js"
+      ]
+     },
+     "beFiles": [
+      "repos/litemall/litemall-admin-api/src/main/java/org/linlinjava/litemall/admin/web/AdminProfileController.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallAdminService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallNoticeAdminService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/service/LitemallNoticeService.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallAdmin.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallIssue.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallNotice.java",
+      "repos/litemall/litemall-db/src/main/java/org/linlinjava/litemall/db/domain/LitemallNoticeAdmin.java",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallAdminMapper.xml",
+      "repos/litemall/litemall-db/src/main/resources/org/linlinjava/litemall/db/dao/LitemallIssueMapper.xml"
+     ],
+     "seeds": {
+      "slug": "notice",
+      "cn": "通知中心",
+      "controllers": [
+       "AdminProfileController"
+      ]
+     },
+     "aliases": [
+      "我的通知",
+      "消息中心",
+      "已读未读",
+      "收件箱"
+     ]
+    }
+   ]
+  }
+ ]
+}

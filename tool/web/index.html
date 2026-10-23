@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>jev-zg 代码检索</title>
+<style>
+  :root { --bg:#0f1115; --panel:#171a21; --panel2:#1d212b; --line:#2a2f3a; --fg:#e6e9f0; --dim:#8b93a5;
+          --acc:#5b9dff; --ok:#3fb950; --warn:#d29922; --be:#7ee787; --fe:#79c0ff; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:14px/1.55 "Segoe UI",system-ui,"Microsoft YaHei",sans-serif; }
+  header { padding:14px 22px; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:14px; }
+  header h1 { font-size:16px; margin:0 8px 0 0; font-weight:600; }
+  header .sub { color:var(--dim); font-size:12px; }
+  select, input, button { background:var(--panel2); color:var(--fg); border:1px solid var(--line); border-radius:8px; padding:8px 12px; font-size:14px; outline:none; }
+  select:focus, input:focus { border-color:var(--acc); }
+  .searchbar { display:flex; gap:10px; padding:16px 22px 6px; }
+  .searchbar input { flex:1; font-size:15px; }
+  .searchbar button { background:var(--acc); color:#fff; border:none; cursor:pointer; padding:8px 22px; font-weight:600; }
+  .searchbar button:disabled { opacity:.5; cursor:wait; }
+  .hint { padding:0 22px; color:var(--dim); font-size:12px; }
+  .hint span { cursor:pointer; color:var(--acc); margin-right:10px; }
+  main { display:grid; grid-template-columns:360px 1fr; gap:14px; padding:14px 22px 30px; align-items:start; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin-bottom:12px; }
+  .card h3 { margin:0 0 8px; font-size:13px; color:var(--dim); font-weight:600; letter-spacing:.4px; }
+  .chips { display:flex; flex-wrap:wrap; gap:6px; }
+  .chip { background:var(--panel2); border:1px solid var(--line); border-radius:999px; padding:2px 10px; font-size:12px; color:var(--fg); }
+  .step { margin-bottom:10px; }
+  .step .label { color:var(--dim); font-size:12px; margin-bottom:3px; }
+  .choice { font-size:15px; font-weight:600; color:var(--acc); }
+  .margin { color:var(--ok); font-size:12px; margin-left:8px; }
+  .cands { color:var(--dim); font-size:12px; margin-top:2px; }
+  .scorebar { height:5px; border-radius:3px; background:var(--panel2); margin:6px 0 2px; overflow:hidden; display:flex; }
+  .scorebar i { height:100%; }
+  .lat { font-size:12px; color:var(--dim); }
+  .lat b { color:var(--fg); font-weight:600; }
+  .hit { background:var(--panel); border:1px solid var(--line); border-radius:10px; margin-bottom:10px; overflow:hidden; }
+  .hit .head { display:flex; align-items:center; gap:8px; padding:8px 12px; background:var(--panel2); font-size:12px; }
+  .badge { border-radius:5px; padding:1px 7px; font-weight:700; font-size:11px; }
+  .badge.BE { background:#12351c; color:var(--be); }
+  .badge.FE { background:#0e2a44; color:var(--fe); }
+  .hit .path { font-family:Consolas,monospace; color:var(--fg); word-break:break-all; }
+  .hit .meta { color:var(--dim); margin-left:auto; white-space:nowrap; }
+  .hit pre { margin:0; padding:10px 12px; overflow:auto; max-height:340px; font:12px/1.5 Consolas,"Courier New",monospace; }
+  .hit pre .no { color:#4a5262; display:inline-block; width:44px; text-align:right; margin-right:12px; user-select:none; }
+  .empty { color:var(--dim); text-align:center; padding:60px 0; }
+  .degraded { color:var(--warn); font-size:12px; margin:4px 0; }
+  .err { color:#f85149; padding:20px 22px; }
+  .rank { color:var(--dim); font-size:11px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>jev-zg 代码检索</h1>
+  <span class="sub">Jev 决策模型 + zg 混合检索 · 无 LLM</span>
+  <div style="flex:1"></div>
+  <select id="proj"></select>
+</header>
+<div class="searchbar">
+  <input id="q" placeholder="自然语言查询,如:定时任务是怎么调度的? / 防止接口重复提交的机制在哪?" autofocus>
+  <button id="go">检索</button>
+</div>
+<div class="hint" id="hints"></div>
+<main>
+  <section id="left"></section>
+  <section id="right"><div class="empty">输入查询开始检索</div></section>
+</main>
+<script>
+let PROJECTS = {};
+const $ = id => document.getElementById(id);
+fetch('/api/projects').then(r => r.json()).then(d => {
+  PROJECTS = {};
+  for (const p of d.projects) PROJECTS[p.id] = p;
+  $('proj').innerHTML = Object.values(PROJECTS).map(p => '<option value="' + p.id + '">' + p.name + ' · ' + p.menuTotal + '菜单</option>').join('');
+});
+const EXAMPLES = ['用户忘记密码后如何重置?','定时任务是怎么调度的?','防止接口重复提交的机制在哪?','密码连续输错锁定账号的逻辑在哪','列表数据导出 Excel 的实现在哪','Token 过期怎么自动续期?','商品上架下架在哪里操作','角色数据权限过滤在哪实现'];
+$('hints').innerHTML = '试试:' + EXAMPLES.map(e => '<span>' + e + '</span>').join('');
+$('hints').addEventListener('click', e => { if (e.target.tagName === 'SPAN') { $('q').value = e.target.textContent; doSearch(); } });
+$('go').addEventListener('click', doSearch);
+$('q').addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+
+async function doSearch() {
+  const q = $('q').value.trim();
+  if (!q) return;
+  $('go').disabled = true;
+  $('right').innerHTML = '<div class="empty">检索中…(首次加载决策模型约 15s)</div>';
+  $('left').innerHTML = '';
+  try {
+    const r = await fetch('/api/search', { method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ project: $('proj').value, query: q }) }).then(x => x.json());
+    if (r.error) { $('right').innerHTML = '<div class="err">错误: ' + r.error + '</div>'; return; }
+    render(r);
+  } catch (e) { $('right').innerHTML = '<div class="err">' + e + '</div>'; }
+  $('go').disabled = false;
+}
+
+function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+function render(r) {
+  const st = r.steps;
+  const iePct = 100 * (st.extract.ms || 0) / r.ms, jevPct = 100 * ((st.jevModule.ms || 0) + (st.jevMenu.ms || 0)) / r.ms;
+  $('left').innerHTML =
+    '<div class="card"><h3>① 信息提取 (' + st.extract.ms + 'ms)</h3><div class="chips">' +
+      st.extract.keywords.map(k => '<span class="chip">' + esc(k) + '</span>').join('') + '</div></div>' +
+    '<div class="card"><h3>② 模块决策 (jev ' + st.jevModule.ms + 'ms)</h3>' +
+      '<div class="step"><div class="choice">' + esc(st.jevModule.choice) + '<span class="margin">margin ' + st.jevModule.margin + '</span></div>' +
+      '<div class="cands">候选: ' + st.jevModule.candidates.map(esc).join(' / ') + '</div>' +
+      '<div class="scorebar">' + st.moduleScores.map(x => '<i style="width:' + Math.max(2, x.s * 4) + '%;background:' + (x.name === st.jevModule.choice ? 'var(--acc)' : 'var(--line)') + '" title="' + esc(x.name) + '=' + x.s + '"></i>').join('') + '</div>' +
+      '<div class="cands">打分: ' + st.moduleScores.map(x => esc(x.name) + '=' + x.s).join(' · ') + '</div></div></div>' +
+    '<div class="card"><h3>③ 菜单决策 (jev ' + st.jevMenu.ms + 'ms)</h3>' +
+      '<div class="step"><div class="choice">' + esc(st.jevMenu.choice) + '<span class="margin">margin ' + st.jevMenu.margin + '</span></div>' +
+      '<div class="cands">候选: ' + st.jevMenu.candidates.map(esc).join(' / ') + '</div></div></div>' +
+    '<div class="card"><h3>④ 耗时</h3><div class="lat">端到端 <b>' + r.ms + 'ms</b>(提取 ' + st.extract.ms + ' / jev ' + (st.jevModule.ms + st.jevMenu.ms) + ' / 精筛 ' + (r.ms - st.extract.ms - st.jevModule.ms - st.jevMenu.ms) + ')</div>' +
+      '<div class="scorebar"><i style="width:' + iePct + '%;background:var(--warn)"></i><i style="width:' + jevPct + '%;background:var(--ok)"></i><i style="width:' + (100 - iePct - jevPct) + '%;background:var(--acc)"></i></div>' +
+      '<div class="lat" style="margin-top:4px"><span style="color:var(--warn)">■</span>提取 <span style="color:var(--ok)">■</span>决策 <span style="color:var(--acc)">■</span>zg精筛' + (r.degraded ? ' · <b style="color:var(--warn)">已降级为全库检索</b>' : '') + '</div></div>';
+  $('right').innerHTML = r.hits.length ? r.hits.map((h, i) =>
+    '<div class="hit"><div class="head"><span class="rank">#' + (i + 1) + '</span><span class="badge ' + (h.repo.length <= 2 ? h.repo : 'BE') + '">' + esc(h.repo) + '</span>' +
+    '<span class="path">' + esc(h.file) + '</span><span class="meta">' + h.start + '-' + h.end + ' · ' + esc(h.matchedBy) + '</span></div>' +
+    '<pre>' + (h.code || []).map(c => '<span class="no">' + c.n + '</span>' + esc(c.l)).join('\n') + '</pre></div>'
+  ).join('') : '<div class="empty">无命中</div>';
+}
+</script>
+</body>
+</html>

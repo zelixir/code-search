@@ -1,0 +1,2117 @@
+{
+ "builtAt": "2026-10-23T15:57:50.468Z",
+ "modules": [
+  {
+   "id": "1",
+   "name": "系统管理",
+   "path": "system",
+   "aliases": [
+    "用户",
+    "角色",
+    "部门",
+    "字典",
+    "租户",
+    "权限",
+    "账号",
+    "通知"
+   ],
+   "menus": [
+    {
+     "id": "4",
+     "name": "用户管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "user",
+     "component": "system/user/index",
+     "perms": "system:user:list",
+     "permPrefix": "system:user",
+     "aliases": [
+      "用户",
+      "账号管理",
+      "新增用户",
+      "员工账号",
+      "后台用户",
+      "重置密码"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/system/user/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/system/user",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/system/user/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/system/permission/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/system/role/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/user/UserController.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/service/user/AdminUserServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/user/AdminUserMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/user/AdminUserDO.java"
+     ],
+     "seeds": {
+      "slug": "user",
+      "cn": "用户管理",
+      "controllers": [
+       "UserController"
+      ]
+     }
+    },
+    {
+     "id": "5",
+     "name": "角色管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "role",
+     "component": "system/role/index",
+     "perms": "system:role:query",
+     "permPrefix": "system:role",
+     "aliases": [
+      "角色",
+      "权限角色",
+      "角色授权",
+      "给角色分配权限",
+      "新增角色"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/system/role/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/system/role",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/system/role/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/system/menu/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/system/permission/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/RoleController.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/service/permission/RoleServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/permission/RoleMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/permission/RoleDO.java"
+     ],
+     "seeds": {
+      "slug": "role",
+      "cn": "角色管理",
+      "controllers": [
+       "RoleController"
+      ]
+     }
+    },
+    {
+     "id": "6",
+     "name": "菜单管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "menu",
+     "component": "system/menu/index",
+     "perms": "system:menu:query",
+     "permPrefix": "system:menu",
+     "aliases": [
+      "菜单",
+      "导航配置",
+      "菜单配置",
+      "菜单树",
+      "前端路由菜单"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/system/menu/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/system/menu",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/system/menu/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/MenuController.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/service/permission/MenuServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/permission/MenuMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/permission/MenuDO.java"
+     ],
+     "seeds": {
+      "slug": "menu",
+      "cn": "菜单管理",
+      "controllers": [
+       "MenuController"
+      ]
+     }
+    },
+    {
+     "id": "7",
+     "name": "部门管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "dept",
+     "component": "system/dept/index",
+     "perms": "system:dept:query",
+     "permPrefix": "system:dept",
+     "aliases": [
+      "部门",
+      "组织架构",
+      "组织机构",
+      "科室管理",
+      "部门树"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/system/dept/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/system/dept",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/system/dept/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/system/user/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dept/DeptController.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/service/dept/DeptServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/dept/DeptMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/dept/DeptDO.java"
+     ],
+     "seeds": {
+      "slug": "dept",
+      "cn": "部门管理",
+      "controllers": [
+       "DeptController"
+      ]
+     }
+    },
+    {
+     "id": "9",
+     "name": "字典管理",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": null,
+     "path": "dict",
+     "component": "system/dict/index",
+     "perms": "system:dict:query",
+     "permPrefix": "system:dict",
+     "aliases": [
+      "字典",
+      "数据字典",
+      "枚举值",
+      "下拉选项",
+      "字典项维护"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/system/dict/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/system/dict",
+      "api": []
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictDataController.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/service/dict/DictDataServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/dict/DictDataMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/dict/DictDataDO.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/service/dict/DictTypeServiceImpl.java"
+     ],
+     "seeds": {
+      "slug": "dict",
+      "cn": "字典管理",
+      "controllers": [
+       "DictDataController",
+       "DictTypeController"
+      ]
+     }
+    },
+    {
+     "id": "21",
+     "name": "操作日志",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": "审计日志",
+     "path": "operate-log",
+     "component": "system/operatelog/index",
+     "perms": "system:operate-log:query",
+     "permPrefix": "system:operate-log",
+     "aliases": [
+      "操作日志",
+      "审计日志",
+      "操作记录",
+      "谁改的数据",
+      "变更留痕"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/system/operatelog/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/system/operatelog",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/system/operatelog/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/system/user/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/logger/OperateLogController.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/service/logger/OperateLogServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/logger/OperateLogMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/logger/OperateLogDO.java"
+     ],
+     "seeds": {
+      "slug": "operatelog",
+      "cn": "操作日志",
+      "controllers": [
+       "OperateLogController"
+      ]
+     }
+    },
+    {
+     "id": "129",
+     "name": "租户列表",
+     "module": "系统管理",
+     "modulePath": "system",
+     "parentMenu": "租户管理",
+     "path": "list",
+     "component": "system/tenant/index",
+     "perms": "system:tenant:query",
+     "permPrefix": "system:tenant",
+     "aliases": [
+      "租户",
+      "多租户",
+      "租户列表",
+      "SaaS 租户",
+      "开通租户"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/system/tenant/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/system/tenant",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/system/tenant/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/system/tenantPackage/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/tenant/TenantController.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/service/tenant/TenantServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/tenant/TenantMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/tenant/TenantDO.java"
+     ],
+     "seeds": {
+      "slug": "tenant",
+      "cn": "租户列表",
+      "controllers": [
+       "TenantController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "2",
+   "name": "基础设施",
+   "path": "infra",
+   "aliases": [
+    "infra",
+    "监控",
+    "定时任务",
+    "代码生成",
+    "文件",
+    "配置",
+    "日志"
+   ],
+   "menus": [
+    {
+     "id": "14",
+     "name": "定时任务",
+     "module": "基础设施",
+     "modulePath": "infra",
+     "parentMenu": null,
+     "path": "job",
+     "component": "infra/job/index",
+     "perms": "infra:job:create",
+     "permPrefix": "infra:job",
+     "aliases": [
+      "定时任务",
+      "任务调度",
+      "quartz",
+      "cron 计划任务",
+      "周期任务"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/infra/job/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/infra/job",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/infra/job/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/infra/jobLog/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/job/JobController.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/service/job/JobServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/job/JobMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/job/JobDO.java"
+     ],
+     "seeds": {
+      "slug": "job",
+      "cn": "定时任务",
+      "controllers": [
+       "JobController"
+      ]
+     }
+    },
+    {
+     "id": "19",
+     "name": "代码生成",
+     "module": "基础设施",
+     "modulePath": "infra",
+     "parentMenu": null,
+     "path": "codegen",
+     "component": "infra/codegen/index",
+     "perms": "infra:codegen:query",
+     "permPrefix": "infra:codegen",
+     "aliases": [
+      "代码生成",
+      "codegen",
+      "生成前后端代码",
+      "生成 CRUD",
+      "脚手架"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/infra/codegen/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/infra/codegen",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/infra/codegen/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/system/menu/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/infra/dataSourceConfig/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/codegen/CodegenController.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/service/codegen/CodegenServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/codegen/CodegenTableMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/codegen/CodegenTableDO.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/codegen/CodegenColumnMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/codegen/CodegenColumnDO.java"
+     ],
+     "seeds": {
+      "slug": "codegen",
+      "cn": "代码生成",
+      "controllers": [
+       "CodegenController"
+      ]
+     }
+    },
+    {
+     "id": "95",
+     "name": "文件列表",
+     "module": "基础设施",
+     "modulePath": "infra",
+     "parentMenu": "文件管理",
+     "path": "file",
+     "component": "infra/file/index",
+     "perms": "infra:file:query",
+     "permPrefix": "infra:file",
+     "aliases": [
+      "文件",
+      "上传文件",
+      "附件管理",
+      "文件管理",
+      "对象存储"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/infra/file/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/infra/file",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/infra/file/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/file/FileController.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/service/file/FileServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/file/FileMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/file/FileDO.java"
+     ],
+     "seeds": {
+      "slug": "file",
+      "cn": "文件列表",
+      "controllers": [
+       "FileController"
+      ]
+     }
+    },
+    {
+     "id": "10",
+     "name": "配置管理",
+     "module": "基础设施",
+     "modulePath": "infra",
+     "parentMenu": null,
+     "path": "config",
+     "component": "infra/config/index",
+     "perms": "infra:config:query",
+     "permPrefix": "infra:config",
+     "aliases": [
+      "参数配置",
+      "系统配置",
+      "config 配置项",
+      "键值参数",
+      "系统参数"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/infra/config/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/infra/config",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/infra/config/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/config/ConfigController.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/service/config/ConfigServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/config/ConfigMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/config/ConfigDO.java"
+     ],
+     "seeds": {
+      "slug": "config",
+      "cn": "配置管理",
+      "controllers": [
+       "ConfigController"
+      ]
+     }
+    },
+    {
+     "id": "86",
+     "name": "访问日志",
+     "module": "基础设施",
+     "modulePath": "infra",
+     "parentMenu": "API 日志",
+     "path": "api-access-log",
+     "component": "infra/apiAccessLog/index",
+     "perms": "infra:api-access-log:export",
+     "permPrefix": "infra:api-access-log",
+     "aliases": [
+      "访问日志",
+      "api 日志",
+      "接口日志",
+      "请求日志",
+      "调用记录"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/infra/apiAccessLog/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/infra/apiAccessLog",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/infra/apiAccessLog/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/controller/admin/logger/ApiAccessLogController.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/service/logger/ApiAccessLogServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/dal/mysql/logger/ApiAccessLogMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-infra/src/main/java/cn/iocoder/yudao/module/infra/dal/dataobject/logger/ApiAccessLogDO.java"
+     ],
+     "seeds": {
+      "slug": "apiAccessLog",
+      "cn": "访问日志",
+      "controllers": [
+       "ApiAccessLogController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "148",
+   "name": "工作流程",
+   "path": "bpm",
+   "aliases": [
+    "bpm",
+    "工作流",
+    "审批",
+    "流程",
+    "flowable"
+   ],
+   "menus": [
+    {
+     "id": "156",
+     "name": "流程模型",
+     "module": "工作流程",
+     "modulePath": "bpm",
+     "parentMenu": "流程管理",
+     "path": "model",
+     "component": "bpm/model/index",
+     "perms": "bpm:model:query",
+     "permPrefix": "bpm:model",
+     "aliases": [
+      "流程模型",
+      "流程设计",
+      "bpmn 画流程",
+      "流程定义",
+      "设计审批流"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/bpm/model/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/bpm/model",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/bpm/category/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/bpm/model/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/bpm/form/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/BpmModelController.java",
+      "repos/ruoyi-vue-pro/yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/service/definition/BpmModelServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/service/definition/BpmModelService.java",
+      "repos/ruoyi-vue-pro/yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/convert/definition/BpmModelConvert.java"
+     ],
+     "seeds": {
+      "slug": "model",
+      "cn": "流程模型",
+      "controllers": [
+       "BpmModelController"
+      ]
+     }
+    },
+    {
+     "id": "150",
+     "name": "流程表单",
+     "module": "工作流程",
+     "modulePath": "bpm",
+     "parentMenu": "流程管理",
+     "path": "form",
+     "component": "bpm/form/index",
+     "perms": "bpm:form:query",
+     "permPrefix": "bpm:form",
+     "aliases": [
+      "流程表单",
+      "表单设计",
+      "审批表单",
+      "动态表单设计"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/bpm/form/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/bpm/form",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/bpm/form/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/definition/BpmFormController.java",
+      "repos/ruoyi-vue-pro/yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/service/definition/BpmFormServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/dal/mysql/definition/BpmFormMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/dal/dataobject/definition/BpmFormDO.java"
+     ],
+     "seeds": {
+      "slug": "form",
+      "cn": "流程表单",
+      "controllers": [
+       "BpmFormController"
+      ]
+     }
+    },
+    {
+     "id": "164",
+     "name": "我的流程",
+     "module": "工作流程",
+     "modulePath": "bpm",
+     "parentMenu": "审批中心",
+     "path": "my",
+     "component": "bpm/processInstance/index",
+     "perms": "bpm:process-instance:query",
+     "permPrefix": "bpm:process-instance",
+     "aliases": [
+      "我的流程",
+      "我发起的流程",
+      "审批进度",
+      "流程实例",
+      "撤回流程"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/bpm/processInstance/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/bpm/processInstance",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/bpm/definition/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/bpm/processInstance/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/bpm/category/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/controller/admin/task/BpmProcessInstanceController.java",
+      "repos/ruoyi-vue-pro/yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/service/task/BpmProcessInstanceServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/service/task/BpmProcessInstanceService.java",
+      "repos/ruoyi-vue-pro/yudao-module-bpm/src/main/java/cn/iocoder/yudao/module/bpm/convert/task/BpmProcessInstanceConvert.java"
+     ],
+     "seeds": {
+      "slug": "processInstance",
+      "cn": "我的流程",
+      "controllers": [
+       "BpmProcessInstanceController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "373",
+   "name": "会员中心",
+   "path": "member",
+   "aliases": [
+    "会员",
+    "member",
+    "积分",
+    "等级",
+    "签到"
+   ],
+   "menus": [
+    {
+     "id": "404",
+     "name": "会员管理",
+     "module": "会员中心",
+     "modulePath": "member",
+     "parentMenu": null,
+     "path": "user",
+     "component": "member/user/index",
+     "perms": "member:user:query",
+     "permPrefix": "member:user",
+     "aliases": [
+      "会员",
+      "会员列表",
+      "商城用户",
+      "member 用户",
+      "会员资料"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/member/user/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/member/user",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/member/user/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/pay/wallet/balance/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/member/address/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-member/src/main/java/cn/iocoder/yudao/module/member/controller/admin/user/MemberUserController.java",
+      "repos/ruoyi-vue-pro/yudao-module-member/src/main/java/cn/iocoder/yudao/module/member/service/user/MemberUserServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-member/src/main/java/cn/iocoder/yudao/module/member/dal/mysql/user/MemberUserMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-member/src/main/java/cn/iocoder/yudao/module/member/dal/dataobject/user/MemberUserDO.java"
+     ],
+     "seeds": {
+      "slug": "user",
+      "cn": "会员管理",
+      "controllers": [
+       "MemberUserController"
+      ]
+     }
+    },
+    {
+     "id": "412",
+     "name": "会员等级",
+     "module": "会员中心",
+     "modulePath": "member",
+     "parentMenu": null,
+     "path": "level",
+     "component": "member/level/index",
+     "perms": "member:level:query",
+     "permPrefix": "member:level",
+     "aliases": [
+      "会员等级",
+      "vip 等级",
+      "成长值",
+      "等级规则"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/member/level/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/member/level",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/member/level/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-member/src/main/java/cn/iocoder/yudao/module/member/controller/admin/level/MemberLevelController.java",
+      "repos/ruoyi-vue-pro/yudao-module-member/src/main/java/cn/iocoder/yudao/module/member/service/level/MemberLevelServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-member/src/main/java/cn/iocoder/yudao/module/member/dal/mysql/level/MemberLevelMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-member/src/main/java/cn/iocoder/yudao/module/member/dal/dataobject/level/MemberLevelDO.java"
+     ],
+     "seeds": {
+      "slug": "level",
+      "cn": "会员等级",
+      "controllers": [
+       "MemberLevelController"
+      ]
+     }
+    },
+    {
+     "id": "382",
+     "name": "会员积分",
+     "module": "会员中心",
+     "modulePath": "member",
+     "parentMenu": null,
+     "path": "record",
+     "component": "member/point/record/index",
+     "perms": "point:record:query",
+     "permPrefix": "point:record",
+     "aliases": [
+      "积分",
+      "积分明细",
+      "积分记录",
+      "积分变动",
+      "points"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/member/point/record/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/member/point/record",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/member/point/record/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-member/src/main/java/cn/iocoder/yudao/module/member/controller/admin/point/MemberPointRecordController.java",
+      "repos/ruoyi-vue-pro/yudao-module-member/src/main/java/cn/iocoder/yudao/module/member/service/point/MemberPointRecordServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-member/src/main/java/cn/iocoder/yudao/module/member/dal/mysql/point/MemberPointRecordMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-member/src/main/java/cn/iocoder/yudao/module/member/dal/dataobject/point/MemberPointRecordDO.java"
+     ],
+     "seeds": {
+      "slug": "record",
+      "cn": "会员积分",
+      "controllers": [
+       "MemberPointRecordController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "449",
+   "name": "商城系统",
+   "path": "mall",
+   "aliases": [
+    "商城",
+    "mall",
+    "商品",
+    "交易",
+    "订单",
+    "营销",
+    "促销",
+    "分销"
+   ],
+   "menus": [
+    {
+     "id": "220",
+     "name": "商品列表",
+     "module": "商城系统",
+     "modulePath": "mall",
+     "parentMenu": "商品中心",
+     "path": "spu",
+     "component": "mall/product/spu/index",
+     "perms": "product:spu:query",
+     "permPrefix": "product:spu",
+     "aliases": [
+      "商品",
+      "spu",
+      "商品管理",
+      "上架商品",
+      "商品发布",
+      "单品"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/mall/product/spu/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/mall/product/spu",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/mall/product/spu.ts",
+       "repos/yudao-ui-admin-vue3/src/api/mall/product/category.ts",
+       "repos/yudao-ui-admin-vue3/src/api/mall/trade/delivery/expressTemplate/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/spu/ProductSpuController.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/spu/ProductSpuServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/mysql/spu/ProductSpuMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/spu/ProductSpuDO.java"
+     ],
+     "seeds": {
+      "slug": "spu",
+      "cn": "商品列表",
+      "controllers": [
+       "ProductSpuController"
+      ]
+     }
+    },
+    {
+     "id": "210",
+     "name": "商品分类",
+     "module": "商城系统",
+     "modulePath": "mall",
+     "parentMenu": "商品中心",
+     "path": "category",
+     "component": "mall/product/category/index",
+     "perms": "product:category:query",
+     "permPrefix": "product:category",
+     "aliases": [
+      "分类",
+      "商品类目",
+      "类目树",
+      "商品 category"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/mall/product/category/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/mall/product/category",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/mall/product/category.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/category/ProductCategoryController.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/category/ProductCategoryServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/mysql/category/ProductCategoryMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/category/ProductCategoryDO.java"
+     ],
+     "seeds": {
+      "slug": "category",
+      "cn": "商品分类",
+      "controllers": [
+       "ProductCategoryController"
+      ]
+     }
+    },
+    {
+     "id": "215",
+     "name": "商品品牌",
+     "module": "商城系统",
+     "modulePath": "mall",
+     "parentMenu": "商品中心",
+     "path": "brand",
+     "component": "mall/product/brand/index",
+     "perms": "product:brand:query",
+     "permPrefix": "product:brand",
+     "aliases": [
+      "品牌",
+      "商品品牌",
+      "brand",
+      "品牌管理"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/mall/product/brand/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/mall/product/brand",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/mall/product/brand.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/controller/admin/brand/ProductBrandController.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/service/brand/ProductBrandServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/mysql/brand/ProductBrandMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-product/src/main/java/cn/iocoder/yudao/module/product/dal/dataobject/brand/ProductBrandDO.java"
+     ],
+     "seeds": {
+      "slug": "brand",
+      "cn": "商品品牌",
+      "controllers": [
+       "ProductBrandController"
+      ]
+     }
+    },
+    {
+     "id": "270",
+     "name": "订单列表",
+     "module": "商城系统",
+     "modulePath": "mall",
+     "parentMenu": "订单中心",
+     "path": "order",
+     "component": "mall/trade/order/index",
+     "perms": "trade:order:pick-up",
+     "permPrefix": "trade:order",
+     "aliases": [
+      "订单",
+      "交易订单",
+      "订单管理",
+      "订单查询",
+      "订单发货"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/mall/trade/order/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/mall/trade/order",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/mall/trade/order/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/mall/trade/delivery/pickUpStore/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/mall/trade/delivery/express/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-trade/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/order/TradeOrderController.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-trade/src/main/java/cn/iocoder/yudao/module/trade/dal/mysql/order/TradeOrderMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-trade/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/order/TradeOrderDO.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-trade/src/main/java/cn/iocoder/yudao/module/trade/convert/order/TradeOrderConvert.java"
+     ],
+     "seeds": {
+      "slug": "order",
+      "cn": "订单列表",
+      "controllers": [
+       "TradeOrderController"
+      ]
+     }
+    },
+    {
+     "id": "267",
+     "name": "售后退款",
+     "module": "商城系统",
+     "modulePath": "mall",
+     "parentMenu": "订单中心",
+     "path": "after-sale",
+     "component": "mall/trade/afterSale/index",
+     "perms": "trade:after-sale:query",
+     "permPrefix": "trade:after-sale",
+     "aliases": [
+      "售后",
+      "退款退货",
+      "售后单",
+      "退款审核",
+      "售后处理"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/mall/trade/afterSale/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/mall/trade/afterSale",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/mall/trade/afterSale/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-trade/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/aftersale/AfterSaleController.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-trade/src/main/java/cn/iocoder/yudao/module/trade/service/aftersale/AfterSaleServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-trade/src/main/java/cn/iocoder/yudao/module/trade/dal/mysql/aftersale/AfterSaleMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-trade/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/aftersale/AfterSaleDO.java"
+     ],
+     "seeds": {
+      "slug": "afterSale",
+      "cn": "售后退款",
+      "controllers": [
+       "AfterSaleController"
+      ]
+     }
+    },
+    {
+     "id": "433",
+     "name": "分销用户",
+     "module": "商城系统",
+     "modulePath": "mall",
+     "parentMenu": "分销管理",
+     "path": "brokerage-user",
+     "component": "mall/trade/brokerage/user/index",
+     "perms": "trade:brokerage-user:query",
+     "permPrefix": "trade:brokerage-user",
+     "aliases": [
+      "分销",
+      "分销员",
+      "推广员",
+      "分销用户",
+      "佣金分销"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/mall/trade/brokerage/user/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/mall/trade/brokerage/user",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/mall/trade/brokerage/record/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/mall/trade/brokerage/user/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/member/user/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-trade/src/main/java/cn/iocoder/yudao/module/trade/controller/admin/brokerage/BrokerageUserController.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-trade/src/main/java/cn/iocoder/yudao/module/trade/service/brokerage/BrokerageUserServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-trade/src/main/java/cn/iocoder/yudao/module/trade/dal/mysql/brokerage/BrokerageUserMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-trade/src/main/java/cn/iocoder/yudao/module/trade/dal/dataobject/brokerage/BrokerageUserDO.java"
+     ],
+     "seeds": {
+      "slug": "user",
+      "cn": "分销用户",
+      "controllers": [
+       "BrokerageUserController"
+      ]
+     }
+    },
+    {
+     "id": "236",
+     "name": "优惠劵列表",
+     "module": "商城系统",
+     "modulePath": "mall",
+     "parentMenu": "优惠劵",
+     "path": "template",
+     "component": "mall/promotion/coupon/template/index",
+     "perms": "promotion:coupon-template:query",
+     "permPrefix": "promotion:coupon-template",
+     "aliases": [
+      "优惠券",
+      "优惠劵",
+      "券模板",
+      "平台发券",
+      "coupon"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/mall/promotion/coupon/template/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/mall/promotion/coupon/template",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/mall/promotion/coupon/couponTemplate.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/coupon/CouponTemplateController.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/coupon/CouponController.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/service/coupon/CouponTemplateServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/dal/mysql/coupon/CouponTemplateMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/coupon/CouponTemplateDO.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/service/coupon/CouponServiceImpl.java"
+     ],
+     "seeds": {
+      "slug": "template",
+      "cn": "优惠劵列表",
+      "controllers": [
+       "CouponTemplateController",
+       "CouponController"
+      ]
+     }
+    },
+    {
+     "id": "256",
+     "name": "秒杀商品",
+     "module": "商城系统",
+     "modulePath": "mall",
+     "parentMenu": "秒杀活动",
+     "path": "activity",
+     "component": "mall/promotion/seckill/activity/index",
+     "perms": "promotion:seckill-activity:query",
+     "permPrefix": "promotion:seckill-activity",
+     "aliases": [
+      "秒杀",
+      "秒杀活动",
+      "限时秒杀",
+      "seckill 活动"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/mall/promotion/seckill/activity/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/mall/promotion/seckill/activity",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/mall/promotion/seckill/seckillActivity.ts",
+       "repos/yudao-ui-admin-vue3/src/api/mall/promotion/seckill/seckillConfig.ts",
+       "repos/yudao-ui-admin-vue3/src/api/mall/product/spu.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/seckill/SeckillActivityController.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/service/seckill/SeckillActivityServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/dal/mysql/seckill/seckillactivity/SeckillActivityMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/seckill/SeckillActivityDO.java"
+     ],
+     "seeds": {
+      "slug": "activity",
+      "cn": "秒杀商品",
+      "controllers": [
+       "SeckillActivityController"
+      ]
+     }
+    },
+    {
+     "id": "391",
+     "name": "拼团商品",
+     "module": "商城系统",
+     "modulePath": "mall",
+     "parentMenu": "拼团活动",
+     "path": "acitivity",
+     "component": "mall/promotion/combination/activity/index",
+     "perms": "promotion:combination-activity:query",
+     "permPrefix": "promotion:combination-activity",
+     "aliases": [
+      "拼团",
+      "拼团活动",
+      "多人拼团",
+      "组团购买"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/mall/promotion/combination/activity/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/mall/promotion/combination/activity",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/mall/promotion/combination/combinationActivity.ts",
+       "repos/yudao-ui-admin-vue3/src/api/mall/product/spu.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/combination/CombinationActivityController.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/service/combination/CombinationActivityServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/dal/mysql/combination/CombinationActivityMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/combination/CombinationActivityDO.java"
+     ],
+     "seeds": {
+      "slug": "activity",
+      "cn": "拼团商品",
+      "controllers": [
+       "CombinationActivityController"
+      ]
+     }
+    },
+    {
+     "id": "398",
+     "name": "砍价商品",
+     "module": "商城系统",
+     "modulePath": "mall",
+     "parentMenu": "砍价活动",
+     "path": "activity",
+     "component": "mall/promotion/bargain/activity/index",
+     "perms": "promotion:bargain-activity:query",
+     "permPrefix": "promotion:bargain-activity",
+     "aliases": [
+      "砍价",
+      "砍价活动",
+      "好友帮砍",
+      "bargain"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/mall/promotion/bargain/activity/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/mall/promotion/bargain/activity",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/mall/promotion/bargain/bargainActivity.ts",
+       "repos/yudao-ui-admin-vue3/src/api/mall/product/spu.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/bargain/BargainActivityController.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/service/bargain/BargainActivityServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/dal/mysql/bargain/BargainActivityMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/bargain/BargainActivityDO.java"
+     ],
+     "seeds": {
+      "slug": "activity",
+      "cn": "砍价商品",
+      "controllers": [
+       "BargainActivityController"
+      ]
+     }
+    },
+    {
+     "id": "517",
+     "name": "商城装修",
+     "module": "商城系统",
+     "modulePath": "mall",
+     "parentMenu": "营销中心",
+     "path": "diy-template",
+     "component": "mall/promotion/diy/template/index",
+     "perms": "",
+     "permPrefix": "",
+     "aliases": [
+      "装修",
+      "商城装修",
+      "diy 页面",
+      "店铺装修",
+      "首页装修"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/mall/promotion/diy/template/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/mall/promotion/diy/template",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/mall/promotion/diy/template.ts",
+       "repos/yudao-ui-admin-vue3/src/api/mall/promotion/diy/page.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/controller/admin/diy/DiyTemplateController.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/service/diy/DiyTemplateServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/dal/mysql/diy/DiyTemplateMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-mall/yudao-module-promotion/src/main/java/cn/iocoder/yudao/module/promotion/dal/dataobject/diy/DiyTemplateDO.java"
+     ],
+     "seeds": {
+      "slug": "template",
+      "cn": "商城装修",
+      "controllers": [
+       "DiyTemplateController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "114",
+   "name": "支付管理",
+   "path": "pay",
+   "aliases": [
+    "支付",
+    "pay",
+    "退款",
+    "钱包",
+    "收款",
+    "转账"
+   ],
+   "menus": [
+    {
+     "id": "118",
+     "name": "应用信息",
+     "module": "支付管理",
+     "modulePath": "pay",
+     "parentMenu": null,
+     "path": "app",
+     "component": "pay/app/index",
+     "perms": "pay:app:query",
+     "permPrefix": "pay:app",
+     "aliases": [
+      "支付应用",
+      "商户应用",
+      "支付配置",
+      "pay app"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/pay/app/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/pay/app",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/pay/app/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/pay/channel/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/app/PayAppController.java",
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/service/app/PayAppServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/dal/mysql/app/PayAppMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/app/PayAppDO.java"
+     ],
+     "seeds": {
+      "slug": "app",
+      "cn": "应用信息",
+      "controllers": [
+       "PayAppController"
+      ]
+     }
+    },
+    {
+     "id": "142",
+     "name": "支付订单",
+     "module": "支付管理",
+     "modulePath": "pay",
+     "parentMenu": null,
+     "path": "order",
+     "component": "pay/order/index",
+     "perms": "pay:order:query",
+     "permPrefix": "pay:order",
+     "aliases": [
+      "支付订单",
+      "收款记录",
+      "支付流水",
+      "在线支付单"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/pay/order/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/pay/order",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/pay/order/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/pay/app/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/order/PayOrderController.java",
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/service/order/PayOrderServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/dal/mysql/order/PayOrderMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/order/PayOrderDO.java"
+     ],
+     "seeds": {
+      "slug": "order",
+      "cn": "支付订单",
+      "controllers": [
+       "PayOrderController"
+      ]
+     }
+    },
+    {
+     "id": "136",
+     "name": "退款订单",
+     "module": "支付管理",
+     "modulePath": "pay",
+     "parentMenu": null,
+     "path": "refund",
+     "component": "pay/refund/index",
+     "perms": "pay:refund:query",
+     "permPrefix": "pay:refund",
+     "aliases": [
+      "退款订单",
+      "支付退款",
+      "退款记录",
+      "退款处理"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/pay/refund/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/pay/refund",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/pay/refund/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/pay/app/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/refund/PayRefundController.java",
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/service/refund/PayRefundServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/dal/mysql/refund/PayRefundMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/refund/PayRefundDO.java"
+     ],
+     "seeds": {
+      "slug": "refund",
+      "cn": "退款订单",
+      "controllers": [
+       "PayRefundController"
+      ]
+     }
+    },
+    {
+     "id": "591",
+     "name": "钱包余额",
+     "module": "支付管理",
+     "modulePath": "pay",
+     "parentMenu": "钱包管理",
+     "path": "wallet-balance",
+     "component": "pay/wallet/balance/index",
+     "perms": "pay:wallet:query",
+     "permPrefix": "pay:wallet",
+     "aliases": [
+      "钱包",
+      "余额",
+      "用户钱包",
+      "钱包充值",
+      "wallet"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/pay/wallet/balance/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/pay/wallet/balance",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/pay/wallet/balance/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/PayWalletController.java",
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/controller/admin/wallet/PayWalletTransactionController.java",
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/service/wallet/PayWalletServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/dal/mysql/wallet/PayWalletMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/dal/dataobject/wallet/PayWalletDO.java",
+      "repos/ruoyi-vue-pro/yudao-module-pay/src/main/java/cn/iocoder/yudao/module/pay/service/wallet/PayWalletTransactionServiceImpl.java"
+     ],
+     "seeds": {
+      "slug": "balance",
+      "cn": "钱包余额",
+      "controllers": [
+       "PayWalletController",
+       "PayWalletTransactionController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "480",
+   "name": "CRM 系统",
+   "path": "crm",
+   "aliases": [
+    "crm",
+    "客户",
+    "线索",
+    "商机",
+    "合同",
+    "回款"
+   ],
+   "menus": [
+    {
+     "id": "474",
+     "name": "客户管理",
+     "module": "CRM 系统",
+     "modulePath": "crm",
+     "parentMenu": null,
+     "path": "customer",
+     "component": "crm/customer/index",
+     "perms": "crm:customer:query",
+     "permPrefix": "crm:customer",
+     "aliases": [
+      "客户",
+      "crm 客户",
+      "客户档案",
+      "客户资料",
+      "客户跟进"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/crm/customer/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/crm/customer",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/crm/customer/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/system/area/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/system/user/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/customer/CrmCustomerController.java",
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/service/customer/CrmCustomerServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/customer/CrmCustomerMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/customer/CrmCustomerDO.java"
+     ],
+     "seeds": {
+      "slug": "customer",
+      "cn": "客户管理",
+      "controllers": [
+       "CrmCustomerController"
+      ]
+     }
+    },
+    {
+     "id": "487",
+     "name": "线索管理",
+     "module": "CRM 系统",
+     "modulePath": "crm",
+     "parentMenu": null,
+     "path": "clue",
+     "component": "crm/clue/index",
+     "perms": "crm:clue:query",
+     "permPrefix": "crm:clue",
+     "aliases": [
+      "线索",
+      "销售线索",
+      "leads",
+      "潜在客户",
+      "线索转化"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/crm/clue/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/crm/clue",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/crm/clue/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/system/area/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/system/user/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/clue/CrmClueController.java",
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/service/clue/CrmClueServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/clue/CrmClueMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/clue/CrmClueDO.java"
+     ],
+     "seeds": {
+      "slug": "clue",
+      "cn": "线索管理",
+      "controllers": [
+       "CrmClueController"
+      ]
+     }
+    },
+    {
+     "id": "493",
+     "name": "商机管理",
+     "module": "CRM 系统",
+     "modulePath": "crm",
+     "parentMenu": null,
+     "path": "business",
+     "component": "crm/business/index",
+     "perms": "crm:business:query",
+     "permPrefix": "crm:business",
+     "aliases": [
+      "商机",
+      "销售机会",
+      "商业机会",
+      "商机推进"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/crm/business/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/crm/business",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/crm/business/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/crm/business/status/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/crm/customer/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/business/CrmBusinessController.java",
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/service/business/CrmBusinessServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/business/CrmBusinessMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/business/CrmBusinessDO.java"
+     ],
+     "seeds": {
+      "slug": "business",
+      "cn": "商机管理",
+      "controllers": [
+       "CrmBusinessController"
+      ]
+     }
+    },
+    {
+     "id": "481",
+     "name": "合同管理",
+     "module": "CRM 系统",
+     "modulePath": "crm",
+     "parentMenu": null,
+     "path": "contract",
+     "component": "crm/contract/index",
+     "perms": "crm:contract:query",
+     "permPrefix": "crm:contract",
+     "aliases": [
+      "合同",
+      "签约",
+      "销售合同",
+      "合同审批"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/crm/contract/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/crm/contract",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/crm/contract/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/crm/permission/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/crm/product/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/controller/admin/contract/CrmContractController.java",
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/service/contract/CrmContractServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/dal/mysql/contract/CrmContractMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-crm/src/main/java/cn/iocoder/yudao/module/crm/dal/dataobject/contract/CrmContractDO.java"
+     ],
+     "seeds": {
+      "slug": "contract",
+      "cn": "合同管理",
+      "controllers": [
+       "CrmContractController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "597",
+   "name": "ERP 系统",
+   "path": "erp",
+   "aliases": [
+    "erp",
+    "进销存",
+    "采购",
+    "销售",
+    "库存",
+    "财务"
+   ],
+   "menus": [
+    {
+     "id": "700",
+     "name": "采购订单",
+     "module": "ERP 系统",
+     "modulePath": "erp",
+     "parentMenu": "采购管理",
+     "path": "order",
+     "component": "erp/purchase/order/index",
+     "perms": "erp:purchase-order:query",
+     "permPrefix": "erp:purchase-order",
+     "aliases": [
+      "采购",
+      "采购单",
+      "进货单",
+      "采购下单"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/erp/purchase/order/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/erp/purchase/order",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/erp/purchase/order/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/erp/product/product/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/erp/stock/stock/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/purchase/ErpPurchaseOrderController.java",
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/service/purchase/ErpPurchaseOrderServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/dal/mysql/purchase/ErpPurchaseOrderMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/purchase/ErpPurchaseOrderDO.java"
+     ],
+     "seeds": {
+      "slug": "order",
+      "cn": "采购订单",
+      "controllers": [
+       "ErpPurchaseOrderController"
+      ]
+     }
+    },
+    {
+     "id": "672",
+     "name": "销售订单",
+     "module": "ERP 系统",
+     "modulePath": "erp",
+     "parentMenu": "销售管理",
+     "path": "order",
+     "component": "erp/sale/order/index",
+     "perms": "erp:sale-order:query",
+     "permPrefix": "erp:sale-order",
+     "aliases": [
+      "销售订单",
+      "销售单",
+      "erp 销售",
+      "出货单"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/erp/sale/order/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/erp/sale/order",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/erp/product/product/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/erp/stock/stock/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/erp/sale/order/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/sale/ErpSaleOrderController.java",
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/service/sale/ErpSaleOrderServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/dal/mysql/sale/ErpSaleOrderMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/sale/ErpSaleOrderDO.java"
+     ],
+     "seeds": {
+      "slug": "order",
+      "cn": "销售订单",
+      "controllers": [
+       "ErpSaleOrderController"
+      ]
+     }
+    },
+    {
+     "id": "624",
+     "name": "产品库存",
+     "module": "ERP 系统",
+     "modulePath": "erp",
+     "parentMenu": "库存管理",
+     "path": "stock",
+     "component": "erp/stock/stock/index",
+     "perms": "erp:stock:query",
+     "permPrefix": "erp:stock",
+     "aliases": [
+      "库存",
+      "产品库存",
+      "stock",
+      "存货数量",
+      "库存查询"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/erp/stock/stock/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/erp/stock/stock",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/erp/stock/stock/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/erp/product/product/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/erp/stock/warehouse/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/stock/ErpStockController.java",
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/service/stock/ErpStockServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/dal/mysql/stock/ErpStockMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/stock/ErpStockDO.java"
+     ],
+     "seeds": {
+      "slug": "stock",
+      "cn": "产品库存",
+      "controllers": [
+       "ErpStockController"
+      ]
+     }
+    },
+    {
+     "id": "680",
+     "name": "结算账户",
+     "module": "ERP 系统",
+     "modulePath": "erp",
+     "parentMenu": "财务管理",
+     "path": "account",
+     "component": "erp/finance/account/index",
+     "perms": "erp:account:query",
+     "permPrefix": "erp:account",
+     "aliases": [
+      "结算账户",
+      "银行账户",
+      "收款账户",
+      "往来账户",
+      "erp 账户"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/erp/finance/account/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/erp/finance/account",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/erp/finance/account/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/controller/admin/finance/ErpAccountController.java",
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/service/finance/ErpAccountServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/dal/mysql/finance/ErpAccountMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-erp/src/main/java/cn/iocoder/yudao/module/erp/dal/dataobject/finance/ErpAccountDO.java"
+     ],
+     "seeds": {
+      "slug": "account",
+      "cn": "结算账户",
+      "controllers": [
+       "ErpAccountController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "791",
+   "name": "AI 大模型",
+   "path": "ai",
+   "aliases": [
+    "ai",
+    "大模型",
+    "人工智能",
+    "chatgpt",
+    "rag",
+    "知识库"
+   ],
+   "menus": [
+    {
+     "id": "792",
+     "name": "AI 对话",
+     "module": "AI 大模型",
+     "modulePath": "ai",
+     "parentMenu": null,
+     "path": "chat",
+     "component": "ai/chat/index/index",
+     "perms": "",
+     "permPrefix": "",
+     "aliases": [
+      "ai 对话",
+      "聊天",
+      "大模型对话",
+      "ai 聊天",
+      "对话机器人",
+      "chat"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/ai/chat/index/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/ai/chat/index",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/ai/chat/conversation/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/ai/model/model/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/ai/chat/message/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/chat/AiChatConversationController.java",
+      "repos/ruoyi-vue-pro/yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/chat/AiChatMessageController.java",
+      "repos/ruoyi-vue-pro/yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/service/chat/AiChatConversationServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/dal/mysql/chat/AiChatConversationMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/chat/AiChatConversationDO.java",
+      "repos/ruoyi-vue-pro/yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/service/chat/AiChatMessageServiceImpl.java"
+     ],
+     "seeds": {
+      "slug": "chat",
+      "cn": "AI 对话",
+      "controllers": [
+       "AiChatConversationController",
+       "AiChatMessageController"
+      ]
+     }
+    },
+    {
+     "id": "850",
+     "name": "AI 知识库",
+     "module": "AI 大模型",
+     "modulePath": "ai",
+     "parentMenu": null,
+     "path": "knowledge",
+     "component": "ai/knowledge/knowledge/index",
+     "perms": "ai:knowledge:query",
+     "permPrefix": "ai:knowledge",
+     "aliases": [
+      "知识库",
+      "rag",
+      "向量检索",
+      "文档问答",
+      "知识问答"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/ai/knowledge/knowledge/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/ai/knowledge/knowledge",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/ai/knowledge/knowledge/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/ai/model/model/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/ai/knowledge/segment/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/knowledge/AiKnowledgeController.java",
+      "repos/ruoyi-vue-pro/yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/service/knowledge/AiKnowledgeServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/dal/mysql/knowledge/AiKnowledgeMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/knowledge/AiKnowledgeDO.java"
+     ],
+     "seeds": {
+      "slug": "knowledge",
+      "cn": "AI 知识库",
+      "controllers": [
+       "AiKnowledgeController"
+      ]
+     }
+    },
+    {
+     "id": "800",
+     "name": "模型配置",
+     "module": "AI 大模型",
+     "modulePath": "ai",
+     "parentMenu": "控制台",
+     "path": "model",
+     "component": "ai/model/model/index",
+     "perms": "ai:model:query",
+     "permPrefix": "ai:model",
+     "aliases": [
+      "模型",
+      "大模型配置",
+      "模型管理",
+      "llm 模型",
+      "模型接入"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/ai/model/model/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/ai/model/model",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/ai/model/model/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/ai/model/apiKey/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/controller/admin/model/AiModelController.java",
+      "repos/ruoyi-vue-pro/yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/service/model/AiModelServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/dal/dataobject/model/AiModelDO.java",
+      "repos/ruoyi-vue-pro/yudao-module-ai/src/main/java/cn/iocoder/yudao/module/ai/service/model/AiModelService.java"
+     ],
+     "seeds": {
+      "slug": "model",
+      "cn": "模型配置",
+      "controllers": [
+       "AiModelController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "272",
+   "name": "MP 公众号管理",
+   "path": "mp",
+   "aliases": [
+    "公众号",
+    "微信",
+    "weixin",
+    "mp",
+    "粉丝"
+   ],
+   "menus": [
+    {
+     "id": "287",
+     "name": "粉丝管理",
+     "module": "MP 公众号管理",
+     "modulePath": "mp",
+     "parentMenu": null,
+     "path": "user",
+     "component": "mp/user/index",
+     "perms": "mp:user:query",
+     "permPrefix": "mp:user",
+     "aliases": [
+      "粉丝",
+      "公众号粉丝",
+      "微信用户",
+      "关注者"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/mp/user/index.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/mp/user",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/mp/user/index.ts",
+       "repos/yudao-ui-admin-vue3/src/api/mp/tag/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-module-mp/src/main/java/cn/iocoder/yudao/module/mp/controller/admin/user/MpUserController.java",
+      "repos/ruoyi-vue-pro/yudao-module-mp/src/main/java/cn/iocoder/yudao/module/mp/service/user/MpUserServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-mp/src/main/java/cn/iocoder/yudao/module/mp/dal/mysql/user/MpUserMapper.java",
+      "repos/ruoyi-vue-pro/yudao-module-mp/src/main/java/cn/iocoder/yudao/module/mp/dal/dataobject/user/MpUserDO.java"
+     ],
+     "seeds": {
+      "slug": "user",
+      "cn": "粉丝管理",
+      "controllers": [
+       "MpUserController"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "900",
+   "name": "平台机制",
+   "path": "framework",
+   "aliases": [
+    "登录",
+    "token",
+    "权限",
+    "租户",
+    "异常",
+    "框架",
+    "机制",
+    "底层",
+    "拦截"
+   ],
+   "menus": [
+    {
+     "id": "901",
+     "name": "登录认证",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "登录认证",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "登录",
+      "登陆",
+      "认证",
+      "sign in",
+      "账号密码登录",
+      "验证码",
+      "oauth2 登录"
+     ],
+     "fe": {
+      "view": "repos/yudao-ui-admin-vue3/src/views/Login/Login.vue",
+      "dir": "repos/yudao-ui-admin-vue3/src/views/Login",
+      "api": [
+       "repos/yudao-ui-admin-vue3/src/api/Login/index.ts"
+      ]
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-security/src/main/java/cn/iocoder/yudao/framework/security/core/filter/TokenAuthenticationFilter.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/auth/AuthController.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/service/auth/AdminAuthServiceImpl.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "登录认证",
+      "controllers": [
+       "AuthController"
+      ]
+     }
+    },
+    {
+     "id": "902",
+     "name": "Token 认证",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "Token 认证",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "token",
+      "jwt",
+      "令牌",
+      "无感刷新",
+      "accessToken",
+      "会话保持",
+      "token 过期"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-security/src/main/java/cn/iocoder/yudao/framework/security/core/filter/TokenAuthenticationFilter.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/service/oauth2/OAuth2TokenServiceImpl.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/oauth2/OAuth2TokenController.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "Token 认证",
+      "controllers": []
+     }
+    },
+    {
+     "id": "903",
+     "name": "数据权限",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "数据权限",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "数据权限",
+      "行级权限",
+      "data permission",
+      "按部门过滤数据",
+      "只能看自己的数据"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/rule/DataPermissionRuleFactoryImpl.java",
+      "repos/ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/db/DataPermissionRuleHandler.java",
+      "repos/ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/aop/DataPermissionAnnotationInterceptor.java",
+      "repos/ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/rule/DataPermissionRule.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "数据权限",
+      "controllers": []
+     }
+    },
+    {
+     "id": "904",
+     "name": "多租户",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "多租户",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "多租户",
+      "租户隔离",
+      "tenant",
+      "SaaS 多租户",
+      "tenant_id",
+      "租户插件"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/context/TenantContextHolder.java",
+      "repos/ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/db/TenantDatabaseInterceptor.java",
+      "repos/ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/aop/TenantIgnoreAspect.java",
+      "repos/ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-tenant/src/main/java/cn/iocoder/yudao/framework/tenant/core/db/TenantBaseDO.java",
+      "repos/ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/service/tenant/TenantServiceImpl.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "多租户",
+      "controllers": []
+     }
+    },
+    {
+     "id": "905",
+     "name": "全局异常处理",
+     "module": "平台机制",
+     "modulePath": "framework",
+     "parentMenu": null,
+     "path": "全局异常处理",
+     "component": "",
+     "perms": "",
+     "permPrefix": "",
+     "virtual": true,
+     "aliases": [
+      "全局异常",
+      "异常处理",
+      "exception handler",
+      "统一错误返回",
+      "错误码"
+     ],
+     "fe": {
+      "view": null,
+      "dir": null,
+      "api": []
+     },
+     "beFiles": [
+      "repos/ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/web/core/handler/GlobalExceptionHandler.java",
+      "repos/ruoyi-vue-pro/yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/exception/ServiceException.java",
+      "repos/ruoyi-vue-pro/yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/exception/ErrorCode.java"
+     ],
+     "seeds": {
+      "slug": "",
+      "cn": "全局异常处理",
+      "controllers": []
+     }
+    }
+   ]
+  }
+ ]
+}

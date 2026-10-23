@@ -1,0 +1,9 @@
+.zvec-grep/
+node_modules/
+target/
+dist/
+*.log
+logs/
+smoke.json
+e2e_*.json
+__pycache__/
