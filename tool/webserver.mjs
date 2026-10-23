@@ -7,9 +7,10 @@ const args = process.argv.slice(2);
 const port = +(args.includes("--port") ? args[args.indexOf("--port") + 1] : 8642);
 const confPath = path.resolve(args.includes("--conf") ? args[args.indexOf("--conf") + 1] : path.join(import.meta.dir, "web", "projects.json"));
 const CONF = JSON.parse(fs.readFileSync(confPath, "utf8"));
+const REPO_ROOT = path.resolve(path.dirname(confPath), "..", "..");  // conf 在 tool/web/ 下, 仓库根为上两级
 const PROJECTS = {};
 for (const [id, p] of Object.entries(CONF.projects || {})) {
-  const dir = path.resolve(p.dir);
+  const dir = path.isAbsolute(p.dir) ? path.resolve(p.dir) : path.join(REPO_ROOT, p.dir);
   if (fs.existsSync(path.join(dir, "index", "code_index.json"))) {
     try {
       const idx = loadIndex(dir);

@@ -16,3 +16,9 @@
 [submodule "projects/litemall/repos/litemall"]
 	path = projects/litemall/repos/litemall
 	url = https://gitee.com/linlinjava/litemall.git
+[submodule "projects/yudao/repos/ruoyi-vue-pro"]
+	path = projects/yudao/repos/ruoyi-vue-pro
+	url = https://gitee.com/zhijiantianya/ruoyi-vue-pro.git
+[submodule "projects/yudao/repos/yudao-ui-admin-vue3"]
+	path = projects/yudao/repos/yudao-ui-admin-vue3
+	url = https://gitee.com/yudaocode/yudao-ui-admin-vue3.git
