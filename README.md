@@ -102,13 +102,21 @@ bun tool/webserver.mjs --port 8642     # 首次请求时加载模型 ~15s
 3. 仓库根建 zg 索引(步骤 2);
 4. 写 50 条查询 + 真值(参考 eval/ 现有格式),`--batch` 跑评测看指标。
 
-## 评测基线(RuoYi,50 查询,RTX 5080)
+## 评测基线(RuoYi,50 查询 + 12 条改写型探针,RTX 5080)
+
+v3 管道(IE 恢复 + 全菜单 en 种子 + 三路融合,embedding = zg 内置 potion-code-16m-v2):
 
 | 指标 | 值 |
 |---|---|
 | 菜单定位 Menu@1 | **100%** |
-| 代码文件 Hit@5 | **100%** |
-| MRR | 0.79 |
-| 端到端耗时 | avg 2.85s / p90 3.7s(提取 11% · 决策 4% · 精筛 85%) |
+| 文件 Hit@5 | **100%** |
+| **代码段 Hit@5**(150 个符号级真值段) | **96%** |
+| 段 MRR | 0.784 |
+| MRR | 0.863 |
+| 端到端耗时 | avg 1.37s(zg server 常驻;决策 ~110ms · 精筛占大头) |
 
-五个项目的完整对比见 REPORT.md §9。
+评测工具:`tool/score_generic.mjs`(文件级)、`tool/score_segs.mjs`(段级);
+改写型探针集:projects/ruoyi/eval/probe_cn.jsonl。段级真值:150 个符号段(eval/ground_truth.jsonl 的 expectSegs)。
+
+其他四个项目(mall/jeecg/litemall/yudao)的对比数据见 REPORT.md §9(那些为 v1 管道实测;
+其索引尚未做 en 种子与段级真值升级,属索引维护活,方法同 RuoYi)。

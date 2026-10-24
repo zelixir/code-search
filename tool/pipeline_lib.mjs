@@ -173,6 +173,7 @@ export async function search(query, opts) {
     const root = rootOf(PROJ, beFiles[0]);
     const g = beFiles.flatMap(f => ["-g", stripFor(f)]);
     beHits = parseZg(zg(root, qArgs.concat(g))).map(h => Object.assign(h, { repo: "BE", root }));
+    if (!beHits.length) beHits = parseZg(zg(root, qArgs.concat(g))).map(h => Object.assign(h, { repo: "BE", root }));  // daemon 模型逐出后首查可能为空, 重试一次
   }
   if (scopeFe.length) {
     const root = rootOf(PROJ, scopeFe[0]);
@@ -206,6 +207,13 @@ export async function search(query, opts) {
   res.proj = PROJ;
   res.ms = Date.now() - t0;
   return res;
+}
+
+// 保温: 定期跑一次极小查询, 防止 daemon 空闲逐出 embedding 模型(逐出后首查返回空)
+export function warmUp(proj) {
+  const roots = indexRoots(path.resolve(proj));
+  if (!roots.length) return;
+  zg(roots[0], ["query", "--hybrid", "config", "--limit", "1"], 30000);
 }
 
 // 串行队列: jev/ie 协议按 FIFO 配对, 并发请求必须排队

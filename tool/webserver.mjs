@@ -1,7 +1,7 @@
 // web 服务: bun tool/webserver.mjs [--port 8642] [--conf tool/web/projects.json]
 import fs from "node:fs";
 import path from "node:path";
-import { initServers, shutdownServers, searchQueued, loadIndex } from "./pipeline_lib.mjs";
+import { initServers, shutdownServers, searchQueued, loadIndex, warmUp } from "./pipeline_lib.mjs";
 
 const args = process.argv.slice(2);
 const port = +(args.includes("--port") ? args[args.indexOf("--port") + 1] : 8642);
@@ -27,6 +27,9 @@ async function ensureServers() {
   if (!serversReady) {
     console.log("[web] 启动 ie/jev 服务器(首次 ~15s)...");
     await initServers(m => console.log(m), { ie: true });
+    for (const p of Object.values(PROJECTS)) warmUp(p.dir);
+    setInterval(() => { for (const p of Object.values(PROJECTS)) { try { warmUp(p.dir); } catch (e) {} } }, 8 * 60 * 1000);
+    console.log("[web] 模型保温已开启(每8分钟)");
     serversReady = true;
   }
 }
