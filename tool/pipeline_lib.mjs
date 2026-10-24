@@ -128,14 +128,18 @@ export async function search(query, opts) {
     if (rA.error) throw new Error("菜单判定失败: " + rA.error);
     const signed = rA.results.map(x => ({ name: x.id, m: x.choice === 0 ? x.margin : -x.margin, yesMargin: x.choice === 0 ? x.margin : -x.margin })).sort((a, b) => b.m - a.m);
     res.steps.menuRank = signed.slice(0, 8).map(x => ({ name: x.name, margin: x.m }));
+    // 条件并集: Top1 领先不足(<1)或置信不高(<8)时, 取 Top2 两个菜单的作用域并集
+    const chosenMenus = (signed[1] && (signed[0].m - signed[1].m < 1 || signed[0].m < 8))
+      ? [byName[signed[0].name], byName[signed[1].name]] : [byName[signed[0].name]];
     const menu = byName[signed[0].name];
-    tried.push(menu.name);
-    res.steps.jevMenu = { choice: menu.name, margin: signed[0].m, ms: rA.ms, candidates: signed.slice(0, 4).map(x => x.name), round };
+    tried.push(...chosenMenus.map(x => x.name));
+    res.steps.jevMenu = { choice: menu.name, margin: signed[0].m, ms: rA.ms, candidates: signed.slice(0, 4).map(x => x.name), union: chosenMenus.map(x => x.name), round };
     // ⑥ zg 作用域三路融合
     const strip = f => f.replace(/^repos\/[^/]+\//, "");
-    const fe = menu.fe || {};
+    const fes = chosenMenus.map(x => x.fe || {});
+    const fe = { view: fes.map(x => x.view).find(Boolean), api: fes.flatMap(x => x.api || []), dir: fes.map(x => x.dir).find(Boolean) };
     const scopeFe = [].concat(fe.view ? [fe.view] : [], fe.api || [], fe.dir ? [fe.dir + "/**"] : []);
-    const beFiles = menu.beFiles || [];
+    const beFiles = [].concat(...chosenMenus.map(x => x.beFiles || []));
     const kwFts = menu.en || (query.match(/[a-zA-Z][a-zA-Z0-9_]{2,}/g) || [])[0] || "";
     const qArgs = ["query", "--hybrid", query, "--limit", "6"];
     if (kwFts) qArgs.push("--vector", kwFts, "--fts", kwFts, "--fuse");
