@@ -111,7 +111,13 @@ async function search(query, opts) {
   const t0 = Date.now();
   const res = { query, steps: {} };
   // 1) 信息提取
-  const kws = [];  // IE 已移除(消融 A 零损失), 如需开启用 --ie
+  let kws = [];
+  if (ieServer) {
+    const ie = await ieServer.ask({ id: "1", query });
+    kws = (ie.keywords || []).slice();
+    for (const v of Object.values(ie.fields || {})) kws.push(...v);
+    res.steps.extract = { keywords: kws.slice(), ms: ie.ms };
+  }
   // 2) 模块短名单
   const mods = INDEX.modules.map(m => ({ mod: m, s: scoreModule(query, kws, m) })).sort((a, b) => b.s - a.s);
   const modCands = mods.slice(0, 3);
@@ -193,7 +199,7 @@ async function search(query, opts) {
 
 const argv = _argv.filter((a, i) => !(_pi >= 0 && i === _pi + 1));
 const batchIdx = argv.indexOf("--batch");
-if (argv.includes("--ie")) ieServer = startServer("D:\\ai\\code-search\\.venv-ie\\Scripts\\python.exe", [path.join(ROOT, "tool", "ie_server.py")]);
+if (!argv.includes("--no-ie")) ieServer = startServer("D:\\ai\\code-search\\.venv-ie\\Scripts\\python.exe", [path.join(ROOT, "tool", "ie_server.py")]);
 jevServer = startServer("D:\\ai\\anime-text-filter\\.venv\\Scripts\\python.exe", [path.join(ROOT, "tool", "jev_server.py")]);
 process.on("exit", () => { try { ieServer.kill(); jevServer.kill(); } catch (e) {} });
 try {

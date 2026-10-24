@@ -1,0 +1,12 @@
+{"id":"p01","q":"密码连续输错几次后锁定账号的逻辑在哪","file":"ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/SysPasswordService.java","symbol":"validate"}
+{"id":"p02","q":"防止表单重复提交是怎么实现的","file":"ruoyi-framework/src/main/java/com/ruoyi/framework/interceptor/impl/SameUrlDataInterceptor.java","symbol":"SameUrlDataInterceptor"}
+{"id":"p03","q":"列表数据怎么导出成 Excel 文件","file":"ruoyi-common/src/main/java/com/ruoyi/common/utils/poi/ExcelUtil.java","symbol":"ExcelUtil"}
+{"id":"p04","q":"token 过期后怎么自动刷新","file":"ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/TokenService.java","symbol":"refreshToken"}
+{"id":"p05","q":"只能看本部门和下级部门的数据,这个过滤在哪做","file":"ruoyi-framework/src/main/java/com/ruoyi/framework/aspectj/DataScopeAspect.java","symbol":"DataScopeAspect"}
+{"id":"p06","q":"定时任务的调度触发在哪里实现","file":"ruoyi-quartz/src/main/java/com/ruoyi/quartz/util/AbstractQuartzJob.java","symbol":"AbstractQuartzJob"}
+{"id":"p07","q":"操作日志是怎么自动记录下来的","file":"ruoyi-framework/src/main/java/com/ruoyi/framework/aspectj/LogAspect.java","symbol":"LogAspect"}
+{"id":"p08","q":"接口访问频率超限会被限制吗,在哪实现","file":"ruoyi-framework/src/main/java/com/ruoyi/framework/aspectj/RateLimiterAspect.java","symbol":"RateLimiterAspect"}
+{"id":"p09","q":"全局的异常都到哪里去了","file":"ruoyi-framework/src/main/java/com/ruoyi/framework/web/exception/GlobalExceptionHandler.java","symbol":"GlobalExceptionHandler"}
+{"id":"p10","q":"验证码图片是怎么生成和校验的","file":"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysLoginController.java","symbol":"getCode"}
+{"id":"p11","q":"文件上传存储到哪里,在哪处理","file":"ruoyi-admin/src/main/java/com/ruoyi/web/controller/common/CommonController.java","symbol":"CommonController"}
+{"id":"p12","q":"参数在数据库里配置,启动后会加载到哪里","file":"ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysConfigServiceImpl.java","symbol":"SysConfigServiceImpl"}

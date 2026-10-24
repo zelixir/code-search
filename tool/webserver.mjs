@@ -25,8 +25,8 @@ console.log("[web] 项目:", Object.keys(PROJECTS).join(", "));
 let serversReady = false;
 async function ensureServers() {
   if (!serversReady) {
-    console.log("[web] 启动 jev 服务器(首次 ~6s)...");
-    await initServers(m => console.log(m), { ie: false });
+    console.log("[web] 启动 ie/jev 服务器(首次 ~15s)...");
+    await initServers(m => console.log(m), { ie: true });
     serversReady = true;
   }
 }

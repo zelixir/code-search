@@ -212,6 +212,10 @@ venv A 若本机没有现成的,可用 uv 重建:`uv venv --python 3.11 .venv-je
 
 (网传"单次上限 255"未见一手来源;上游开源实现的读出就是 A-Z 字母方案。255 或指其商业 API 的 choice/score 双原语设计——score 并行粗筛 + choice 精选,思路与我们实测结论一致:大 N 先粗筛再精选,而非单轮硬扛。)
 
+### 12.2.1a IE 移除结论修正(12 条改写型探针)
+
+50 条基准的消融 A(去 IE 零损失)结论**只对别名友好型查询成立**。另建 12 条改写型中文机制探针(projects/ruoyi/eval/probe_cn.jsonl,如"只能看本部门和下级部门的数据"→数据权限、"接口访问频率超限会被限制吗"→限流),去 IE 时文件 Top3 仅 5/12(改写查询提不出与别名重叠的字面词,jev 被字面带偏);恢复 IE 后段级 Top5 10/12。结论:**改写型查询需要 jieba 关键词做泛化匹配,IE 保留**。同批修复:定时任务/操作日志作用域补 AbstractQuartzJob、LogAspect 等漏文件;全部菜单补 en 英文种子词(见 12.2.2)。
+
 ### 12.2.2 英文种子词(真实缺陷修复)
 
 中文"机制类"查询(如"密码连续输错锁定账号")打不到纯英文标识符代码(password/retryCount/lock):作用域内 FTS/向量都匹配不上,连全库检索也排不进前 8。修复:①平台机制伪菜单在索引里维护 **en 英文种子词**(如登录认证 = "password retry lock login captcha register");②检索时三路融合 `--hybrid <中文原查> --vector <en 种子> --fts <en 种子> --fuse`。实测同查询下 SysPasswordService.validate() 从"完全不可见"升至 BE 第 4 位,调用方 SysLoginService 排第 1。索引维护时为每个机制伪菜单配 en 种子词是必要的。

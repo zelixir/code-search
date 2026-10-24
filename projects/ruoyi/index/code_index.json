@@ -43,7 +43,8 @@
       "重置密码",
       "导入用户",
       "用户导入"
-     ]
+     ],
+     "en": "user password reset import export assign role"
     },
     {
      "id": "101",
@@ -79,7 +80,8 @@
       "角色",
       "数据范围",
       "角色授权"
-     ]
+     ],
+     "en": "role perm数据 dataScope assign"
     },
     {
      "id": "102",
@@ -114,7 +116,8 @@
       "菜单",
       "导航",
       "路由配置"
-     ]
+     ],
+     "en": "menu router perms"
     },
     {
      "id": "103",
@@ -150,7 +153,8 @@
       "组织",
       "机构",
       "组织架构"
-     ]
+     ],
+     "en": "dept tree department"
     },
     {
      "id": "104",
@@ -184,7 +188,8 @@
      "aliases": [
       "岗位",
       "职位"
-     ]
+     ],
+     "en": "post"
     },
     {
      "id": "105",
@@ -228,7 +233,8 @@
       "下拉框",
       "状态文字",
       "取值"
-     ]
+     ],
+     "en": "dict type data dropdown"
     },
     {
      "id": "106",
@@ -264,7 +270,8 @@
       "配置",
       "系统参数",
       "开关"
-     ]
+     ],
+     "en": "config key value redis cache refresh"
     },
     {
      "id": "107",
@@ -301,7 +308,8 @@
       "公告",
       "消息",
       "广播"
-     ]
+     ],
+     "en": "notice"
     },
     {
      "id": "500",
@@ -321,7 +329,10 @@
       ]
      },
      "beFiles": [
-      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/SysOperlogController.java"
+      "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/SysOperlogController.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/aspectj/LogAspect.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/manager/AsyncManager.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/manager/factory/AsyncFactory.java"
      ],
      "seeds": {
       "slug": "operlog",
@@ -334,7 +345,8 @@
       "操作日志",
       "审计",
       "操作记录"
-     ]
+     ],
+     "en": "operlog log aspect audit business"
     },
     {
      "id": "501",
@@ -369,7 +381,8 @@
       "登录日志",
       "登录记录",
       "登录历史"
-     ]
+     ],
+     "en": "logininfor login record"
     }
    ],
    "aliases": [
@@ -425,7 +438,8 @@
       "强退",
       "踢下线",
       "强制退出"
-     ]
+     ],
+     "en": "online session forceLogout"
     },
     {
      "id": "110",
@@ -450,7 +464,9 @@
       "repos/RuoYi-Vue/ruoyi-quartz/src/main/java/com/ruoyi/quartz/domain/SysJob.java",
       "repos/RuoYi-Vue/ruoyi-quartz/src/main/java/com/ruoyi/quartz/domain/SysJobLog.java",
       "repos/RuoYi-Vue/ruoyi-quartz/src/main/java/com/ruoyi/quartz/service/ISysJobLogService.java",
-      "repos/RuoYi-Vue/ruoyi-quartz/src/main/java/com/ruoyi/quartz/service/ISysJobService.java"
+      "repos/RuoYi-Vue/ruoyi-quartz/src/main/java/com/ruoyi/quartz/service/ISysJobService.java",
+      "repos/RuoYi-Vue/ruoyi-quartz/src/main/java/com/ruoyi/quartz/util/AbstractQuartzJob.java",
+      "repos/RuoYi-Vue/ruoyi-quartz/src/main/java/com/ruoyi/quartz/util/JobInvokeUtil.java"
      ],
      "seeds": {
       "slug": "job",
@@ -467,7 +483,8 @@
       "job",
       "cron",
       "计划任务"
-     ]
+     ],
+     "en": "quartz job trigger invoke schedule abstract"
     },
     {
      "id": "111",
@@ -531,7 +548,8 @@
       "jvm",
       "磁盘",
       "系统信息"
-     ]
+     ],
+     "en": "server cpu mem jvm"
     },
     {
      "id": "113",
@@ -566,7 +584,8 @@
       "缓存",
       "redis",
       "缓存信息"
-     ]
+     ],
+     "en": "cache redis info"
     },
     {
      "id": "114",
@@ -599,7 +618,8 @@
       "缓存键",
       "键值",
       "缓存名称"
-     ]
+     ],
+     "en": "cache keys names"
     }
    ],
    "aliases": [
@@ -683,7 +703,8 @@
       "脚手架",
       "crud",
       "generator"
-     ]
+     ],
+     "en": "gen table column template velocity"
     },
     {
      "id": "117",

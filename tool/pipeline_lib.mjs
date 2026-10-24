@@ -129,7 +129,13 @@ export async function search(query, opts) {
   const INDEX = loadIndex(PROJ);
   const t0 = Date.now();
   const res = { query, steps: {} };
-  const kws = [];  // IE 已按消融结论移除(零精度损失), 打分使用查询原文×别名子串匹配
+  let kws = [];
+  if (ieServer) {
+    const ie = await ieServer.ask({ id: "1", query });
+    kws = (ie.keywords || []).slice();
+    for (const v of Object.values(ie.fields || {})) kws.push(...v);
+    res.steps.extract = { keywords: kws.slice(), ms: ie.ms };
+  }
   const mods = INDEX.modules.map(m => ({ mod: m, s: scoreModule(query, kws, m) })).sort((a, b) => b.s - a.s);
   const modCands = mods.slice(0, 3);
   res.steps.moduleScores = mods.map(x => ({ name: x.mod.name, s: +x.s.toFixed(1) }));
