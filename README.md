@@ -11,7 +11,7 @@
 中文 NL 查询
   │
   ├─① 菜单批量判断: 全部菜单各一道"yes/no"判断题, 一个 batch 一次前向   ~0.6s
-  │     → 按带符号 margin 排序, 取 Top1 菜单(其余为负分拒绝)
+  │     → 按带符号 margin 排序取 Top1; Top1 领先不足(差<1)或置信<8 时取 Top2 两菜单并集
   ├─② zg 作用域三路融合精筛(该菜单映射的前后端文件, ~10 个)             ~0.3~1s
   │     --hybrid <中文原查> --vector/--fts <菜单en种子词> --fuse
   ├─③ 文件批量判断: 作用域内每个文件(文件名+前60行摘录)各一道判断题, 一个 batch ~0.5s
@@ -103,7 +103,7 @@ tool/                       工具本体
   pipeline_lib.mjs          管道核心库(web 与 CLI 共用)
   webserver.mjs             Web 服务(API + 静态页)
   jev_server.py             Jev 决策服务器(字母 logits 读出, JSON 行协议)
-  ie_server.py              信息提取服务器(UIE + jieba, JSON 行协议)
+  ie_server.py              (已退役)早期 UIE+jieba 提取服务器, 运行时不再使用
   score_generic.mjs         通用评测评分器
   web/index.html            WebUI(单文件, 无框架)
   web/projects.json         项目注册表(名称→PROJ 目录)
@@ -133,11 +133,11 @@ REPORT.md                   实验报告
 
 - bun(管道/web)、node(zg 运行时)、git
 - `bun add -g @zvec/zvec-grep`(zg 0.2.1+,确认 `zg --version` 可用)
-- Python 3.11 两个 venv(见 REPORT.md §4):
-  - **jev 环境**: torch(cu128)+ transformers 4.57+ peft;本地模型 `Qwen3-VL-4B-Instruct`(LoRA 可选)
-  - **关键词环境**: 只需 `pip install jieba`(纯 python, 无 paddle;UIE 已按消融移除, 见 REPORT §12.2.1a)
+- Python 3.11 一个 venv(见 REPORT.md §4):
+  - **jev 环境(唯一运行时依赖)**: torch(cu128)+ transformers 4.57+ peft;本地模型 `Qwen3-VL-4B-Instruct`(LoRA 可选)
+  - (UIE/jieba 已从运行时移除;复现早期实验才需要 paddle 钉版组合, 见 REPORT §12.2.1a)
 - GPU: 4B bf16 需 ~8GB 空闲显存
-- 路径约定:`tool/pipeline_lib.mjs` 顶部 `IE_PY/JEV_PY` 指向两个 venv 的 python 与模型路径,按需修改
+- 路径约定:`tool/pipeline_lib.mjs` 顶部 `JEV_PY` 指向 jev venv 的 python 与模型路径,按需修改
 
 ### 1. 拉取代码与目标系统(submodule)
 
@@ -184,16 +184,20 @@ bun tool/webserver.mjs --port 8642     # 首次请求时加载模型 ~15s
 
 ## 评测基线(RuoYi,50 查询 + 12 条改写型探针,RTX 5080)
 
-v3 管道(IE 恢复 + 全菜单 en 种子 + 三路融合,embedding = zg 内置 potion-code-16m-v2):
+v5.1 管道(判断题 batch 范式,无 IE/jieba/打分器,embedding = zg 内置 potion-code-16m-v2):
 
 | 指标 | 值 |
 |---|---|
-| 菜单定位 Menu@1 | **100%** |
-| 文件 Hit@5 | **100%** |
-| **代码段 Hit@5**(150 个符号级真值段) | **96%** |
-| 段 MRR | 0.784 |
-| MRR | 0.863 |
-| 端到端耗时 | avg 1.37s(zg server 常驻;决策 ~110ms · 精筛占大头) |
+| 菜单定位 Menu@1(单菜单承诺口径) | 86% |
+| 文件 Hit@5 | **98%** |
+| **代码段 Hit@5**(150 个符号级真值段) | **94%** |
+| 段 MRR | 0.752 |
+| MRR | 0.867 |
+| 端到端耗时 | avg 1.65s(菜单 batch ~0.6s + zg ~0.5s + 文件 batch ~0.5s) |
+
+(v3 两级选择题管道:Menu@1 100% / Hit@5 100% / 段 96% / MRR 0.863 / 1.37s,结果保留于 git 历史
+results_v3.jsonl。v5.1 用"条件 Top2 并集"把终态指标追平到 2pp 以内,代价是路由 Top1 口径 86% 与
++0.3s;两类精度口径的差异见 REPORT §12.2.2b。)
 
 评测工具:`tool/score_generic.mjs`(文件级)、`tool/score_segs.mjs`(段级);
 改写型探针集:projects/ruoyi/eval/probe_cn.jsonl。段级真值:150 个符号段(eval/ground_truth.jsonl 的 expectSegs)。
