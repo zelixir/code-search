@@ -25,8 +25,8 @@ console.log("[web] 项目:", Object.keys(PROJECTS).join(", "));
 let serversReady = false;
 async function ensureServers() {
   if (!serversReady) {
-    console.log("[web] 启动 ie/jev 服务器(首次 ~15s)...");
-    await initServers(m => console.log(m), { ie: true });
+    console.log("[web] 启动 jev 服务器(首次 ~6s)...");
+    await initServers(m => console.log(m));
     for (const p of Object.values(PROJECTS)) warmUp(p.dir);
     setInterval(() => { for (const p of Object.values(PROJECTS)) { try { warmUp(p.dir); } catch (e) {} } }, 8 * 60 * 1000);
     console.log("[web] 模型保温已开启(每8分钟)");

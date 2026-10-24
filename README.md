@@ -5,34 +5,50 @@
 
 实验报告与方法论:**[REPORT.md](REPORT.md)**(含 15 条踩坑经验、跨项目评测数据)。
 
-## 方案架构
+## 方案架构(v5 · 判断题范式)
 
 ```
 中文 NL 查询
   │
-  ├─① 关键词提取(jieba, 毫秒级)                ← 关键词喂给②④的打分器
-  ├─② 模块短名单打分(关键词+查询原文 × 模块/菜单别名)
-  ├─③ jev 决策#1: "属于哪个业务模块?"           ~60ms  ← 候选字母 logits 读出, 无生成
-  ├─④ 菜单短名单打分(决策≠打分Top1时自动并入Top1模块菜单)
-  ├─⑤ jev 决策#2: "在哪个功能菜单的代码里找?"   ~60ms
-  └─⑥ zg 作用域三路融合精筛                      ~0.5~2s
-        --hybrid <中文原查> --vector <菜单en种子词> --fts <en种子词> --fuse
-        作用域 = 该菜单映射的前端 view/api + 后端核心文件(共5~15个)
+  ├─① 菜单批量判断: 全部菜单各一道"yes/no"判断题, 一个 batch 一次前向   ~0.6s
+  │     → 按带符号 margin 排序, 取 Top1 菜单(其余为负分拒绝)
+  ├─② zg 作用域三路融合精筛(该菜单映射的前后端文件, ~10 个)             ~0.3~1s
+  │     --hybrid <中文原查> --vector/--fts <菜单en种子词> --fuse
+  ├─③ 文件批量判断: 作用域内每个文件(文件名+前60行摘录)各一道判断题, 一个 batch ~0.5s
+  │     → relevant 文件按 margin 排前, not relevant 沉底
+  └─④ 重试循环 ≤3 轮: 若③全部 not relevant
+        → 把"已检查菜单X未找到相关代码"写回①的判断题, 排除已试菜单, 重新一轮
   │
   ▼
-代码段(文件:行号 + 代码预览, BE×6 + FE×4, 按文件去重)
+代码段(文件:行号 + 代码预览, 按判定相关性排序)
 ```
 
-- **两级索引是骨架**:`业务模块 → 菜单 → {前端 view/api, 后端核心文件}`;另有"平台机制伪菜单"
-  (登录认证/Token/数据权限/防重复提交/Excel/限流…)承接不挂在菜单树上的基础设施查询;
-- **jev 决策是语义层**:补齐字面打分搞不定的措辞差异(见下文实例第③步);
-- **en 种子词是中英桥**:代码标识符是英文,中文机制查询(如"密码连续输错锁定")靠菜单维护的
-  英文种子词融合进 vector/fts 通道,才能打中 password/retryCount/lockTime 这类符号;
-- **jieba 关键词是泛化层**:改写型查询(如"只能看本部门和下级部门的数据")不含任何菜单别名的
-  原词,jieba 切出的"部门/数据"能与别名"部门过滤/数据范围"做**双向包含匹配**,让正确菜单进候选
-  ——实测关掉它这条查询直接路由失败(12 条改写探针: 段Top5 10/12 → 约7/12);
-- **embedding 用 zg 内置的 `local/potion-code-16m-v2`**(索引与查询同源);可选升级
-  `local/qwen3-embedding-0.6b`(多语言更强,模型下载需代理,见 REPORT §12)。
+- **一切皆判断题**:不生成文本。菜单级(33 个一次前向 ~0.6s)与文件级(~12 个 ~0.5s)都是
+  独立 yes/no 判断,margin(两选项 logit 差)天然给出置信排序;
+- **无 IE / 无 jieba / 无打分器**:路由完全由 jev 的批量判断承担,管道最小化;
+- **en 种子词仍必要**:中文机制查询 → 英文标识符代码的跨语言鸿沟由⑥的三路融合弥补;
+- **循环是兜底**:v3 时代打分门卫的职责,现在由"重选菜单 + 排除已试"的循环承担(≤3 轮);
+- **embedding 用 zg 内置的 `local/potion-code-16m-v2`**;可选 qwen3-embedding-0.6b(见 REPORT §12)。
+
+### 检索实例(真实运行数据,每步标注输入与输出)
+
+查询输入:**「密码连续输错几次账号被锁定的逻辑在哪」**(RuoYi 项目)
+
+**① 菜单批量判断(一个 batch 前向,~0.6s)**
+- 输入:33 个菜单各一道判断题,如 `一个代码检索查询为: 密码连续输错几次账号被锁定的逻辑在哪。候选菜单: 登录认证 (password retry lock login captcha register)。这个菜单的代码是否包含该查询所需的逻辑? A. yes B. no`
+- 输出(margin 降序 Top4):`登录认证(+8.5) · 用户管理(-3) · 权限校验(-4) · 全局异常处理(-4.1)`
+  → 其余 29 个菜单全为负分拒绝;**Top1 = 登录认证**
+
+**② zg 作用域三路融合精筛(~0.4s)**
+- 输入:实际命令 `zg query --hybrid "密码连续输错…" --vector "password retry lock login captcha register" --fts "password retry lock login captcha register" --fuse --limit 6 -g <登录认证作用域 6 个后端文件>`
+- 输出:`SysLoginService.java:36-176` 第 1(login 主流程,调用 validate 并捕获锁定异常)、`SecurityConfig`、`SysRegisterService` 等 BE 命中
+
+**③ 文件批量判断(一个 batch 前向,~0.5s)**
+- 输入:作用域内每个文件(文件名 + 前 60 行摘录)一道判断题,如 `Candidate file: SysLoginService.java ... Does this file contain the logic the query asks for? A. relevant B. not relevant`
+- 输出:`SysLoginService relevant(+5.4) · SysRegisterService not(-9.8) · SecurityConfig not(-6.4)…`
+  → relevant 文件排前,not relevant 沉底
+
+端到端 **~2.0s**(模型常驻;两个 batch 前向 ~1.2s + zg ~0.4s),零降级,1 轮即命中。
 
 ### 检索实例(真实运行数据,每步标注输入与输出)
 
