@@ -145,7 +145,7 @@ async function search(query, ie, jev) {
 }
 
 const gt = fs.readFileSync(path.join(PROJ, "eval", "queries.jsonl"), "utf8").split(/\r?\n/).filter(Boolean).map(l => JSON.parse(l));
-await initServers(m => console.error(m));
+await initServers(m => console.error(m), { ie: VARIANT === "A" });
 const out = fs.openSync(OUT, "w");
 let i = 0;
 for (const o of gt) {

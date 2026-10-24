@@ -111,11 +111,7 @@ async function search(query, opts) {
   const t0 = Date.now();
   const res = { query, steps: {} };
   // 1) 信息提取
-  const ie = await ieServer.ask({ id: "1", query });
-  const kws = (ie.keywords || []).slice();
-  const fields = ie.fields || {};
-  for (const v of Object.values(fields)) kws.push(...v);
-  res.steps.extract = { keywords: kws, fields, ms: ie.ms };
+  const kws = [];  // IE 已移除(消融 A 零损失), 如需开启用 --ie
   // 2) 模块短名单
   const mods = INDEX.modules.map(m => ({ mod: m, s: scoreModule(query, kws, m) })).sort((a, b) => b.s - a.s);
   const modCands = mods.slice(0, 3);
@@ -158,7 +154,7 @@ async function search(query, opts) {
   const fe = menu.menu.fe || {};
   const scopeFe = [].concat(fe.view ? [fe.view] : [], fe.api || [], fe.dir ? [fe.dir + "/**"] : []);
   const beFiles = menu.menu.beFiles || [];
-  const kwFts = kws.find(k => /^[a-zA-Z][a-zA-Z0-9_]*$/.test(k)) || "";
+  const kwFts = (query.match(/[a-zA-Z][a-zA-Z0-9_]{2,}/g) || [])[0] || "";
   const qArgs = ["query", "--hybrid", query, "--limit", "6"];
   if (kwFts) qArgs.push("--fts", kwFts, "--fuse");
   let beHits = [], feHits = [];
@@ -195,11 +191,11 @@ async function search(query, opts) {
 
 const argv = _argv.filter((a, i) => !(_pi >= 0 && i === _pi + 1));
 const batchIdx = argv.indexOf("--batch");
-ieServer = startServer("D:\\ai\\code-search\\.venv-ie\\Scripts\\python.exe", [path.join(ROOT, "tool", "ie_server.py")]);
+if (argv.includes("--ie")) ieServer = startServer("D:\\ai\\code-search\\.venv-ie\\Scripts\\python.exe", [path.join(ROOT, "tool", "ie_server.py")]);
 jevServer = startServer("D:\\ai\\anime-text-filter\\.venv\\Scripts\\python.exe", [path.join(ROOT, "tool", "jev_server.py")]);
 process.on("exit", () => { try { ieServer.kill(); jevServer.kill(); } catch (e) {} });
 try {
-  console.error("[servers] ie: " + JSON.stringify(await ieServer.ready()));
+  if (ieServer) console.error("[servers] ie: " + JSON.stringify(await ieServer.ready()));
   console.error("[servers] jev: " + JSON.stringify(await jevServer.ready()));
   if (batchIdx >= 0) {
     const inFile = argv[batchIdx + 1], outFile = argv[batchIdx + 2];

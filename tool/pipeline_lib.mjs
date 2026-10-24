@@ -39,11 +39,13 @@ function startServer(cmd, args) {
 }
 
 export let ieServer = null, jevServer = null;
-export async function initServers(log) {
+export async function initServers(log, opts) {
+  opts = opts || {};
   if (ieServer && jevServer) return;
-  ieServer = startServer(IE_PY, [IE_PY_]);
+  if (opts.ie) ieServer = startServer(IE_PY, [IE_PY_]);
   jevServer = startServer(JEV_PY, [JEV_PY_]);
-  const ri = await ieServer.ready(); const rj = await jevServer.ready();
+  let ri = null; if (ieServer) ri = await ieServer.ready();
+  const rj = await jevServer.ready();
   if (log) log("[servers] ie=" + JSON.stringify(ri) + " jev=" + JSON.stringify(rj));
 }
 export function shutdownServers() { try { ieServer && ieServer.kill(); jevServer && jevServer.kill(); } catch (e) {} ieServer = jevServer = null; }
@@ -127,11 +129,7 @@ export async function search(query, opts) {
   const INDEX = loadIndex(PROJ);
   const t0 = Date.now();
   const res = { query, steps: {} };
-  const ie = await ieServer.ask({ id: "1", query });
-  const kws = (ie.keywords || []).slice();
-  const fields = ie.fields || {};
-  for (const v of Object.values(fields)) kws.push(...v);
-  res.steps.extract = { keywords: kws, fields, ms: ie.ms };
+  const kws = [];  // IE 已按消融结论移除(零精度损失), 打分使用查询原文×别名子串匹配
   const mods = INDEX.modules.map(m => ({ mod: m, s: scoreModule(query, kws, m) })).sort((a, b) => b.s - a.s);
   const modCands = mods.slice(0, 3);
   res.steps.moduleScores = mods.map(x => ({ name: x.mod.name, s: +x.s.toFixed(1) }));
@@ -158,7 +156,7 @@ export async function search(query, opts) {
   const fe = menu.menu.fe || {};
   const scopeFe = [].concat(fe.view ? [fe.view] : [], fe.api || [], fe.dir ? [fe.dir + "/**"] : []);
   const beFiles = menu.menu.beFiles || [];
-  const kwFts = kws.find(k => /^[a-zA-Z][a-zA-Z0-9_]*$/.test(k)) || "";
+  const kwFts = (query.match(/[a-zA-Z][a-zA-Z0-9_]{2,}/g) || [])[0] || "";  // 直接取查询里的英文词
   const qArgs = ["query", "--hybrid", query, "--limit", "6"];
   if (kwFts) qArgs.push("--fts", kwFts, "--fuse");
   const stripFor = f => path.relative(rootOf(PROJ, f), path.join(PROJ, f)).replace(/\\/g, "/");
