@@ -55,7 +55,7 @@ REPORT.md                   实验报告
 - `bun add -g @zvec/zvec-grep`(zg 0.2.1+,确认 `zg --version` 可用)
 - Python 3.11 两个 venv(见 REPORT.md §4):
   - **jev 环境**: torch(cu128)+ transformers 4.57+ peft;本地模型 `Qwen3-VL-4B-Instruct`(LoRA 可选)
-  - **IE 环境**: paddlepaddle 2.6.2 + paddlenlp 2.6.1 + jieba + 钉版依赖(§7 坑 6)
+  - **关键词环境**: 只需 `pip install jieba`(纯 python, 无 paddle;UIE 已按消融移除, 见 REPORT §12.2.1a)
 - GPU: 4B bf16 需 ~8GB 空闲显存
 - 路径约定:`tool/pipeline_lib.mjs` 顶部 `IE_PY/JEV_PY` 指向两个 venv 的 python 与模型路径,按需修改
 

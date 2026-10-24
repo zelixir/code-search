@@ -54,7 +54,7 @@ Jev 是 2026 年流行的**"秒级决策模型"范式**(APUS 提出并开源复�
 | zg (zvec-grep) | 0.2.1,npm 全局(%APPDATA%\npm\zg.cmd),**依赖 node 在 PATH**(C:\Program Files\nodejs) | 混合检索 |
 | node | C:\Program Files\nodejs\node.exe | zg CLI 运行时 |
 | python 3.11 venv A(jev) | torch 2.11+cu128 / transformers 4.57.6 / peft 0.21.2 / accelerate;模型文件 visual-jev-4b(基座+LoRA) | 决策服务器 |
-| python 3.11 venv B(IE) | paddlepaddle 2.6.2 / paddlenlp 2.6.1 / jieba + 钉版依赖(见 §7 坑 6) | 信息提取 |
+| python 3.11 venv B(关键词) | jieba(纯 python, 毫秒级);paddle/paddlenlp 仅 UIE 实验期需要, **已从运行时移除**(§12.2.1a) | 关键词提取 |
 | embedding 模型 | local/potion-code-16m-v2(zg 本地,首跑自动下载) | zg 向量检索 |
 | 目标代码库 | 任意"菜单结构可解析"的业务系统(见 §5) | 检索对象 |
 
@@ -98,7 +98,7 @@ venv A 若本机没有现成的,可用 uv 重建:`uv venv --python 3.11 .venv-je
 8. **GPU 并发**:多个 jev 实例(每个 ~8GB)会在 16GB 卡上 OOM,多项目评测必须**串行**;单实例批跑时模型常驻,单查询决策仅 ~120ms。
 9. **jev LoRA 用途**:上游 adapter 是广告判定(ad/not_ad)专用,通用文本决策用**基座**效果即可(边际 7~12,非常自信);若决策域与 adapter 训练域冲突反而带偏。
 10. **bf16 logits 量级大**(正确项 ~37 vs 其他 ~23):softmax 概率饱和成 1/0,判断置信度要用 **margin(top1-top2)**,别用概率。
-11. **UIE 零样本对抽象 schema 弱**:schema 写"模块/功能/机制"基本提不出东西;本方案关键词主力是 jieba TF-IDF,UIE 作辅助字段,不要指望它做查询理解的主力。
+11. **UIE 零样本对抽象 schema 弱**:schema 写"模块/功能/机制"基本提不出东西;本方案关键词主力是 jieba TF-IDF(毫秒级),UIE 已从运行时移除(保留 paddle 钉版组合仅供复现 UIE 实验时参考)。
 12. **别名缺口=检索失败**:"下拉选项的取值在哪里维护"提不出"字典"二字,若字典管理没有"下拉选项"别名则短名单全 0 分、候选退化为索引序。修法:别名维护 + "全零分时把整模块菜单交给 jev 决策"双保险。
 13. **决策与打分不一致要兜底**:jev 偶尔推翻打分第一的模块(如"踢下线"查询选了系统管理而非系统监控),必须"决策≠打分top1 时并入 top1 模块的菜单",否则正确菜单不可达(此修复让 Menu@1 92%→100%)。
 14. **同文件多段占坑**:zg 返回同文件多个 chunk 会挤掉其他文件,最终结果要按文件去重(Hit@5 90%→100% 的另一半功劳)。
