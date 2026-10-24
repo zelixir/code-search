@@ -1,0 +1,47 @@
+{
+ "perSize": {
+  "5": {
+   "n": 150,
+   "acc": 98.7,
+   "avgMargin": 12.04,
+   "avgMs": 41
+  },
+  "8": {
+   "n": 150,
+   "acc": 99.3,
+   "avgMargin": 11.82,
+   "avgMs": 60
+  },
+  "12": {
+   "n": 150,
+   "acc": 98.7,
+   "avgMargin": 12.09,
+   "avgMs": 64
+  },
+  "16": {
+   "n": 150,
+   "acc": 100,
+   "avgMargin": 12.42,
+   "avgMs": 71
+  },
+  "20": {
+   "n": 150,
+   "acc": 96.7,
+   "avgMargin": 12.48,
+   "avgMs": 105
+  },
+  "26": {
+   "n": 150,
+   "acc": 96.7,
+   "avgMargin": 11.77,
+   "avgMs": 133
+  }
+ },
+ "tournament33": {
+  "ok": 47,
+  "n": 50,
+  "acc": 94,
+  "avgCalls": 4
+ },
+ "totalMs": 138988
+}

@@ -38,7 +38,7 @@ function startServer(cmd, args) {
   };
 }
 
-let ieServer = null, jevServer = null;
+export let ieServer = null, jevServer = null;
 export async function initServers(log) {
   if (ieServer && jevServer) return;
   ieServer = startServer(IE_PY, [IE_PY_]);
