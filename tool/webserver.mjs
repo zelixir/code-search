@@ -35,6 +35,8 @@ async function ensureServers() {
 }
 
 const HTML = fs.readFileSync(path.join(import.meta.dir, "web", "index.html"));
+process.on("uncaughtException", e => console.error("[web] uncaught:", e));
+process.on("unhandledRejection", e => console.error("[web] unhandledRejection:", e));
 const server = Bun.serve({
   port,
   async fetch(req) {
