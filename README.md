@@ -34,21 +34,50 @@
 - **embedding 用 zg 内置的 `local/potion-code-16m-v2`**(索引与查询同源);可选升级
   `local/qwen3-embedding-0.6b`(多语言更强,模型下载需代理,见 REPORT §12)。
 
-### 检索实例(真实运行数据)
+### 检索实例(真实运行数据,每步标注输入与输出)
 
-查询:**「密码连续输错几次账号被锁定的逻辑在哪」**(RuoYi 项目,下表为真实运行记录)
+查询输入:**「密码连续输错几次账号被锁定的逻辑在哪」**(RuoYi 项目)
 
-| 步骤 | 实际发生 |
-|---|---|
-| ① 关键词提取 <10ms | jieba → `[输错, 账号, 密码, 锁定, 几次, 连续]` |
-| ② 模块打分 | 系统管理=10.4 · 平台机制=5.2 · 其他=0 → 候选[系统管理, 平台机制, 系统监控] |
-| ③ jev 决策#1 61ms | **平台机制**(margin 5.1)——推翻打分Top1"系统管理", 兜底规则把系统管理菜单并入候选池 |
-| ④ 菜单打分 | 用户管理=10.5 · 登录认证=6.5 → 候选[用户管理, 登录认证, Token机制, 权限校验] |
-| ⑤ jev 决策#2 47ms | **登录认证**(margin 11.9)——"密码锁定"语义上属于登录认证而非用户管理 |
-| ⑥ 作用域精筛 ~0.9s | 作用域=登录认证的 6 后端+3 前端文件;三路融合后: `SysLoginService.login`(调用方)第1, **`SysPasswordService.validate`(重试计数+抛锁定异常, 21-86行)第4** |
+**① 关键词提取(jieba,6ms)**
+- 输入:`密码连续输错几次账号被锁定的逻辑在哪`
+- 输出:关键词 `[输错, 账号, 密码, 锁定, 几次, 连续]`
 
-端到端约 **1.2~2s**,零降级。三个角色各管一段:**打分管召回、jev 管语义、种子词管中英**——第③步没
-有兜底则候选池里没有"登录认证";第⑥步没有 en 种子词则中文查询在纯英文标识符代码上全军覆没。
+**② 模块短名单打分**
+- 输入:①的关键词 + 查询原文,对照 4 个模块及其下属菜单的别名表
+- 输出(得分):`系统管理=10.4 · 平台机制=5.2 · 系统监控=0 · 系统工具=0` → 候选 `[系统管理, 平台机制, 系统监控]`
+
+**③ jev 决策#1(选模块,61ms 模型常驻)**
+- 输入(实际 prompt,截取):`Question: 一个代码检索查询为: 密码连续输错几次账号被锁定的逻辑在哪。这个查询最属于哪个业务模块? Options: A. 系统管理(用户管理、角色管理、菜单管理…) B. 平台机制(登录认证、Token机制、数据权限…) C. 系统监控(在线用户、定时任务…)`
+- 处理:一次前向,取 "Answer:" 位置上 ` A`/` B`/` C` 三个字母 token 的 logits,最大者为答案
+- 输出:**平台机制**(margin 5.1)——注意它推翻了②的打分 Top1"系统管理";兜底规则立即把"系统管理"的菜单并入下一步候选池(否则"登录认证"根本进不了候选)
+
+**④ 菜单短名单打分**
+- 输入:平台机制 ∪ 系统管理的全部菜单 × 同一套打分器
+- 输出(得分):`用户管理=10.5 · 登录认证=6.5 · Token机制=0 · 权限校验=0` → 候选 `[用户管理, 登录认证, Token机制, 权限校验]`
+
+**⑤ jev 决策#2(选菜单,41ms 模型常驻)**
+- 输入(实际 prompt,截取):`Question: …这个查询最应该在哪个功能菜单的代码里找? Options: A. 用户管理: 用户/账号/员工/密码/重置密码 | 涉及 SysUserController B. 登录认证: password retry lock login captcha register | 涉及 SysLoginController C. Token机制: …`(选项文本=菜单名+别名+英文种子词+控制器名,这是 jev 能对上"密码锁定→登录认证"的关键)
+- 输出:**登录认证**(margin 11.9)
+
+**⑥ zg 作用域三路融合精筛(~0.9s)**
+- 输入(实际命令,作用域文件由两级索引给出):
+```
+zg query --hybrid "密码连续输错几次账号被锁定的逻辑在哪" \
+  --vector "password retry lock login captcha register" \
+  --fts "password retry lock login captcha register" --fuse --limit 6 \
+  -g …/SysLoginController.java -g …/SecurityConfig.java -g …/SysLoginService.java \
+  -g …/SysRegisterService.java -g …/CaptchaController.java -g …/SysPasswordService.java
+```
+  作用域共 6 个后端文件 + 4 个前端文件(login.vue / user.js / register.vue / login.js),总共 10 个文件
+- 输出(融合排序,节选):
+
+| # | 仓 | 文件:行段 | 说明 |
+|---|---|---|---|
+| 1 | BE | `SysLoginService.java:36-176` | login 主流程,调用 validate 并捕获锁定异常 |
+| 4 | BE | **`SysPasswordService.java:21-86`** | **validate():重试计数 ≥ maxRetryCount 即抛 UserPasswordRetryLimitExceedException——就是它** |
+| 1 | FE | `login.vue:107-141` | 前端登录页 |
+
+端到端 ~1.2s(模型常驻;首查含加载 2~3s),零降级。两个关键点:第③步 jev 推翻打分,但兜底保证"登录认证"仍在候选;第⑥步若去掉 en 种子词的 vector/fts 通道,SysPasswordService 在这种纯英文标识符文件里检索不到。
 
 ## 仓库结构
 
