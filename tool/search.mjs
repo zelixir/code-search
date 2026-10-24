@@ -154,9 +154,11 @@ async function search(query, opts) {
   const fe = menu.menu.fe || {};
   const scopeFe = [].concat(fe.view ? [fe.view] : [], fe.api || [], fe.dir ? [fe.dir + "/**"] : []);
   const beFiles = menu.menu.beFiles || [];
-  const kwFts = (query.match(/[a-zA-Z][a-zA-Z0-9_]{2,}/g) || [])[0] || "";
+  const kwFts = menu.menu.en || (query.match(/[a-zA-Z][a-zA-Z0-9_]{2,}/g) || [])[0] || "";
   const qArgs = ["query", "--hybrid", query, "--limit", "6"];
-  if (kwFts) qArgs.push("--fts", kwFts, "--fuse");
+  if (menu.menu.en) qArgs.push("--vector", menu.menu.en);
+  if (kwFts) qArgs.push("--fts", kwFts);
+  if (menu.menu.en || kwFts) qArgs.push("--fuse");
   let beHits = [], feHits = [];
   if (beFiles.length) {
     const g = beFiles.flatMap(f => ["-g", stripFor(f)]);

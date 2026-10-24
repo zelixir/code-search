@@ -763,7 +763,8 @@
       "repos/RuoYi-Vue/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysLoginController.java",
       "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/config/SecurityConfig.java",
       "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/SysLoginService.java",
-      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/SysRegisterService.java"
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/SysRegisterService.java",
+      "repos/RuoYi-Vue/ruoyi-framework/src/main/java/com/ruoyi/framework/web/service/SysPasswordService.java"
      ],
      "seeds": {
       "slug": "",
@@ -772,7 +773,8 @@
        "CaptchaController",
        "SysLoginController"
       ]
-     }
+     },
+     "en": "password retry lock login captcha register"
     },
     {
      "id": "92",
@@ -807,7 +809,8 @@
       "slug": "",
       "cn": "Token机制",
       "controllers": []
-     }
+     },
+     "en": "jwt token refresh expire"
     },
     {
      "id": "93",
@@ -843,7 +846,8 @@
       "slug": "",
       "cn": "权限校验",
       "controllers": []
-     }
+     },
+     "en": "permission PreAuthorize hasPermi security"
     },
     {
      "id": "94",
@@ -875,7 +879,8 @@
       "slug": "",
       "cn": "数据权限",
       "controllers": []
-     }
+     },
+     "en": "data scope aspect filter department"
     },
     {
      "id": "95",
@@ -908,7 +913,8 @@
       "slug": "",
       "cn": "防重复提交",
       "controllers": []
-     }
+     },
+     "en": "repeat submit interceptor idempotent interval message"
     },
     {
      "id": "96",
@@ -943,7 +949,8 @@
       "slug": "",
       "cn": "操作日志切面",
       "controllers": []
-     }
+     },
+     "en": "operlog log aspect annotation audit async"
     },
     {
      "id": "97",
@@ -976,7 +983,8 @@
       "slug": "",
       "cn": "Excel导入导出",
       "controllers": []
-     }
+     },
+     "en": "excel poi export import util"
     },
     {
      "id": "98",
@@ -1009,7 +1017,8 @@
       "slug": "",
       "cn": "限流",
       "controllers": []
-     }
+     },
+     "en": "rate limiter limit aspect"
     },
     {
      "id": "99",
@@ -1043,7 +1052,8 @@
       "slug": "",
       "cn": "分页",
       "controllers": []
-     }
+     },
+     "en": "page helper table support pagination"
     },
     {
      "id": "910",
@@ -1074,7 +1084,8 @@
       "slug": "",
       "cn": "全局异常处理",
       "controllers": []
-     }
+     },
+     "en": "global exception handler advice"
     },
     {
      "id": "911",
@@ -1108,7 +1119,8 @@
       "slug": "",
       "cn": "XSS过滤",
       "controllers": []
-     }
+     },
+     "en": "xss escape filter wrapper"
     },
     {
      "id": "912",
@@ -1140,7 +1152,8 @@
       "slug": "",
       "cn": "国际化",
       "controllers": []
-     }
+     },
+     "en": "i18n message locale localeResolver"
     },
     {
      "id": "913",
@@ -1177,7 +1190,8 @@
       "controllers": [
        "CommonController"
       ]
-     }
+     },
+     "en": "file upload download common controller"
     },
     {
      "id": "914",
@@ -1212,7 +1226,8 @@
        "SysIndexController",
        "SysProfileController"
       ]
-     }
+     },
+     "en": "index dashboard profile"
     }
    ],
    "aliases": [

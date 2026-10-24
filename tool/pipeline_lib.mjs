@@ -156,9 +156,11 @@ export async function search(query, opts) {
   const fe = menu.menu.fe || {};
   const scopeFe = [].concat(fe.view ? [fe.view] : [], fe.api || [], fe.dir ? [fe.dir + "/**"] : []);
   const beFiles = menu.menu.beFiles || [];
-  const kwFts = (query.match(/[a-zA-Z][a-zA-Z0-9_]{2,}/g) || [])[0] || "";  // 直接取查询里的英文词
+  const kwFts = menu.menu.en || (query.match(/[a-zA-Z][a-zA-Z0-9_]{2,}/g) || [])[0] || "";  // 优先菜单英文种子词, 兜底查询里的英文词
   const qArgs = ["query", "--hybrid", query, "--limit", "6"];
-  if (kwFts) qArgs.push("--fts", kwFts, "--fuse");
+  if (menu.menu.en) qArgs.push("--vector", menu.menu.en);
+  if (kwFts) qArgs.push("--fts", kwFts);
+  if (menu.menu.en || kwFts) qArgs.push("--fuse");
   const stripFor = f => path.relative(rootOf(PROJ, f), path.join(PROJ, f)).replace(/\\/g, "/");
   let beHits = [], feHits = [];
   if (beFiles.length) {
